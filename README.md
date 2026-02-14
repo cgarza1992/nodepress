@@ -1,36 +1,172 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# NodePress CMS
+
+A modern, self-hosted CMS built with Next.js 14, inspired by WordPress but powered by modern web technologies.
+
+## Overview
+
+NodePress is a headless CMS with a full-featured admin dashboard, built to learn production-grade full-stack development patterns. It combines the ease of WordPress with the power of modern JavaScript frameworks.
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Database:** PostgreSQL 16
+- **ORM:** Prisma 6
+- **Authentication:** NextAuth.js v4
+- **Styling:** Tailwind CSS 3
+- **Containerization:** Docker + Docker Compose
+- **Password Hashing:** bcrypt
+
+## Features
+
+### Currently Implemented ✅
+
+- Docker development environment (PostgreSQL + Redis)
+- Prisma ORM with User model
+- Role-based permissions (Admin, Editor, Viewer)
+- Database migrations with UUID primary keys
+- Seed script with default admin user
+- Secure password hashing with bcrypt
+
+### Planned 🚧
+
+- Post and Page content types
+- Media library with image uploads
+- WYSIWYG editor (TipTap)
+- NextAuth authentication system
+- Admin dashboard with CRUD operations
+- Theme system for public-facing site
+- API routes for content management
+
+## Prerequisites
+
+- Node.js 18.17+ (LTS recommended)
+- Docker Desktop
+- Git
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
+
+```bash
+git clone git@github.com:cgarza1992/nodepress.git
+cd nodepress
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start the database
+
+```bash
+docker compose up -d
+```
+
+This starts:
+- PostgreSQL on `localhost:5432`
+- Redis on `localhost:6379`
+
+### 4. Set up environment variables
+
+Copy `.env.local.example` to `.env.local` (if it doesn't exist yet, create `.env.local` with):
+
+```env
+DATABASE_URL="postgresql://nodepress:nodepress123@localhost:5432/nodepress"
+NEXTAUTH_SECRET="your-secret-key-here"
+NEXTAUTH_URL="http://localhost:3000"
+```
+
+### 5. Run database migrations
+
+```bash
+npx prisma generate
+npx prisma migrate dev
+```
+
+### 6. Seed the database
+
+```bash
+npx prisma db seed
+```
+
+This creates a default admin user:
+- **Email:** `admin@nodepress.local`
+- **Password:** `changeme123`
+
+### 7. Start the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Development Commands
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Start Next.js dev server
+npm run dev
 
-## Learn More
+# Build for production
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+# Start production server
+npm start
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Run linting
+npm run lint
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Database commands
+npx prisma studio          # Open database GUI at localhost:5555
+npx prisma migrate dev     # Create and run migrations
+npx prisma db seed         # Seed database with default data
+npx prisma generate        # Regenerate Prisma Client
 
-## Deploy on Vercel
+# Docker commands
+docker compose up -d       # Start database services
+docker compose down        # Stop database services
+docker compose logs -f     # View logs
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+nodepress/
+├── prisma/
+│   ├── schema.prisma      # Database schema
+│   ├── migrations/        # Database migrations
+│   └── seed.ts            # Database seeding script
+├── src/
+│   ├── app/               # Next.js App Router (routes)
+│   ├── components/        # React components
+│   └── lib/               # Utilities and helpers
+├── docker-compose.yml     # Docker services configuration
+└── prisma.config.ts       # Prisma configuration
+```
+
+## Database Schema
+
+### User Model
+
+- `id` - UUID primary key
+- `email` - Unique email address
+- `password` - bcrypt hashed password
+- `name` - Optional display name
+- `role` - ADMIN | EDITOR | VIEWER
+- `createdAt` - Timestamp
+- `updatedAt` - Auto-updated timestamp
+
+## Contributing
+
+This is a personal learning project, but suggestions and feedback are welcome!
+
+## License
+
+MIT
+
+## Acknowledgments
+
+Built as a learning project to develop production-grade full-stack engineering skills, with inspiration from WordPress, Ghost, and modern headless CMS platforms.
