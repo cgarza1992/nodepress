@@ -7,6 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 enum Role {
@@ -23,4 +24,40 @@ model User {
   role      Role     @default(VIEWER)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  // Relationships
+  posts Post[]
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  SCHEDULED
+}
+
+model Post {
+  // Primary key
+  id String @id @default(uuid())
+
+  // Core fields
+  title   String
+  slug    String  @unique
+  content Json // TipTap JSON format
+  excerpt String? // Optional short description
+
+  // Status & publishing
+  status      PostStatus @default(DRAFT)
+  publishedAt DateTime? // Optional (for scheduling)
+
+  // Foreign keys (we'll add relationships next)
+  authorId        String
+  featuredImageId String? // Optional
+
+  // Timestamps
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relationships
+  author User @relation(fields: [authorId], references: [id], onDelete: Restrict)
+
 }
