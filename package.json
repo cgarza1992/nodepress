@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma:format": "prisma format",
+    "prisma:validate": "prisma validate"
   },
   "prisma": {
     "seed": "tsx prisma/seed.ts"
