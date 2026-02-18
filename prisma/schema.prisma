@@ -87,6 +87,10 @@ model Post {
   author        User   @relation(fields: [authorId], references: [id], onDelete: Restrict)
   featuredImage Media? @relation(fields: [featuredImageId], references: [id])
 
+  // Relationships
+  postCategories PostCategory[]
+  postTags       PostTag[]
+
   // Indexes - like a table of contents for the database, speeds up queries
   // Add indexes on fields you frequently filter, sort, or search by
   @@index([title])       // Search posts by title
@@ -149,4 +153,57 @@ model Media {
 
   // Indexes
   @@index([uploadedById]) // Filter media by who uploaded it
+}
+
+model Category {
+  id String @id @default(uuid())
+  name String @unique
+  slug String @unique
+  createdAt DateTime @default(now())
+
+  // Relationships
+  postCategories PostCategory[]
+}
+
+model Tag {
+  id String @id @default(uuid())
+  name String @unique
+  slug String @unique
+  createdAt DateTime @default(now())
+
+  postTags PostTag[]
+}
+
+
+// ============================================================================
+// JUNCTION TABLES - Connect many-to-many relationships
+// ============================================================================
+
+// Junction table for Post ↔ Category (many-to-many)
+// Each row says: "This post belongs to this category"
+// No id field - the combination of postId + categoryId IS the primary key
+model PostCategory {
+  postId     String
+  categoryId String
+
+  // Relationships
+  post Post @relation( fields: [postId], references: [id], onDelete: Cascade)
+  category Category @relation( fields: [categoryId], references: [id], onDelete: Cascade)
+
+  // Composite Primary Key - prevents duplicate pairings
+  @@id([postId, categoryId])
+}
+
+// Junction table for Post ↔ Tag (many-to-many)
+// Each row says: "This post has this tag"
+model PostTag {
+  postId String
+  tagId  String
+
+  // Relationships
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag Tag @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  // Composite Primary Key - prevents duplicate pairings
+  @@id([postId, tagId])
 }
