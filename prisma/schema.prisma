@@ -25,14 +25,14 @@ datasource db {
 
 // User permission levels for access control
 enum Role {
-  ADMIN  // Full access: manage users, settings, all content
+  ADMIN // Full access: manage users, settings, all content
   EDITOR // Can create and edit content
   VIEWER // Read-only access
 }
 
 // Content publishing workflow states
 enum PostStatus {
-  DRAFT     // Work in progress, not visible to public
+  DRAFT // Work in progress, not visible to public
   PUBLISHED // Live and visible to public
   SCHEDULED // Will auto-publish at publishedAt date
 }
@@ -44,17 +44,17 @@ enum PostStatus {
 // User accounts for CMS authentication and content ownership
 model User {
   id        String   @id @default(uuid()) // Primary key, auto-generated UUID
-  email     String   @unique              // Login identifier, must be unique
-  password  String                        // bcrypt hashed password (never plain text)
-  name      String?                       // Display name (? = optional, can be null)
-  role      Role     @default(VIEWER)     // Permission level, defaults to VIEWER
-  createdAt DateTime @default(now())      // Set by PostgreSQL when row is created
-  updatedAt DateTime @updatedAt           // Set by Prisma automatically on every update
+  email     String   @unique // Login identifier, must be unique
+  password  String // bcrypt hashed password (never plain text)
+  name      String? // Display name (? = optional, can be null)
+  role      Role     @default(VIEWER) // Permission level, defaults to VIEWER
+  createdAt DateTime @default(now()) // Set by PostgreSQL when row is created
+  updatedAt DateTime @updatedAt // Set by Prisma automatically on every update
 
   // Virtual fields - NOT stored in database
   // These let us query: "Give me this user AND all their posts/pages/media"
-  posts Post[]  // All posts where Post.authorId = this user's id
-  pages Page[]  // All pages where Page.authorId = this user's id
+  posts Post[] // All posts where Post.authorId = this user's id
+  pages Page[] // All pages where Page.authorId = this user's id
   media Media[] // All media where Media.uploadedById = this user's id
 }
 
@@ -64,22 +64,22 @@ model Post {
   id String @id @default(uuid())
 
   // Core content fields - REAL columns in the database
-  title   String         // Post title
-  slug    String @unique // URL-friendly identifier (e.g., "my-first-post" for /blog/my-first-post)
-  content Json           // TipTap WYSIWYG editor stores content as JSON (not HTML)
-  excerpt String?        // Optional short description for previews and SEO
+  title   String // Post title
+  slug    String  @unique // URL-friendly identifier (e.g., "my-first-post" for /blog/my-first-post)
+  content Json // TipTap WYSIWYG editor stores content as JSON (not HTML)
+  excerpt String? // Optional short description for previews and SEO
 
   // Publishing workflow
   status      PostStatus @default(DRAFT) // All new posts start as drafts
-  publishedAt DateTime?                  // When to publish (null = not scheduled)
+  publishedAt DateTime? // When to publish (null = not scheduled)
 
   // Foreign keys - REAL columns that store UUIDs pointing to other tables
-  authorId        String  // UUID of the User who wrote this post
+  authorId        String // UUID of the User who wrote this post
   featuredImageId String? // UUID of the Media item used as hero image (optional)
 
   // Timestamps
   createdAt DateTime @default(now()) // Set by PostgreSQL on insert
-  updatedAt DateTime @updatedAt      // Set by Prisma on every update
+  updatedAt DateTime @updatedAt // Set by Prisma on every update
 
   // Virtual relationship fields - NOT stored in database
   // @relation tells Prisma: "my authorId field points to User's id field"
@@ -87,12 +87,16 @@ model Post {
   author        User   @relation(fields: [authorId], references: [id], onDelete: Restrict)
   featuredImage Media? @relation(fields: [featuredImageId], references: [id])
 
+  // Virtual relationship fields - junction table records for many-to-many
+  postCategories PostCategory[] // Categories this post belongs to
+  postTags       PostTag[] // Tags applied to this post
+
   // Indexes - like a table of contents for the database, speeds up queries
   // Add indexes on fields you frequently filter, sort, or search by
-  @@index([title])       // Search posts by title
-  @@index([authorId])    // Filter posts by author
-  @@index([slug])        // Look up post by URL slug
-  @@index([status])      // Filter by draft/published/scheduled
+  @@index([title]) // Search posts by title
+  @@index([authorId]) // Filter posts by author
+  @@index([slug]) // Look up post by URL slug
+  @@index([status]) // Filter by draft/published/scheduled
   @@index([publishedAt]) // Sort by publish date
 }
 
@@ -103,10 +107,10 @@ model Page {
   id String @id @default(uuid())
 
   // Core content fields
-  title    String              // Page title
-  slug     String     @unique  // URL path (e.g., "about-us" for /about-us)
-  content  Json                // TipTap JSON content
-  authorId String              // Foreign key: UUID of the User who created this page
+  title    String // Page title
+  slug     String     @unique // URL path (e.g., "about-us" for /about-us)
+  content  Json // TipTap JSON content
+  authorId String // Foreign key: UUID of the User who created this page
   status   PostStatus @default(DRAFT) // Reuses same status workflow as Posts
 
   // Timestamps
@@ -130,12 +134,12 @@ model Media {
   id String @id @default(uuid())
 
   // File metadata - REAL columns describing the uploaded file
-  filename     String   // Original filename (e.g., "hero-image.jpg")
-  url          String   // Where the file is served from (e.g., "/uploads/hero-image.jpg")
-  mimeType     String   // File type (e.g., "image/jpeg", "application/pdf", "video/mp4")
-  size         Int      // File size in bytes (useful for upload limits and display)
-  alt          String?  // Alt text for images (accessibility and SEO, optional)
-  uploadedById String   // Foreign key: UUID of the User who uploaded this file
+  filename     String // Original filename (e.g., "hero-image.jpg")
+  url          String // Where the file is served from (e.g., "/uploads/hero-image.jpg")
+  mimeType     String // File type (e.g., "image/jpeg", "application/pdf", "video/mp4")
+  size         Int // File size in bytes (useful for upload limits and display)
+  alt          String? // Alt text for images (accessibility and SEO, optional)
+  uploadedById String // Foreign key: UUID of the User who uploaded this file
   createdAt    DateTime @default(now()) // When the file was uploaded
 
   // Virtual relationship fields
@@ -149,4 +153,70 @@ model Media {
 
   // Indexes
   @@index([uploadedById]) // Filter media by who uploaded it
+}
+
+// Content organization - groups posts into broad topics
+// Examples: "Programming", "Design", "DevOps"
+// A post can belong to many categories, and a category can have many posts (many-to-many)
+model Category {
+  id        String   @id @default(uuid()) // Primary key
+  name      String   @unique // Category name, must be unique
+  slug      String   @unique // URL-friendly identifier (e.g., "programming" for /category/programming)
+  createdAt DateTime @default(now()) // When the category was created
+
+  // Virtual relationship - junction table records linking this category to posts
+  postCategories PostCategory[]
+
+  // Indexes
+  @@index([slug]) // Look up category by URL slug
+}
+
+// Content labeling - flexible tags for cross-cutting topics
+// Examples: "javascript", "tutorial", "beginner"
+// Similar to Category but more granular and flexible
+// A post can have many tags, and a tag can belong to many posts (many-to-many)
+model Tag {
+  id        String   @id @default(uuid()) // Primary key
+  name      String   @unique // Tag name, must be unique
+  slug      String   @unique // URL-friendly identifier (e.g., "javascript" for /tag/javascript)
+  createdAt DateTime @default(now()) // When the tag was created
+
+  // Virtual relationship - junction table records linking this tag to posts
+  postTags PostTag[]
+
+  // Indexes
+  @@index([slug]) // Look up tag by URL slug
+}
+
+// ============================================================================
+// JUNCTION TABLES - Connect many-to-many relationships
+// ============================================================================
+
+// Junction table for Post ↔ Category (many-to-many)
+// Each row says: "This post belongs to this category"
+// No id field - the combination of postId + categoryId IS the primary key
+model PostCategory {
+  postId     String
+  categoryId String
+
+  // Relationships
+  post     Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  // Composite Primary Key - prevents duplicate pairings
+  @@id([postId, categoryId])
+}
+
+// Junction table for Post ↔ Tag (many-to-many)
+// Each row says: "This post has this tag"
+model PostTag {
+  postId String
+  tagId  String
+
+  // Relationships
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+  tag  Tag  @relation(fields: [tagId], references: [id], onDelete: Cascade)
+
+  // Composite Primary Key - prevents duplicate pairings
+  @@id([postId, tagId])
 }
