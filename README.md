@@ -4,7 +4,7 @@ A modern, self-hosted CMS built with Next.js 14, inspired by WordPress but power
 
 ## Overview
 
-NodePress is a headless CMS with a full-featured admin dashboard, built to learn production-grade full-stack development patterns. It combines the ease of WordPress with the power of modern JavaScript frameworks.
+NodePress is a self-hosted CMS built to fix what WordPress gets wrong. Instead of MySQL's lack of true relational integrity, NodePress uses PostgreSQL with proper foreign keys, cascading deletes, and UUID-based relationships. Instead of coding blocks twice - once in PHP for the backend and again in React for Gutenberg's editor - NodePress uses a single JSON-based content format that renders identically in the editor and on the frontend. No ACF middleware, no duplicated work, no plugin tax. Just a clean, modern stack: Next.js, Prisma, and PostgreSQL.
 
 ## Tech Stack
 
