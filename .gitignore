@@ -12,7 +12,6 @@
 
 # testing
 /coverage
-/tests/visual/__snapshots__
 /test-results
 
 # next.js
