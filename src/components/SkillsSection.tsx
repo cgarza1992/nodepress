@@ -29,6 +29,18 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
           </div>
         ))}
       </div>
+
+      <div className="mt-12 flex justify-center">
+        <a
+          href="https://storybook.christophergarza.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"
+        >
+          <span>View my component library</span>
+          <span className="group-hover:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
     </section>
   );
 }
