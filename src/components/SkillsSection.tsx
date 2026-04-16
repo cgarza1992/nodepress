@@ -32,7 +32,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
 
       <div className="mt-12 flex justify-center">
         <a
-          href="https://storybook.christophergarza.dev"
+          href={process.env.NEXT_PUBLIC_STORYBOOK_URL || 'https://storybook.christophergarza.dev'}
           target="_blank"
           rel="noopener noreferrer"
           className="group flex items-center gap-2 text-slate-400 hover:text-blue-400 transition-colors"

@@ -20,7 +20,7 @@ export function Navigation() {
             );
           })}
           <a
-            href="https://storybook.christophergarza.dev"
+            href={process.env.NEXT_PUBLIC_STORYBOOK_URL || 'https://storybook.christophergarza.dev'}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium px-4 py-1.5 rounded-full border border-blue-500/50 text-blue-400 hover:bg-blue-500/10 transition-colors"
