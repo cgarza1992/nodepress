@@ -6,10 +6,6 @@ const meta: Meta<typeof OpenSourceProjects> = {
   component: OpenSourceProjects,
   parameters: {
     layout: 'fullscreen',
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0f172a' }],
-    },
   },
   tags: ['autodocs'],
 };

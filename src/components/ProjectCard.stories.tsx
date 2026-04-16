@@ -6,10 +6,6 @@ const meta: Meta<typeof ProjectCard> = {
   component: ProjectCard,
   parameters: {
     layout: 'centered',
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0f172a' }],
-    },
   },
   tags: ['autodocs'],
 };

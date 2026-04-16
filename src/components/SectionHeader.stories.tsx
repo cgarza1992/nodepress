@@ -6,10 +6,6 @@ const meta: Meta<typeof SectionHeader> = {
   component: SectionHeader,
   parameters: {
     layout: 'padded',
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0f172a' }],
-    },
   },
   tags: ['autodocs'],
 };

@@ -6,10 +6,6 @@ const meta: Meta<typeof AboutSection> = {
   component: AboutSection,
   parameters: {
     layout: 'fullscreen',
-    backgrounds: {
-      default: 'dark',
-      values: [{ name: 'dark', value: '#0f172a' }],
-    },
   },
   tags: ['autodocs'],
 };
