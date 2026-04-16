@@ -39,6 +39,7 @@ jobs:
 
       - name: Prepare Storybook Vercel output
         run: |
+          rm -rf .vercel
           mkdir -p .vercel/output/static
           cp -r storybook-static/* .vercel/output/static/
           echo '{"version":3}' > .vercel/output/config.json
