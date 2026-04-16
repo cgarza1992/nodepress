@@ -17,11 +17,8 @@ export function Hero({ title, subtitle, image, ctaPrimary, ctaSecondary }: HeroP
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4">
+            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">
               {title}
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">
-                Engineer
-              </span>
             </h1>
             <p className="text-xl text-slate-300 max-w-2xl leading-relaxed">
               {subtitle}
