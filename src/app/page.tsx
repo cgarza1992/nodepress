@@ -179,11 +179,10 @@ export default function Home() {
   ];
 
   const aboutHighlights = [
-    "Led enterprise-scale consolidation of 10 shipping & logistics brands at Auctane",
-    "Increased eCommerce plan purchases 185% and Average Revenue per User 101% at WP Engine",
-    "Increased signups 289% and add-ons purchased 105% by simplifying plan pages",
-    "Grew and mentored the WP Engine web team from 2 developers to a 14-person multidisciplinary force",
-    "Built high-performance web apps with React, Vue.js, Next.js, TypeScript, PHP, and WordPress",
+    "Background in Advertising & Mass Communication — bridges the gap between technical and non-technical teams",
+    "Contributed to growing and mentoring the WP Engine web team, including the first developer onboarding program",
+    "Focused on translating complex business problems into clean, maintainable engineering solutions",
+    "Open to roles that challenge me to grow across the full stack and contribute to teams doing meaningful work",
   ];
 
   return (
@@ -209,7 +208,7 @@ export default function Home() {
         <AboutSection
           profileImage="https://avatars.githubusercontent.com/u/17697283?v=4"
           title="About Me"
-          bio="I'm a Senior Full-Stack Engineer with 9+ years of experience designing and building complex web applications. Most recently at Auctane, where I led enterprise-scale consolidation of 10 shipping & logistics brands. Previously at WP Engine, a $134M ARR WordPress platform. My focus is on translating business challenges into elegant technical solutions. I've driven substantial revenue growth through UI/UX optimization, led cross-functional teams, and architected scalable systems that serve millions of users."
+          bio="I started in Advertising & Mass Communication, taught myself to code, and spent 7 years at WP Engine before moving to Auctane. That non-traditional path shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage — currently building a custom motorcycle for a show."
           highlights={aboutHighlights}
         />
 
