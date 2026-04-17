@@ -1,9 +1,8 @@
 'use client';
 
-import { PlanGrid } from './PlanGrid';
-import { SectionHeader } from '../SectionHeader';
 import { WorkHighlightCard } from '../molecules/WorkHighlightCard';
-import type { PlanTileData } from '../molecules/PlanTile';
+import { NarrativeSection } from '../molecules/NarrativeSection';
+import type { NarrativeItem } from '../molecules/NarrativeSection';
 
 interface Metric {
   value: string;
@@ -19,11 +18,11 @@ export interface WorkHighlight {
 
 interface AuctaneWorkProps {
   metrics: Metric[];
-  pricingPlans: PlanTileData[];
-  workHighlights: WorkHighlight[];
+  narrative: NarrativeItem[];
+  projects: WorkHighlight[];
 }
 
-export function AuctaneWork({ metrics, pricingPlans, workHighlights }: AuctaneWorkProps) {
+export function AuctaneWork({ metrics, narrative, projects }: AuctaneWorkProps) {
   return (
     <section id="auctane" className="max-w-6xl mx-auto px-6 py-20">
       <div className="mb-16">
@@ -31,15 +30,14 @@ export function AuctaneWork({ metrics, pricingPlans, workHighlights }: AuctaneWo
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Auctane</span>{' '}Work
         </h2>
         <p className="text-slate-400 text-lg">
-          Led pricing and platform consolidation across the Auctane shipping portfolio, driving{' '}
-          <span className="text-blue-400 font-semibold">185% revenue growth</span> while managing{' '}
-          <span className="text-blue-400 font-semibold">$134M+ in ARR</span> across 10 brands.
-          Click any plan to see my contribution.
+          Led technical implementation of enterprise brand consolidation, merging{' '}
+          <span className="text-blue-400 font-semibold">10 separate brands</span> under unified
+          corporate standards. Architected and executed complex site migrations, full-stack redesigns,
+          and modernized legacy codebases across the Auctane shipping portfolio.
         </p>
       </div>
 
-      {/* Metrics */}
-      <div className="grid grid-cols-3 gap-6 mb-16">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16">
         {metrics.map((metric, idx) => (
           <div key={idx} className="bg-slate-800/50 border border-slate-700 rounded-lg p-6 text-center">
             <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-2">
@@ -50,18 +48,13 @@ export function AuctaneWork({ metrics, pricingPlans, workHighlights }: AuctaneWo
         ))}
       </div>
 
-      <div className="mb-20">
-        <SectionHeader title="Pricing & Billing" />
-        <PlanGrid plans={pricingPlans} />
-      </div>
+      <NarrativeSection items={narrative} />
 
-      <div>
-        <SectionHeader title="Other Engineering Work" />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {workHighlights.map((item) => (
-            <WorkHighlightCard key={item.title} {...item} />
-          ))}
-        </div>
+      <h3 className="text-xl font-semibold text-white mb-6">Projects & Deliverables</h3>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projects.map((item) => (
+          <WorkHighlightCard key={item.title} {...item} />
+        ))}
       </div>
     </section>
   );

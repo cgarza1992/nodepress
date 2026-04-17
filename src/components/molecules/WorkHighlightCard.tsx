@@ -6,20 +6,24 @@ interface WorkHighlightCardProps {
 }
 
 export function WorkHighlightCard({ title, description, tags, href }: WorkHighlightCardProps) {
+  const Wrapper = href ? 'a' : 'div';
+  const wrapperProps = href
+    ? { href, target: '_blank', rel: 'noopener noreferrer' }
+    : {};
+
   return (
-    <div className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col gap-4 hover:border-blue-500/50 transition-colors duration-300">
+    <Wrapper
+      {...wrapperProps}
+      className={`bg-slate-800/50 border border-slate-700 rounded-xl p-6 flex flex-col gap-4 transition-all duration-300
+        hover:border-blue-500 hover:bg-slate-800 hover:shadow-lg hover:shadow-blue-500/10 hover:-translate-y-1
+        ${href ? 'cursor-pointer' : ''}`}
+    >
       <div className="flex items-start justify-between gap-4">
         <h4 className="text-white font-semibold text-base leading-snug">{title}</h4>
         {href && (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={(e) => e.stopPropagation()}
-            className="text-xs text-blue-400 hover:text-blue-300 whitespace-nowrap shrink-0 transition-colors"
-          >
+          <span className="text-xs text-blue-400 whitespace-nowrap shrink-0">
             View Live →
-          </a>
+          </span>
         )}
       </div>
       <p className="text-slate-400 text-sm leading-relaxed flex-1">{description}</p>
@@ -33,6 +37,6 @@ export function WorkHighlightCard({ title, description, tags, href }: WorkHighli
           </span>
         ))}
       </div>
-    </div>
+    </Wrapper>
   );
 }
