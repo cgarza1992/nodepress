@@ -46,7 +46,7 @@ const auctanePlans: PlanTileData[] = [
       { label: 'Custom branding', included: true },
       { label: 'API access', included: false },
     ],
-    contribution: 'Owned the Bronze tier A/B test strategy. Ran 6 experiments on CTA copy, plan positioning, and feature callouts that contributed to a 23% increase in Bronze conversions.',
+    contribution: 'Owned the Bronze tier A/B test strategy. Ran multiple experiments on CTA copy, plan positioning, and feature callouts to optimize conversions.',
     ctaHref: 'https://www.shipstation.com/pricing/',
   },
   {
@@ -115,7 +115,7 @@ const wpeManagedPlans: PlanTileData[] = [
       { label: 'Staging Environment', included: true },
       { label: 'CDN Included', included: true },
     ],
-    contribution: 'Designed the Most Popular highlight treatment and built the feature comparison logic. A/B tested CTA copy that increased Professional tier conversions by 18%.',
+    contribution: 'Designed the Most Popular highlight treatment and built the feature comparison logic. A/B tested CTA copy and plan positioning to drive Professional tier upgrades.',
     ctaHref: 'https://wpengine.com/plans/',
   },
   {
@@ -184,7 +184,7 @@ const wpeEcommercePlans: PlanTileData[] = [
       { label: 'Priority Support', included: true },
       { label: 'Advanced Analytics', included: true },
     ],
-    contribution: 'Designed the Growth eCommerce tier\'s performance messaging. Ran pricing experiments with Google Optimize resulting in a 22% lift in plan upgrades.',
+    contribution: 'Designed the Growth eCommerce tier\'s performance messaging. Ran pricing experiments with Google Optimize to drive plan upgrades across the WooCommerce customer segment.',
     ctaHref: 'https://wpengine.com/ecommerce-platform-pricing/',
   },
 ];
