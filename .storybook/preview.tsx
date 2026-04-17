@@ -1,4 +1,6 @@
 import type { Preview } from '@storybook/nextjs-vite'
+import { Provider } from 'react-redux'
+import { store } from '../src/store'
 import '../src/app/globals.css'
 
 const MobileWarning = () => (
@@ -22,9 +24,11 @@ const preview: Preview = {
       const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
       if (isMobile) return <MobileWarning />;
       return (
-        <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
-          <Story />
-        </div>
+        <Provider store={store}>
+          <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+            <Story />
+          </div>
+        </Provider>
       );
     },
   ],
@@ -36,8 +40,8 @@ const preview: Preview = {
       },
     },
     a11y: {
-      test: 'todo'
-    }
+      test: 'todo',
+    },
   },
 };
 
