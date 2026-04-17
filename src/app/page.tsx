@@ -17,9 +17,9 @@ import type { PlanTileData } from '@/components/molecules/PlanTile';
 
 const auctanePlans: PlanTileData[] = [
   {
-    id: 'auctane-shipstation',
+    id: 'auctane-shipstation-starter',
     name: 'ShipStation Starter',
-    price: '$9',
+    price: '$14.99',
     priceLabel: '/mo',
     tagline: 'Multi-channel shipping for small businesses.',
     gradient: 'from-blue-500 to-cyan-500',
@@ -29,41 +29,41 @@ const auctanePlans: PlanTileData[] = [
       { label: 'Branded labels', included: true },
       { label: 'Automation rules', included: false },
     ],
-    contribution: 'Built the Starter plan page with a multi-carrier feature comparison table. Implemented the plan selector with real-time price updates and connected it to the billing pipeline.',
+    contribution: 'Implemented the Starter plan page including the multi-carrier feature comparison table and real-time plan selector. Part of migrating Auctane to Segment — wired tracking events to build user profiles and personalize copy for small business owners vs. developers.',
     ctaHref: 'https://www.shipstation.com/pricing/',
   },
   {
-    id: 'auctane-shipstation-bronze',
-    name: 'ShipStation Bronze',
-    price: '$29',
+    id: 'auctane-shipstation-standard',
+    name: 'ShipStation Standard',
+    price: '$29.99',
     priceLabel: '/mo',
-    tagline: 'Growing businesses shipping up to 500 orders/mo.',
+    tagline: 'Growing businesses that need more automation and carriers.',
     gradient: 'from-blue-500 to-cyan-500',
-    badge: { label: 'Popular', variant: 'popular' },
+    badge: { label: 'Most Popular', variant: 'popular' },
     features: [
       { label: 'Multi-carrier shipping', included: true },
-      { label: 'Automation rules', included: true },
+      { label: 'Unlimited automations', included: true },
       { label: 'Custom branding', included: true },
-      { label: 'API access', included: false },
+      { label: 'Shipping API access', included: true },
     ],
-    contribution: 'Owned the Bronze tier A/B test strategy. Ran multiple experiments on CTA copy, plan positioning, and feature callouts to optimize conversions.',
+    contribution: 'Ran A/B experiments on CTA copy, plan positioning, and feature callouts. Led the migration to Segment at Auctane, enabling campaign data to surface targeted messaging to business users vs. technical users based on their tracked behavior.',
     ctaHref: 'https://www.shipstation.com/pricing/',
   },
   {
-    id: 'auctane-shipstation-gold',
-    name: 'ShipStation Gold',
-    price: '$99',
+    id: 'auctane-shipstation-premium',
+    name: 'ShipStation Premium',
+    price: '$349.99',
     priceLabel: '/mo',
-    tagline: 'High-volume shipping with advanced automation.',
+    tagline: 'High-volume operations with advanced warehouse management.',
     gradient: 'from-blue-500 to-cyan-500',
     badge: { label: 'Best Value', variant: 'value' },
     features: [
-      { label: 'Unlimited shipments', included: true },
-      { label: 'API access', included: true },
-      { label: 'Multiple users', included: true },
+      { label: 'Advanced inventory mgmt', included: true },
+      { label: 'Shipping API access', included: true },
+      { label: 'Custom analytics', included: true },
       { label: 'Dedicated support', included: true },
     ],
-    contribution: 'Architected the Gold tier pricing component with multicurrency support across 5 regions. Built the Segment integration that tracked plan page engagement and fed upgrade attribution data to HubSpot.',
+    contribution: 'Implemented the Premium tier pricing component with multicurrency support. Built the Segment integration tracking plan page engagement and feeding upgrade attribution into HubSpot. Leveraged Tray.io to route leads to the correct sales pipeline based on user profile.',
     ctaHref: 'https://www.shipstation.com/pricing/',
   },
   {
@@ -79,7 +79,7 @@ const auctanePlans: PlanTileData[] = [
       { label: 'Tracking webhooks', included: true },
       { label: 'SLA guarantees', included: true },
     ],
-    contribution: 'Led the ShipEngine pricing page redesign. Built the developer-focused feature comparison and API pricing calculator. Integrated Tray.io workflows for enterprise lead routing across Auctane brands.',
+    contribution: 'Rebuilt the ShipEngine pricing page end-to-end. Implemented the API pricing calculator and feature comparison. Used Segment to identify developer vs. business persona and serve tailored content via Tray.io workflows routing enterprise leads across Auctane brands.',
     ctaHref: 'https://www.shipengine.com/pricing/',
   },
 ];
@@ -98,7 +98,7 @@ const wpeManagedPlans: PlanTileData[] = [
       { label: 'Free SSL', included: true },
       { label: 'Staging Environment', included: false },
     ],
-    contribution: 'Owned the Startup plan layout and feature comparison table. Built the billing toggle between monthly and annual cycles, wired to HubSpot for lead capture.',
+    contribution: 'Implemented the Startup plan layout, feature comparison table, and billing toggle between monthly and annual cycles. Instrumented with GTM and GA to track user behavior, feeding into the broader migration from GA to Segment for unified user profiling.',
     ctaHref: 'https://wpengine.com/plans/',
   },
   {
@@ -115,7 +115,7 @@ const wpeManagedPlans: PlanTileData[] = [
       { label: 'Staging Environment', included: true },
       { label: 'CDN Included', included: true },
     ],
-    contribution: 'Designed the Most Popular highlight treatment and built the feature comparison logic. A/B tested CTA copy and plan positioning to drive Professional tier upgrades.',
+    contribution: 'Implemented the Most Popular highlight treatment and feature comparison logic. A/B tested CTA copy and plan positioning. Part of the GA/GTM to Segment migration — used Segment profiles to personalize content for developers, agency owners, and non-technical business reps.',
     ctaHref: 'https://wpengine.com/plans/',
   },
   {
@@ -131,7 +131,7 @@ const wpeManagedPlans: PlanTileData[] = [
       { label: 'Advanced Security', included: true },
       { label: 'Priority Support', included: true },
     ],
-    contribution: 'Built agency-focused feature callouts and Salesforce CRM pipeline for Growth-tier sign-ups. Implemented territory-based routing logic for regional sales teams.',
+    contribution: 'Implemented agency-focused feature callouts and the Salesforce CRM pipeline for Growth-tier sign-ups. Leveraged Segment user profiles to surface relevant content for agency owners vs. individual site managers.',
     ctaHref: 'https://wpengine.com/plans/',
   },
   {
@@ -148,7 +148,7 @@ const wpeManagedPlans: PlanTileData[] = [
       { label: 'Dedicated Account Manager', included: true },
       { label: 'Custom SLA', included: true },
     ],
-    contribution: 'Owned Scale tier end-to-end — pricing logic, feature gates, enterprise CTA flows. Architected the data pipeline syncing Scale sign-ups to Salesforce with custom deal stages.',
+    contribution: 'Owned Scale tier end-to-end — pricing logic, feature gates, and enterprise CTA flows. Implemented the Salesforce pipeline with custom deal stages. Used Segment to route enterprise prospects to the right account team based on their tracked profile.',
     ctaHref: 'https://wpengine.com/plans/',
   },
 ];
@@ -167,7 +167,7 @@ const wpeEcommercePlans: PlanTileData[] = [
       { label: 'Free SSL', included: true },
       { label: 'CDN Included', included: false },
     ],
-    contribution: 'Built the eCommerce pricing page from scratch. Implemented WooCommerce feature differentiation UI and connected the checkout flow to FastSpring for subscription billing.',
+    contribution: 'Built the eCommerce pricing page from scratch. Implemented the WooCommerce feature differentiation UI and connected the checkout flow to FastSpring for subscription billing. Instrumented with GTM and GA as part of the migration toward Segment-based user profiling.',
     ctaHref: 'https://wpengine.com/ecommerce-platform-pricing/',
   },
   {
@@ -184,7 +184,7 @@ const wpeEcommercePlans: PlanTileData[] = [
       { label: 'Priority Support', included: true },
       { label: 'Advanced Analytics', included: true },
     ],
-    contribution: 'Designed the Growth eCommerce tier\'s performance messaging. Ran pricing experiments with Google Optimize to drive plan upgrades across the WooCommerce customer segment.',
+    contribution: 'Implemented the Growth eCommerce tier page and performance-focused feature callouts. Ran pricing experiments with Google Optimize. Used Segment user profiles to deliver targeted content to high-volume store operators vs. new merchants.',
     ctaHref: 'https://wpengine.com/ecommerce-platform-pricing/',
   },
 ];
@@ -202,6 +202,55 @@ export default function Home() {
     { value: "$134M+", label: "ARR Managed" },
   ];
 
+  const auctaneHighlights = [
+    {
+      title: 'ShipStation Free Trial Signup',
+      description: 'Implemented the multi-field trial signup form with shipment volume segmentation, reCAPTCHA validation, and CRM routing. Used Segment to profile incoming users and personalize the post-signup experience.',
+      tags: ['React', 'Segment', 'Tray.io', 'HubSpot'],
+      href: 'https://www.shipstation.com/start-a-free-trial/',
+    },
+    {
+      title: 'ShipEngine API Signup',
+      description: 'Implemented the developer-focused API signup form, connected to the billing pipeline and CRM. Integrated Segment tracking to route developer vs. business signups through the appropriate onboarding flow.',
+      tags: ['React', 'Segment', 'Tray.io'],
+      href: 'https://www.shipengine.com/signup/',
+    },
+    {
+      title: 'Reusable Component System',
+      description: 'Built a library of reusable React components enabling marketing and content teams to assemble custom landing pages without developer involvement.',
+      tags: ['React', 'TypeScript', 'Component Library'],
+    },
+    {
+      title: 'Partner Portal (POC)',
+      description: 'Led the proof of concept for a self-serve partner portal built on the reusable component system, enabling partners to build and manage custom landing pages. POC was not launched.',
+      tags: ['React', 'Vue.js', 'Partner Portal'],
+    },
+  ];
+
+  const wpeHighlights = [
+    {
+      title: 'Agency Partner Portal',
+      description: 'Implemented the WP Engine agency partner portal, supporting the agency program with custom landing pages, a partner directory, and reusable components that let partners manage their presence without developer involvement.',
+      tags: ['React', 'Gutenberg Blocks', 'PHP'],
+      href: 'https://wpengine.com/agency-programs/',
+    },
+    {
+      title: 'Reusable Component Library',
+      description: 'Implemented a shared library of React and WordPress block components used across marketing, partner, and product landing pages. Reduced page build time and ensured consistent UI patterns at scale.',
+      tags: ['React', 'Gutenberg Blocks', 'PHP'],
+    },
+    {
+      title: 'Decode Events Platform',
+      description: 'Built the WP Engine Decode conference event platform using React and WordPress. Handled registration, session management, and attendee experience for WP Engine\'s annual developer conference.',
+      tags: ['React', 'WordPress', 'PHP'],
+    },
+    {
+      title: 'GA/GTM to Segment Migration',
+      description: 'Migrated WP Engine\'s analytics and user tracking stack from Google Analytics and GTM to Segment, enabling unified user profiling and personalized content delivery across the platform.',
+      tags: ['Segment', 'GTM', 'Google Analytics'],
+    },
+  ];
+
   const githubProjects = [
     {
       name: "NodePress CMS",
@@ -216,7 +265,7 @@ export default function Home() {
     {
       name: "Partner Directory",
       url: "https://github.com/cgarza1992/partner-directory",
-      description: "Business/partner directory application built with modern JavaScript stack for organizing and displaying partner information.",
+      description: "Reusable, filterable card grid built with Vue 3 Composition API. A generalized reference of enterprise partner/integration directory work — supports multi-dimensional filtering for partner directories, app marketplaces, or any catalog UI.",
     },
     {
       name: "Script Queries",
@@ -246,9 +295,9 @@ export default function Home() {
           ctaSecondary={{ text: "View GitHub", href: "https://github.com/cgarza1992" }}
         />
 
-        <AuctaneWork metrics={auctaneMetrics} pricingPlans={auctanePlans} />
+        <AuctaneWork metrics={auctaneMetrics} pricingPlans={auctanePlans} workHighlights={auctaneHighlights} />
 
-        <WPEngineWork managedPlans={wpeManagedPlans} ecommercePlans={wpeEcommercePlans} />
+        <WPEngineWork managedPlans={wpeManagedPlans} ecommercePlans={wpeEcommercePlans} workHighlights={wpeHighlights} />
 
         <OpenSourceProjects projects={githubProjects} />
 

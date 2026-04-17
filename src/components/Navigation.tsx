@@ -17,7 +17,7 @@ export function Navigation() {
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
-            const href = `#${item.toLowerCase().replace(" ", "")}`;
+            const href = `#${item.toLowerCase().replace(/\s+/g, '-')}`;
             return (
               <a
                 key={item}
@@ -55,7 +55,7 @@ export function Navigation() {
       <div className={`md:hidden transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
         <div className="px-6 pb-6 flex flex-col gap-4 border-t border-slate-800 pt-4">
           {navItems.map((item) => {
-            const href = `#${item.toLowerCase().replace(" ", "")}`;
+            const href = `#${item.toLowerCase().replace(/\s+/g, '-')}`;
             return (
               <a
                 key={item}

@@ -11,7 +11,7 @@ const variants = {
 
 export function PlanBadge({ label, variant = 'popular' }: PlanBadgeProps) {
   return (
-    <span className={`inline-block px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide ${variants[variant]}`}>
+    <span className={`inline-block px-3 py-0.5 rounded-full text-xs font-bold uppercase tracking-wide whitespace-nowrap ${variants[variant]}`}>
       {label}
     </span>
   );

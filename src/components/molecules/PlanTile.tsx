@@ -26,15 +26,13 @@ export interface PlanTileData {
 interface PlanTileProps {
   plan: PlanTileData;
   isFlipped: boolean;
-  isSelected: boolean;
   onFlip: (id: string) => void;
-  onSelect: (id: string) => void;
 }
 
-export function PlanTile({ plan, isFlipped, isSelected, onFlip, onSelect }: PlanTileProps) {
+export function PlanTile({ plan, isFlipped, onFlip }: PlanTileProps) {
   return (
     <div
-      className={`relative h-80 cursor-pointer group`}
+      className="relative h-96 cursor-pointer group"
       style={{ perspective: '1000px' }}
       onClick={() => onFlip(plan.id)}
     >
@@ -47,12 +45,7 @@ export function PlanTile({ plan, isFlipped, isSelected, onFlip, onSelect }: Plan
       >
         {/* Front */}
         <div
-          className={`absolute inset-0 rounded-xl border overflow-hidden flex flex-col transition-all duration-300
-            ${isSelected
-              ? 'border-blue-400 shadow-lg shadow-blue-500/20'
-              : 'border-slate-700 group-hover:border-blue-500/50 group-hover:shadow-xl group-hover:-translate-y-1'
-            }
-            bg-slate-800/50`}
+          className="absolute inset-0 rounded-xl border border-slate-700 group-hover:border-blue-500/50 group-hover:shadow-xl overflow-hidden flex flex-col transition-all duration-300 bg-slate-800/50"
           style={{ backfaceVisibility: 'hidden' }}
         >
           <div className={`h-1 bg-gradient-to-r ${plan.gradient}`} />
@@ -90,45 +83,33 @@ export function PlanTile({ plan, isFlipped, isSelected, onFlip, onSelect }: Plan
 
         {/* Back */}
         <div
-          className={`absolute inset-0 rounded-xl border border-blue-500/50 bg-slate-900 overflow-hidden flex flex-col`}
+          className="absolute inset-0 rounded-xl border border-blue-500/50 bg-slate-900 overflow-hidden flex flex-col"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
         >
           <div className={`h-1 bg-gradient-to-r ${plan.gradient}`} />
-          <div className="flex flex-col flex-1 p-6">
-            <h3 className="text-lg font-bold mb-1">
+          <div className="flex flex-col flex-1 p-6 min-h-0">
+            <h3 className="text-lg font-bold mb-1 shrink-0">
               <GradientText>{plan.name}</GradientText>
             </h3>
-            <p className="text-xs text-slate-500 mb-3 uppercase tracking-wide">My Contribution</p>
+            <p className="text-xs text-slate-500 mb-3 uppercase tracking-wide shrink-0">My Contribution</p>
 
-            <p className="text-slate-300 text-sm leading-relaxed flex-1">
-              {plan.contribution || `Designed and built the ${plan.name} pricing page, including responsive layout, feature comparison logic, and CRM integrations.`}
+            <p className="text-slate-300 text-sm leading-relaxed overflow-y-auto flex-1 pr-1">
+              {plan.contribution || `Built the ${plan.name} pricing page, including responsive layout, feature comparison logic, and CRM integrations.`}
             </p>
 
-            <div className="flex gap-2 mt-4">
-              {plan.ctaHref && (
-                <div onClick={(e) => e.stopPropagation()}>
-                  <Button
-                    href={plan.ctaHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="primary"
-                    size="sm"
-                  >
-                    View Live
-                  </Button>
-                </div>
-              )}
-              <div onClick={(e) => e.stopPropagation()}>
+            {plan.ctaHref && (
+              <div className="mt-4 shrink-0" onClick={(e) => e.stopPropagation()}>
                 <Button
-                  variant="secondary"
+                  href={plan.ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="primary"
                   size="sm"
-                  onClick={() => onSelect(plan.id)}
-                  className={isSelected ? 'border-blue-400 text-blue-400' : ''}
                 >
-                  {isSelected ? 'Selected ✓' : 'Select'}
+                  View Live
                 </Button>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>

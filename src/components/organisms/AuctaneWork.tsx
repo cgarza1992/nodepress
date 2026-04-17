@@ -2,6 +2,7 @@
 
 import { PlanGrid } from './PlanGrid';
 import { SectionHeader } from '../SectionHeader';
+import { WorkHighlightCard } from '../molecules/WorkHighlightCard';
 import type { PlanTileData } from '../molecules/PlanTile';
 
 interface Metric {
@@ -9,12 +10,20 @@ interface Metric {
   label: string;
 }
 
+export interface WorkHighlight {
+  title: string;
+  description: string;
+  tags: string[];
+  href?: string;
+}
+
 interface AuctaneWorkProps {
   metrics: Metric[];
   pricingPlans: PlanTileData[];
+  workHighlights: WorkHighlight[];
 }
 
-export function AuctaneWork({ metrics, pricingPlans }: AuctaneWorkProps) {
+export function AuctaneWork({ metrics, pricingPlans, workHighlights }: AuctaneWorkProps) {
   return (
     <section id="auctane" className="max-w-6xl mx-auto px-6 py-20">
       <div className="mb-16">
@@ -41,8 +50,19 @@ export function AuctaneWork({ metrics, pricingPlans }: AuctaneWorkProps) {
         ))}
       </div>
 
-      <SectionHeader title="Pricing & Billing Projects" />
-      <PlanGrid plans={pricingPlans} />
+      <div className="mb-20">
+        <SectionHeader title="Pricing & Billing" />
+        <PlanGrid plans={pricingPlans} />
+      </div>
+
+      <div>
+        <SectionHeader title="Other Engineering Work" />
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {workHighlights.map((item) => (
+            <WorkHighlightCard key={item.title} {...item} />
+          ))}
+        </div>
+      </div>
     </section>
   );
 }

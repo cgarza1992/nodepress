@@ -1,7 +1,7 @@
 'use client';
 
 import { useAppDispatch, useAppSelector } from '@/store/hooks';
-import { flipTile, selectPlan } from '@/store/slices/planSlice';
+import { flipTile } from '@/store/slices/planSlice';
 import { PlanTile } from '../molecules/PlanTile';
 import type { PlanTileData } from '../molecules/PlanTile';
 
@@ -14,7 +14,6 @@ interface PlanGridProps {
 export function PlanGrid({ plans, title, description }: PlanGridProps) {
   const dispatch = useAppDispatch();
   const flippedTileId = useAppSelector((state) => state.plans.flippedTileId);
-  const selectedPlanId = useAppSelector((state) => state.plans.selectedPlanId);
 
   return (
     <div>
@@ -31,18 +30,10 @@ export function PlanGrid({ plans, title, description }: PlanGridProps) {
             key={plan.id}
             plan={plan}
             isFlipped={flippedTileId === plan.id}
-            isSelected={selectedPlanId === plan.id}
             onFlip={(id) => dispatch(flipTile(id))}
-            onSelect={(id) => dispatch(selectPlan(id))}
           />
         ))}
       </div>
-
-      {selectedPlanId && (
-        <p className="mt-4 text-center text-sm text-slate-500">
-          Selected: <span className="text-blue-400">{plans.find(p => p.id === selectedPlanId)?.name}</span>
-        </p>
-      )}
     </div>
   );
 }
