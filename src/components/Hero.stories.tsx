@@ -15,9 +15,9 @@ type Story = StoryObj<typeof Hero>;
 
 export const Default: Story = {
   args: {
-    title: 'Senior Full-Stack',
+    title: 'Senior Web Developer',
     subtitle:
-      'Building high-performance web solutions for complex, business-critical projects. Proven track record: 185% revenue growth, helped scale engineering team from 2 to 14 through mentoring and hiring, architected enterprise-scale migrations.',
+      "Developer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most developers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo.",
     image: 'https://avatars.githubusercontent.com/u/17697283?v=4',
     ctaPrimary: { text: 'Get In Touch', href: '#contact' },
     ctaSecondary: { text: 'View GitHub', href: 'https://github.com/cgarza1992' },
@@ -27,6 +27,6 @@ export const Default: Story = {
 export const ShortSubtitle: Story = {
   args: {
     ...Default.args,
-    subtitle: 'Building high-performance web solutions.',
+    subtitle: 'Full-stack developer at the seam between marketing and engineering.',
   },
 };

@@ -186,12 +186,12 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-white">
         <Navigation />
 
         <Hero
-          title="Senior Full-Stack Engineer"
-          subtitle="Building high-performance web solutions for complex, business-critical projects. Proven track record: 185% revenue growth, helped scale engineering team from 2 to 14 through mentoring and hiring, architected enterprise-scale migrations."
+          title="Senior Web Developer"
+          subtitle="Developer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most developers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           image="https://christopherwp.wpenginepowered.com/wp-content/uploads/2017/08/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
           ctaSecondary={{ text: "View GitHub", href: "https://github.com/cgarza1992" }}
@@ -207,7 +207,7 @@ export default function Home() {
 
         <AboutSection
           profileImage="https://avatars.githubusercontent.com/u/17697283?v=4"
-          title="About Me"
+          title="Christopher Garza"
           bio="I started in Advertising & Mass Communication, taught myself to code, and spent 7 years at WP Engine before moving to Auctane. That non-traditional path shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage — currently building a custom motorcycle for a show."
           highlights={aboutHighlights}
         />

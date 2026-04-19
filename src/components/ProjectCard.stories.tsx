@@ -13,39 +13,32 @@ const meta: Meta<typeof ProjectCard> = {
 export default meta;
 type Story = StoryObj<typeof ProjectCard>;
 
-export const BlueGradient: Story = {
+export const NodePress: Story = {
   args: {
-    name: 'ShipStation Pricing',
-    url: 'https://www.shipstation.com/pricing/',
-    description: 'Interactive plan comparison with multicurrency support. Built responsive pricing tiers and dynamic plan selector logic.',
-    gradient: 'from-blue-500 to-cyan-500',
-    emoji: '💳',
-  },
-};
-
-export const GreenGradient: Story = {
-  args: {
-    ...BlueGradient.args,
-    name: 'WP Engine Plans',
-    gradient: 'from-emerald-500 to-teal-500',
-    emoji: '💰',
-  },
-};
-
-export const OrangeGradient: Story = {
-  args: {
-    ...BlueGradient.args,
     name: 'NodePress CMS',
+    url: 'https://github.com/cgarza1992/nodepress',
+    description: 'Self-hosted CMS built to replace WordPress. Swaps MySQL for PostgreSQL with real relational integrity. Built with Next.js, Prisma, TypeScript.',
     gradient: 'from-orange-500 to-red-500',
     emoji: '🚀',
   },
 };
 
-export const PurpleGradient: Story = {
+export const PartnerDirectory: Story = {
   args: {
-    ...BlueGradient.args,
-    name: 'StudioPress',
+    name: 'Partner Directory',
+    url: 'https://github.com/cgarza1992/partner-directory',
+    description: 'Reusable, filterable card grid built with Vue 3 Composition API. Supports multi-dimensional filtering for partner directories and app marketplaces.',
+    gradient: 'from-blue-500 to-cyan-500',
+    emoji: '📋',
+  },
+};
+
+export const ScriptQueries: Story = {
+  args: {
+    name: 'Script Queries',
+    url: 'https://github.com/cgarza1992/script-queries',
+    description: 'PHP scripts for WordPress database management. Exports posts to CSV, validates URLs in bulk, and filters data based on custom criteria.',
     gradient: 'from-purple-500 to-pink-500',
-    emoji: '📦',
+    emoji: '🗄️',
   },
 };

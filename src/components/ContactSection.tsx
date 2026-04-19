@@ -6,11 +6,14 @@ interface ContactSectionProps {
 export function ContactSection({ email, message }: ContactSectionProps) {
   return (
     <section id="contact" className="max-w-6xl mx-auto px-6 py-20">
-      <div className="bg-gradient-to-r from-slate-800/50 to-slate-900/50 border border-slate-700 rounded-2xl p-12 text-center">
-        <h2 className="text-4xl font-bold mb-6">
-          Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">Connect</span>
+      <div className="bg-white dark:bg-gradient-to-r dark:from-slate-800/50 dark:to-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-2xl p-12 text-center shadow-sm dark:shadow-none">
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 dark:text-blue-400 mb-3">
+          Get In Touch
+        </p>
+        <h2 className="text-4xl font-bold mb-6 text-slate-900 dark:text-white">
+          Let's Connect
         </h2>
-        <p className="text-lg text-slate-300 mb-8">
+        <p className="text-lg text-slate-700 dark:text-slate-300 mb-8">
           {message}
         </p>
         <a

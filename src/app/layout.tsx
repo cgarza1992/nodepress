@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Christopher Garza | Senior Full-Stack Engineer",
-  description: "Senior Full-Stack Engineer | React • TypeScript • Next.js • Node.js | Building high-performance web solutions for enterprise brands. 185% revenue growth • Scale engineering teams through mentoring",
+  title: "Christopher Garza | Senior Web Developer",
+  description: "Senior Web Developer at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products. React • TypeScript • Next.js • Node.js",
 };
 
 export default function RootLayout({
@@ -28,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

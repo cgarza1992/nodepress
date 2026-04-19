@@ -1,34 +1,33 @@
-import type { Preview } from '@storybook/nextjs-vite'
-import { Provider } from 'react-redux'
-import { store } from '../src/store'
-import '../src/app/globals.css'
+import type { Preview } from '@storybook/nextjs-vite';
+import { ThemeProvider } from 'next-themes';
+import '../src/app/globals.css';
 
-const MobileWarning = () => (
-  <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white flex items-center justify-center p-8 text-center">
-    <div>
-      <p className="text-4xl mb-4">🖥️</p>
-      <h1 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 mb-3">
-        Best viewed on desktop
-      </h1>
-      <p className="text-slate-400">
-        This component library is a developer tool designed for desktop use.
-        Visit <span className="text-blue-400">christophergarza.dev</span> on mobile instead.
-      </p>
-    </div>
-  </div>
-);
+export const globalTypes = {
+  theme: {
+    name: 'Theme',
+    description: 'Color theme',
+    defaultValue: 'light',
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: 'light', title: 'Light Mode' },
+        { value: 'dark', title: 'Dark Mode' },
+      ],
+      showName: true,
+    },
+  },
+};
 
 const preview: Preview = {
   decorators: [
-    (Story) => {
-      const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-      if (isMobile) return <MobileWarning />;
+    (Story, context) => {
+      const isDark = context.globals.theme === 'dark';
       return (
-        <Provider store={store}>
-          <div className="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} storageKey="storybook-theme">
+          <div className={`${isDark ? 'dark' : ''} min-h-screen ${isDark ? 'bg-slate-950 text-white' : 'bg-slate-50 text-slate-900'}`}>
             <Story />
           </div>
-        </Provider>
+        </ThemeProvider>
       );
     },
   ],

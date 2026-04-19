@@ -13,15 +13,24 @@ const meta: Meta<typeof SectionHeader> = {
 export default meta;
 type Story = StoryObj<typeof SectionHeader>;
 
-export const TitleOnly: Story = {
+export const Default: Story = {
   args: {
-    title: 'Pricing & Billing Projects',
+    label: 'Open Source',
+    title: 'GitHub Projects',
   },
 };
 
 export const WithDescription: Story = {
   args: {
-    title: 'Open Source Projects',
+    label: 'Open Source',
+    title: 'GitHub Projects',
     description: 'A selection of personal and open source work available on GitHub.',
+  },
+};
+
+export const WorkExperience: Story = {
+  args: {
+    label: 'Work Experience',
+    title: 'Auctane',
   },
 };
