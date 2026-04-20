@@ -80,6 +80,6 @@ export const ShortDescriptions: Story = {
 
 export const Mobile: Story = {
   args: { items: wpeItems },
-  parameters: { viewport: { defaultViewport: 'mobile1' } },
+  globals: { viewport: 'mobile' },
   decorators: [(Story) => <div className="p-6"><Story /></div>],
 };

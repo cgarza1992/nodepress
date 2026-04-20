@@ -49,5 +49,5 @@ export const ManyItems: Story = {
 
 export const Mobile: Story = {
   args: { skills: allSkills },
-  parameters: { viewport: { defaultViewport: 'mobile1' } },
+  globals: { viewport: 'mobile' },
 };

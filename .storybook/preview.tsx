@@ -1,4 +1,14 @@
 import type { Preview } from '@storybook/nextjs-vite';
+import { MINIMAL_VIEWPORTS } from 'storybook/viewport';
+
+const customViewports = {
+  ...MINIMAL_VIEWPORTS,
+  mobile: {
+    name: 'Mobile (390px)',
+    styles: { width: '390px', height: '844px' },
+    type: 'mobile' as const,
+  },
+};
 import '../src/app/globals.css';
 
 export const globalTypes = {
@@ -63,6 +73,7 @@ const preview: Preview = {
     },
   ],
   parameters: {
+    viewport: { options: customViewports },
     backgrounds: { disable: true },
     controls: {
       matchers: {

@@ -51,5 +51,5 @@ export const TwoProjects: Story = {
 
 export const Mobile: Story = {
   args: { projects: allProjects },
-  parameters: { viewport: { defaultViewport: 'mobile1' } },
+  globals: { viewport: 'mobile' },
 };

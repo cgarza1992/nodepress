@@ -31,7 +31,7 @@ export function Hero({ title, subtitle, image, ctaPrimary, ctaSecondary }: HeroP
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a
               href={ctaPrimary.href}
-              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-lg font-semibold transition transform hover:scale-105"
+              className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-lg font-semibold transition transform hover:scale-105 text-center"
             >
               {ctaPrimary.text}
             </a>
@@ -39,7 +39,7 @@ export function Hero({ title, subtitle, image, ctaPrimary, ctaSecondary }: HeroP
               href={ctaSecondary.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-400 rounded-lg font-semibold transition"
+              className="px-8 py-3 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-300 hover:border-slate-400 dark:hover:border-slate-400 rounded-lg font-semibold transition text-center"
             >
               {ctaSecondary.text}
             </a>

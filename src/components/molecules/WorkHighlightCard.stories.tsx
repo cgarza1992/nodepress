@@ -131,9 +131,6 @@ export const GridLayout: Story = {
 
 export const Mobile: Story = {
   args: { ...WithLink.args },
-  parameters: {
-    viewport: { defaultViewport: 'mobile1' },
-    layout: 'fullscreen',
-  },
+  globals: { viewport: 'mobile' },
   decorators: [(Story) => <div className="p-4"><Story /></div>],
 };

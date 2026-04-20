@@ -113,5 +113,5 @@ export const TwoMetrics: Story = {
 
 export const Mobile: Story = {
   args: { ...Default.args },
-  parameters: { viewport: { defaultViewport: 'mobile1' } },
+  globals: { viewport: 'mobile' },
 };

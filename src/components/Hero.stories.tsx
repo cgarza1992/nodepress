@@ -45,14 +45,10 @@ export const LongTitle: Story = {
 
 export const Mobile: Story = {
   args: defaultArgs,
-  parameters: {
-    viewport: { defaultViewport: 'mobile1' },
-  },
+  globals: { viewport: 'mobile' },
 };
 
 export const Tablet: Story = {
   args: defaultArgs,
-  parameters: {
-    viewport: { defaultViewport: 'tablet' },
-  },
+  globals: { viewport: 'tablet' },
 };

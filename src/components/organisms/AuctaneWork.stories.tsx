@@ -93,5 +93,5 @@ export const SingleProject: Story = {
 
 export const Mobile: Story = {
   args: { ...Default.args },
-  parameters: { viewport: { defaultViewport: 'mobile1' } },
+  globals: { viewport: 'mobile' },
 };
