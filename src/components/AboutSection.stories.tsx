@@ -2,12 +2,16 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { AboutSection } from './AboutSection';
 
 const meta: Meta<typeof AboutSection> = {
-  title: 'Portfolio/AboutSection',
+  title: 'Sections/AboutSection',
   component: AboutSection,
-  parameters: {
-    layout: 'fullscreen',
-  },
+  parameters: { layout: 'fullscreen' },
   tags: ['autodocs'],
+  argTypes: {
+    profileImage: { control: 'text', description: 'URL of the profile image' },
+    title: { control: 'text', description: 'Heading shown below the label' },
+    bio: { control: 'text', description: 'Primary biographical paragraph' },
+    highlights: { control: 'object', description: 'Bullet point list of key highlights' },
+  },
 };
 
 export default meta;

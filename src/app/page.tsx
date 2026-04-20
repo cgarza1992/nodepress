@@ -162,11 +162,6 @@ export default function Home() {
       description: "Self-hosted CMS built to replace WordPress. Swaps MySQL for PostgreSQL with real relational integrity, eliminates PHP-to-React block duplication. Built with Next.js, Prisma, TypeScript.",
     },
     {
-      name: "FastSpring Demo",
-      url: "https://github.com/cgarza1992/fastspring_demo",
-      description: "Next.js demo built to showcase FastSpring's embedded checkout and SBL integration. Simulates a SaaS pricing flow with localized pricing, webhook processing, and live event logging.",
-    },
-    {
       name: "Partner Directory",
       url: "https://github.com/cgarza1992/partner-directory",
       description: "Reusable, filterable card grid built with Vue 3 Composition API. A generalized reference of enterprise partner directory work — supports multi-dimensional filtering for partner directories, app marketplaces, or any catalog UI.",
@@ -175,6 +170,11 @@ export default function Home() {
       name: "Script Queries",
       url: "https://github.com/cgarza1992/script-queries",
       description: "PHP scripts for WordPress database management. Exports posts to CSV, validates URLs in bulk, and filters data based on custom criteria.",
+    },
+    {
+      name: "FastSpring Demo",
+      url: "https://github.com/cgarza1992/fastspring_demo",
+      description: "Next.js demo built to showcase FastSpring's embedded checkout and SBL integration. Simulates a SaaS pricing flow with localized pricing, webhook processing, and live event logging.",
     },
   ];
 

@@ -7,12 +7,19 @@ interface ButtonProps {
   className?: string;
   target?: string;
   rel?: string;
+  disabled?: boolean;
 }
 
 const variants = {
-  primary: 'bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-lg hover:shadow-blue-500/25',
-  secondary: 'border border-slate-600 hover:border-slate-400 text-slate-300 hover:text-white',
-  ghost: 'text-blue-400 hover:text-cyan-400 hover:bg-blue-500/10',
+  // bg-blue-500 is the solid fallback for a11y scanners that can't read gradients;
+  // browsers render the gradient (background-image) on top of it visually.
+  primary: 'bg-blue-500 bg-gradient-to-r from-blue-500 to-cyan-500 hover:bg-blue-600 hover:from-blue-600 hover:to-cyan-600 text-white font-semibold shadow-lg hover:shadow-blue-500/25',
+  // Light: dark border + dark text → inverts to dark bg + white on hover (7:1+)
+  // Dark: subtle border + light text → brightens border + goes white on hover
+  secondary: 'border border-slate-700 text-slate-700 hover:bg-slate-900 hover:text-white hover:border-slate-900 dark:border-slate-500 dark:text-slate-200 dark:hover:border-white dark:hover:text-white',
+  // Light: blue text → fills with blue + white text on hover (4.6:1+)
+  // Dark: lighter blue → subtle fill on hover
+  ghost: 'text-blue-600 hover:bg-blue-600 hover:text-white dark:text-blue-400 dark:hover:bg-blue-400/15 dark:hover:text-cyan-300',
 };
 
 const sizes = {
@@ -30,8 +37,10 @@ export function Button({
   className = '',
   target,
   rel,
+  disabled = false,
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center rounded-lg transition-all duration-200 ${variants[variant]} ${sizes[size]} ${className}`;
+  const disabledClass = disabled ? 'opacity-40 cursor-not-allowed pointer-events-none' : 'cursor-pointer';
+  const classes = `inline-flex items-center justify-center rounded-lg transition-all duration-200 ${variants[variant]} ${sizes[size]} ${disabledClass} ${className}`;
 
   if (href) {
     return (
@@ -42,7 +51,7 @@ export function Button({
   }
 
   return (
-    <button onClick={onClick} className={classes}>
+    <button onClick={onClick} disabled={disabled} className={classes}>
       {children}
     </button>
   );

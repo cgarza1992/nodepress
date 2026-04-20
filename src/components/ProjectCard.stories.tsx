@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { ProjectCard } from './ProjectCard';
 
 const meta: Meta<typeof ProjectCard> = {
-  title: 'Portfolio/ProjectCard',
+  title: 'Molecules/ProjectCard',
   component: ProjectCard,
   parameters: {
     layout: 'centered',

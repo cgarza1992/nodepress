@@ -2,12 +2,15 @@ import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Footer } from './Footer';
 
 const meta: Meta<typeof Footer> = {
-  title: 'Portfolio/Footer',
+  title: 'Sections/Footer',
   component: Footer,
-  parameters: {
-    layout: 'fullscreen',
-  },
+  parameters: { layout: 'fullscreen' },
   tags: ['autodocs'],
+  argTypes: {
+    year: { control: 'number', description: 'Copyright year' },
+    name: { control: 'text', description: 'Name shown in the copyright line' },
+    builtWith: { control: 'text', description: 'Tech stack credit' },
+  },
 };
 
 export default meta;
