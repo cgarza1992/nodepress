@@ -14,9 +14,30 @@ import { WPEngineWork } from '@/components/organisms/WPEngineWork';
 
 export default function Home() {
   const skills = [
-    { category: "Frontend", items: ["React", "Next.js", "Vue.js", "TypeScript", "JavaScript", "Tailwind CSS"] },
-    { category: "Backend & Tools", items: ["Node.js", "PHP", "APIs", "Git/GitHub", "CircleCI", "REST"] },
-    { category: "Specializations", items: ["Performance Optimization", "A/B Testing", "Team Leadership", "Technical Documentation", "UI/UX", "Mentorship"] },
+    {
+      category: "Languages & Markup",
+      items: ["JavaScript", "TypeScript", "PHP", "Cascading Style Sheets (CSS)", "HyperText Markup Language 5 (HTML5)", "JavaScript XML (JSX)"],
+    },
+    {
+      category: "Frameworks & Technologies",
+      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "Grunt/Gulp", "Node Package Manager (NPM) / Yarn", "Composer", "WP-CLI"],
+    },
+    {
+      category: "APIs & Integrations",
+      items: ["Representational State Transfer (REST) APIs", "HubSpot", "Salesforce", "Segment", "CircleCI", "Git/GitHub", "Claude Artificial Intelligence (AI) / Model Context Protocol (MCP)"],
+    },
+    {
+      category: "Testing & Quality",
+      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing", "JSHint / JSLint"],
+    },
+    {
+      category: "Practices",
+      items: ["A/B Testing", "Test-Driven Development (TDD)", "Object-Oriented Programming (OOP)", "Functional Programming", "Continuous Integration / Deployment (CI/CD)", "Performance Optimization"],
+    },
+    {
+      category: "Leadership & Collaboration",
+      items: ["Mentorship", "Technical Documentation", "Cross-Functional Collaboration", "Project Scoping & Management", "Team Leadership"],
+    },
   ];
 
   const auctaneMetrics = [
@@ -214,10 +235,11 @@ export default function Home() {
 
         <ContactSection
           email="christopher.pgarza@gmail.com"
+          linkedin="https://www.linkedin.com/in/christopher-garza-dev/"
           message="Open to opportunities that challenge me to grow. Whether it's a new role, a project, or just want to connect—I'd love to hear from you."
         />
 
-        <Footer year={2026} name="Christopher Garza" builtWith="Next.js + Tailwind CSS" />
+        <Footer year={2026} name="Christopher Garza" />
     </div>
   );
 }

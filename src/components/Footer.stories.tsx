@@ -9,7 +9,6 @@ const meta: Meta<typeof Footer> = {
   argTypes: {
     year: { control: 'number', description: 'Copyright year' },
     name: { control: 'text', description: 'Name shown in the copyright line' },
-    builtWith: { control: 'text', description: 'Tech stack credit' },
   },
 };
 
@@ -20,6 +19,5 @@ export const Default: Story = {
   args: {
     year: 2026,
     name: 'Christopher Garza',
-    builtWith: 'Next.js + Tailwind CSS',
   },
 };

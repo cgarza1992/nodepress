@@ -4,11 +4,7 @@ import { useState, useEffect } from 'react';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(() =>
-    typeof document !== 'undefined'
-      ? document.documentElement.classList.contains('dark')
-      : false
-  );
+  const [isDark, setIsDark] = useState(false);
   const navItems = ['Auctane', 'WP Engine', 'Projects', 'About', 'Contact'];
   const storybookUrl = process.env.NEXT_PUBLIC_STORYBOOK_URL || 'https://storybook.christophergarza.dev';
 

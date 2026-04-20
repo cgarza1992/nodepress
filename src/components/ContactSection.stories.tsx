@@ -8,7 +8,8 @@ const meta: Meta<typeof ContactSection> = {
   tags: ['autodocs'],
   argTypes: {
     email: { control: 'text', description: 'Email address for the mailto link' },
-    message: { control: 'text', description: 'Descriptive text above the CTA button' },
+    linkedin: { control: 'text', description: 'LinkedIn profile URL' },
+    message: { control: 'text', description: 'Descriptive text above the CTA buttons' },
   },
 };
 
@@ -18,6 +19,7 @@ type Story = StoryObj<typeof ContactSection>;
 export const Default: Story = {
   args: {
     email: 'christopher.pgarza@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/christopher-garza-dev/',
     message: "Open to opportunities that challenge me to grow. Whether it's a new role, a project, or just want to connect — I'd love to hear from you.",
   },
 };
