@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite';
 import { Hero } from './Hero';
+import { GradientText } from './atoms/GradientText';
 
 const meta: Meta<typeof Hero> = {
   title: 'Organisms/Hero',
@@ -7,7 +8,7 @@ const meta: Meta<typeof Hero> = {
   parameters: { layout: 'fullscreen' },
   tags: ['autodocs'],
   argTypes: {
-    title: { control: 'text', description: 'Primary heading — job title or name' },
+    title: { control: false, description: 'Primary heading — job title or name' },
     subtitle: { control: 'text', description: 'Positioning statement below the title' },
     image: { control: 'text', description: 'Profile image URL' },
   },
@@ -17,9 +18,9 @@ export default meta;
 type Story = StoryObj<typeof Hero>;
 
 const defaultArgs = {
-  title: 'Senior Web Developer',
+  title: <><span>Senior Software Engineer,</span><br /><GradientText>Frontend</GradientText></>,
   subtitle:
-    "Developer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most developers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo.",
+    "Engineer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo.",
   image: 'https://avatars.githubusercontent.com/u/17697283?v=4',
   ctaPrimary: { text: 'Get In Touch', href: '#contact' },
   ctaSecondary: { text: 'View GitHub', href: 'https://github.com/cgarza1992' },

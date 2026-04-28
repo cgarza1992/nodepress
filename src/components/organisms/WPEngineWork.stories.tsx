@@ -81,14 +81,17 @@ const allProjects = [
 ];
 
 const allMetrics = [
-  { value: '$134M', label: 'ARR' },
+  { value: '$60M → $245M', label: 'ARR Growth During Tenure' },
   { value: '185%', label: 'eCommerce Plan Purchases' },
   { value: '289%', label: 'Signups Increase' },
   { value: '101%', label: 'Avg Revenue per User' },
 ];
 
+const defaultDescription = 'Grew from intern to Senior Software Engineer over nearly 7 years at WP Engine, a WordPress platform that scaled from $60M to over $245M ARR during my tenure. Built and maintained the marketing and product web ecosystem across multiple brands.';
+
 export const Default: Story = {
   args: {
+    description: defaultDescription,
     metrics: allMetrics,
     narrative: allNarrative,
     projects: allProjects,
@@ -97,6 +100,7 @@ export const Default: Story = {
 
 export const FewProjects: Story = {
   args: {
+    description: defaultDescription,
     metrics: allMetrics,
     narrative: allNarrative.slice(0, 2),
     projects: allProjects.slice(0, 3),
@@ -105,6 +109,7 @@ export const FewProjects: Story = {
 
 export const TwoMetrics: Story = {
   args: {
+    description: defaultDescription,
     metrics: allMetrics.slice(0, 2),
     narrative: allNarrative,
     projects: allProjects.slice(0, 4),

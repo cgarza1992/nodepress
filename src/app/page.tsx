@@ -9,6 +9,7 @@ import {
   ContactSection,
   Footer,
 } from '@/components';
+import { GradientText } from '@/components/atoms/GradientText';
 import { AuctaneWork } from '@/components/organisms/AuctaneWork';
 import { WPEngineWork } from '@/components/organisms/WPEngineWork';
 
@@ -45,7 +46,7 @@ export default function Home() {
   ];
 
   const wpeMetrics = [
-    { value: "$134M", label: "ARR" },
+    { value: "$60M → $245M", label: "ARR Growth During Tenure" },
     { value: "185%", label: "eCommerce Plan Purchases" },
     { value: "289%", label: "Signups Increase" },
     { value: "101%", label: "Avg Revenue per User" },
@@ -201,7 +202,7 @@ export default function Home() {
 
   const aboutHighlights = [
     "Background in Advertising & Mass Communication — bridges the gap between technical and non-technical teams",
-    "Contributed to growing and mentoring the WP Engine web team, including the first developer onboarding program",
+    "Contributed to growing and mentoring the WP Engine web team, including the first engineer onboarding program",
     "Focused on translating complex business problems into clean, maintainable engineering solutions",
     "Open to roles that challenge me to grow across the full stack and contribute to teams doing meaningful work",
   ];
@@ -211,16 +212,26 @@ export default function Home() {
         <Navigation />
 
         <Hero
-          title="Senior Web Developer"
-          subtitle="Developer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most developers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          title={<>Senior Software Engineer<br /><GradientText>Frontend</GradientText></>}
+          subtitle="Engineer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
           ctaSecondary={{ text: "View GitHub", href: "https://github.com/cgarza1992" }}
         />
 
-        <AuctaneWork metrics={auctaneMetrics} narrative={auctaneNarrative} projects={auctaneProjects} />
+        <AuctaneWork
+          description={<>Led technical implementation of Auctane&apos;s brand consolidation, merging{' '}<span className="text-slate-900 dark:text-white font-semibold">10+ acquired companies</span> under unified corporate standards. Architected and executed complex site migrations, full-stack redesigns, and modernized legacy codebases across the Auctane shipping portfolio.</>}
+          metrics={auctaneMetrics}
+          narrative={auctaneNarrative}
+          projects={auctaneProjects}
+        />
 
-        <WPEngineWork metrics={wpeMetrics} narrative={wpeNarrative} projects={wpeProjects} />
+        <WPEngineWork
+          description={<>Grew from intern to Senior Software Engineer over nearly 7 years at WP Engine, a WordPress platform that scaled from{' '}<span className="text-slate-900 dark:text-white font-semibold">$60M to over $245M ARR</span> during my tenure. Built and maintained the marketing and product web ecosystem across multiple brands.</>}
+          metrics={wpeMetrics}
+          narrative={wpeNarrative}
+          projects={wpeProjects}
+        />
 
         <OpenSourceProjects projects={githubProjects} />
 
@@ -229,7 +240,7 @@ export default function Home() {
         <AboutSection
           profileImage="https://avatars.githubusercontent.com/u/17697283?v=4"
           title="Christopher Garza"
-          bio="I started in Advertising & Mass Communication, taught myself to code, and spent 7 years at WP Engine before moving to Auctane. That non-traditional path shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage — currently building a custom motorcycle for a show."
+          bio="I started in Advertising & Mass Communication, taught myself to code, and spent nearly 7 years at WP Engine before moving to Auctane. That non-traditional path shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage, currently building out a custom 1985 BMW K100 or riding my café racer Bonneville T100 through the Texas hill country."
           highlights={aboutHighlights}
         />
 

@@ -38,7 +38,7 @@ export function Navigation() {
   );
 
   return (
-    <nav className="@container border-b border-slate-200 dark:border-slate-800 bg-white/80 backdrop-blur-sm dark:bg-slate-950 sticky top-0 z-50">
+    <nav className="border-b border-slate-200 dark:border-slate-800 bg-white/80 backdrop-blur-sm dark:bg-slate-950 sticky top-0 z-50">
       {/* Header row */}
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400">
@@ -46,7 +46,7 @@ export function Navigation() {
         </h2>
 
         {/* Desktop links */}
-        <div className="hidden @md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => {
             const href = `#${item.toLowerCase().replace(/\s+/g, '-')}`;
             return (
@@ -78,7 +78,7 @@ export function Navigation() {
         </div>
 
         {/* Mobile: theme toggle + hamburger */}
-        <div className="@md:hidden flex items-center gap-3">
+        <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
@@ -99,7 +99,7 @@ export function Navigation() {
       </div>
 
       {/* Mobile dropdown — slides open below the header row */}
-      <div className={`@md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96' : 'max-h-0'}`}>
         <div className="px-6 pb-6 pt-4 flex flex-col gap-1 border-t border-slate-200 dark:border-slate-800">
           {navItems.map((item) => {
             const href = `#${item.toLowerCase().replace(/\s+/g, '-')}`;

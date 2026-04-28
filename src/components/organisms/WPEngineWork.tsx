@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { WorkHighlightCard } from '../molecules/WorkHighlightCard';
 import { NarrativeSection } from '../molecules/NarrativeSection';
 import type { NarrativeItem } from '../molecules/NarrativeSection';
@@ -11,12 +12,13 @@ interface Metric {
 }
 
 interface WPEngineWorkProps {
+  description: ReactNode;
   metrics: Metric[];
   narrative: NarrativeItem[];
   projects: WorkHighlight[];
 }
 
-export function WPEngineWork({ metrics, narrative, projects }: WPEngineWorkProps) {
+export function WPEngineWork({ description, metrics, narrative, projects }: WPEngineWorkProps) {
   return (
     <section id="wp-engine" className="max-w-6xl mx-auto px-6 py-20">
       <div className="mb-16">
@@ -27,9 +29,7 @@ export function WPEngineWork({ metrics, narrative, projects }: WPEngineWorkProps
           WP Engine
         </h2>
         <p className="text-slate-600 dark:text-slate-400 text-lg">
-          Grew from intern to Senior Web Developer over 7 years at WP Engine, a{' '}
-          <span className="text-slate-900 dark:text-white font-semibold">$134M ARR</span> WordPress platform.
-          Built and maintained the marketing and product web ecosystem across multiple brands.
+          {description}
         </p>
       </div>
 

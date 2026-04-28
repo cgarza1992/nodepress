@@ -1,10 +1,12 @@
+import type { ReactNode } from 'react';
+
 interface CTA {
   text: string;
   href: string;
 }
 
 interface HeroProps {
-  title: string;
+  title: ReactNode;
   subtitle: string;
   image: string;
   ctaPrimary: CTA;

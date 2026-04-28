@@ -1,5 +1,6 @@
 'use client';
 
+import type { ReactNode } from 'react';
 import { WorkHighlightCard } from '../molecules/WorkHighlightCard';
 import { NarrativeSection } from '../molecules/NarrativeSection';
 import type { NarrativeItem } from '../molecules/NarrativeSection';
@@ -17,12 +18,13 @@ export interface WorkHighlight {
 }
 
 interface AuctaneWorkProps {
+  description: ReactNode;
   metrics: Metric[];
   narrative: NarrativeItem[];
   projects: WorkHighlight[];
 }
 
-export function AuctaneWork({ metrics, narrative, projects }: AuctaneWorkProps) {
+export function AuctaneWork({ description, metrics, narrative, projects }: AuctaneWorkProps) {
   return (
     <section id="auctane" className="max-w-6xl mx-auto px-6 py-20">
       <div className="mb-16">
@@ -33,10 +35,7 @@ export function AuctaneWork({ metrics, narrative, projects }: AuctaneWorkProps) 
           Auctane
         </h2>
         <p className="text-slate-600 dark:text-slate-400 text-lg">
-          Led technical implementation of enterprise brand consolidation, merging{' '}
-          <span className="text-slate-900 dark:text-white font-semibold">10 separate brands</span> under unified
-          corporate standards. Architected and executed complex site migrations, full-stack redesigns,
-          and modernized legacy codebases across the Auctane shipping portfolio.
+          {description}
         </p>
       </div>
 

@@ -67,8 +67,11 @@ const allProjects = [
   },
 ];
 
+const defaultDescription = "Led technical implementation of Auctane's brand consolidation, merging 10+ acquired companies under unified corporate standards. Architected and executed complex site migrations, full-stack redesigns, and modernized legacy codebases across the Auctane shipping portfolio.";
+
 export const Default: Story = {
   args: {
+    description: defaultDescription,
     metrics: [{ value: '10', label: 'Brands Consolidated' }],
     narrative: allNarrative,
     projects: allProjects,
@@ -77,6 +80,7 @@ export const Default: Story = {
 
 export const FewProjects: Story = {
   args: {
+    description: defaultDescription,
     metrics: [{ value: '10', label: 'Brands Consolidated' }],
     narrative: allNarrative.slice(0, 2),
     projects: allProjects.slice(0, 3),
@@ -85,6 +89,7 @@ export const FewProjects: Story = {
 
 export const SingleProject: Story = {
   args: {
+    description: defaultDescription,
     metrics: [{ value: '10', label: 'Brands Consolidated' }],
     narrative: allNarrative.slice(0, 2),
     projects: [allProjects[0]],

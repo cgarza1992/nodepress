@@ -20,7 +20,7 @@ type Story = StoryObj<typeof GradientText>;
 
 export const BlueCyan: Story = {
   args: {
-    children: 'Senior Web Developer',
+    children: 'Frontend',
     from: 'from-blue-400',
     to: 'to-cyan-400',
     className: 'text-4xl font-bold',

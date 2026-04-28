@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Christopher Garza | Senior Web Developer",
-  description: "Senior Web Developer at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products. React • TypeScript • Next.js • Node.js",
+  title: "Christopher Garza | Senior Software Engineer, Frontend",
+  description: "Senior Software Engineer, Frontend at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products. React • TypeScript • Next.js • Node.js",
 };
 
 export default function RootLayout({
