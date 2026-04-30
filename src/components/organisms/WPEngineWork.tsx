@@ -36,7 +36,7 @@ export function WPEngineWork({ description, metrics, narrative, projects }: WPEn
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-16">
         {metrics.map((metric, idx) => (
           <div key={idx} className="bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg p-6 text-center shadow-sm dark:shadow-none">
-            <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+            <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2 whitespace-nowrap">
               {metric.value}
             </div>
             <div className="text-slate-600 dark:text-slate-400 text-sm">{metric.label}</div>

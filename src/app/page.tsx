@@ -17,19 +17,19 @@ export default function Home() {
   const skills = [
     {
       category: "Languages & Markup",
-      items: ["JavaScript", "TypeScript", "PHP", "Cascading Style Sheets (CSS)", "HyperText Markup Language 5 (HTML5)", "JavaScript XML (JSX)"],
+      items: ["JavaScript", "TypeScript", "PHP", "Cascading Style Sheets (CSS)", "HyperText Markup Language 5 (HTML5)", "JavaScript XML (JSX)", "TypeScript XML (TSX)"],
     },
     {
       category: "Frameworks & Technologies",
-      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "Grunt/Gulp", "Node Package Manager (NPM) / Yarn", "Composer", "WP-CLI"],
+      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "Grunt/Gulp", "Node Package Manager (NPM) / Yarn", "Composer", "WP-CLI", "Prisma"],
     },
     {
       category: "APIs & Integrations",
-      items: ["Representational State Transfer (REST) APIs", "HubSpot", "Salesforce", "Segment", "CircleCI", "Git/GitHub", "Claude Artificial Intelligence (AI) / Model Context Protocol (MCP)"],
+      items: ["Representational State Transfer (REST) APIs", "HubSpot", "Salesforce", "Segment", "Google Accounts (OAuth2 / OIDC)", "Google Optimize", "Optimizely", "CircleCI", "GitHub Actions", "Git/GitHub", "Claude Artificial Intelligence (AI) / Model Context Protocol (MCP)"],
     },
     {
       category: "Testing & Quality",
-      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing", "JSHint / JSLint"],
+      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing (Playwright / GitHub Actions CI)", "JSHint / JSLint"],
     },
     {
       category: "Practices",
@@ -43,13 +43,15 @@ export default function Home() {
 
   const auctaneMetrics = [
     { value: "10", label: "Brands Consolidated" },
+    { value: "+12%", label: "ShipStation ICP Trial Conversions (A/B)" },
+    { value: "+6.6%", label: "Stamps.com Accounts Created (A/B)" },
   ];
 
   const wpeMetrics = [
     { value: "$60M → $245M", label: "ARR Growth During Tenure" },
     { value: "185%", label: "eCommerce Plan Purchases" },
     { value: "289%", label: "Signups Increase" },
-    { value: "101%", label: "Avg Revenue per User" },
+    { value: "2x", label: "Avg Revenue Per User (ARPU)" },
   ];
 
   const auctaneNarrative = [
@@ -59,15 +61,19 @@ export default function Home() {
     },
     {
       title: 'Reusable Component Architecture',
-      description: 'Built scalable component libraries in React and Vue that powered redesigns across multiple Auctane brands and websites. These reusable systems enabled consistent branding, faster development cycles, and reduced code duplication across the entire portfolio while maintaining flexibility for brand-specific customizations.',
+      description: 'Built scalable component libraries in React and Vue that powered redesigns across multiple Auctane brands. Enabled marketing teams to assemble and publish landing pages without a developer in the loop. Brand homepages are a direct example: designers could update components directly, with content localized by GeoIP to serve regional variations, without a dev stop. On projects where this system was used, design and development time dropped to roughly 1/4 of the original timeline. The real bottleneck shifted from build time to stakeholder approval.',
+    },
+    {
+      title: 'A/B Testing Infrastructure',
+      description: 'Wired the component system into A/B testing infrastructure across Google Optimize and Optimizely. Built custom variant detection and conditional flow logic beyond what the native platforms supported, triggering different user flows and surfacing different content based on which experiment variant a user was assigned to. Enabled marketing teams to run experiments and iterate on copy, layout, and structure independently.',
     },
     {
       title: 'Multi-Brand Ecosystem',
       description: 'Managed pricing and front-end implementations across Auctane\'s diverse shipping brand portfolio, ensuring seamless data pipeline integrations with HubSpot, Salesforce, Tray.io, and other enterprise APIs while maintaining distinct brand identities.',
     },
     {
-      title: 'Data Pipeline & Analytics Architecture',
-      description: 'Architected and implemented data pipelines capturing user tracking data from Google Analytics and Segment, routing customer data to appropriate CRM and business tools (HubSpot, Salesforce) based on territories and business rules. Used Tray.io to facilitate large-scale data movement and orchestration across Auctane brands.',
+      title: 'Data Pipeline & Analytics',
+      description: 'Drove the evaluation and purchase of Segment at Auctane as the central analytics and data pipeline platform. Led the migration with a focus on continuity, preserving user tracking and purchase pipeline data without interruption. Owned the data collection layer, instrumenting events on the website and sourcing clean, structured data for the analytics team to work with downstream. Routed data through Tray into data warehouses, Salesforce, and HubSpot, and connected product signups to unified user profiles for persona-based onboarding targeting.',
     },
   ];
 
@@ -86,13 +92,13 @@ export default function Home() {
     },
     {
       title: 'ShipStation Free Trial Signup',
-      description: 'Implemented the multi-field trial signup form with shipment volume segmentation, reCAPTCHA validation, and CRM routing. Used Segment to profile incoming users and personalize the post-signup experience.',
-      tags: ['React', 'TypeScript', 'Segment', 'Tray.io', 'HubSpot'],
+      description: 'Built the ShipStation Free Trial signup flow, including shipment volume segmentation that powered ICP identification at point of entry. Integrated reCAPTCHA v3 and Blackbox.io as part of a cross-organizational anti-fraud initiative to reduce bot-driven trial starts without impacting legitimate signups. Connected the OAuth2/OIDC provisioning flow to handle account creation directly from ShipStation.com into the app. Routed all signups through Segment for persona-based onboarding targeting.',
+      tags: ['React', 'TypeScript', 'Segment', 'Tray.io', 'HubSpot', 'OAuth2', 'OIDC', 'reCAPTCHA', 'Blackbox.io'],
       href: 'https://www.shipstation.com/start-a-free-trial/',
     },
     {
       title: 'ShipEngine API Signup',
-      description: 'Implemented the developer-focused API signup form, connected to the billing pipeline and CRM. Integrated Segment tracking to route developer vs. business signups through the appropriate onboarding flow.',
+      description: 'Replaced a bare-bones Gravity Form that was routing developer signups to a single inbox. Rebuilt the ShipEngine API signup with proper CRM integration and Segment routing to profile incoming signups and direct developer vs. business personas through tailored onboarding flows — different messaging, different first-touch sequences, different sales routing based on signup signals.',
       tags: ['React', 'TypeScript', 'Segment', 'Tray.io'],
       href: 'https://www.shipengine.com/signup/',
     },
@@ -102,9 +108,10 @@ export default function Home() {
       tags: ['React', 'Vue.js', 'TypeScript'],
     },
     {
-      title: 'Partner Portal (POC)',
-      description: 'Led the proof of concept for a self-serve partner portal built on the reusable component system, enabling partners to build and manage custom landing pages. POC was not launched.',
-      tags: ['React', 'PHP', 'TypeScript'],
+      title: 'ShipStation Partner Ecosystem',
+      description: 'Built the ShipStation partner ecosystem, including a public-facing carrier and integration directory spanning hundreds of partners across carriers, marketplaces, and eCommerce platforms. Powered by a REST API data layer that served as the single source of truth across Auctane brands. Included relevancy searching with weighted scoring so the most relevant partners surfaced based on user context, and an authenticated self-serve portal with SSO/OAuth2 (OIDC) so partners could log in and manage their own listings directly.',
+      tags: ['React', 'PHP', 'TypeScript', 'REST API', 'OAuth2', 'OIDC'],
+      href: 'https://www.shipstation.com/partners/',
     },
   ];
 
@@ -115,7 +122,11 @@ export default function Home() {
     },
     {
       title: 'GA/GTM to Segment Migration',
-      description: 'Led the migration of WP Engine\'s analytics and user tracking stack from Google Analytics and GTM to Segment. Enabled unified user profiling and personalized content delivery — serving different copy and recommendations to developers, agency owners, and non-technical business users based on their tracked behavior.',
+      description: 'Led WP Engine\'s analytics infrastructure overhaul. Drove the evaluation and purchase of Segment as the replacement analytics platform ahead of Google Analytics 4\'s end-of-life. Architected the migration plan to ensure site analytics continuity, preserving historical event data and maintaining CRM integrations with HubSpot and Salesforce without a gap in user tracking. Owned the data collection layer, instrumenting events on the website and sourcing clean, structured data for the analytics team to work with downstream. Migrating off GTM as middleware improved data fidelity between the site and downstream tools. Segment enabled unified user profiling that powered personalized content delivery across developer, agency, and non-technical business personas.',
+    },
+    {
+      title: 'Chat Integrations',
+      description: 'Managed chat infrastructure across the WP Engine marketing site and product portal, implementing and configuring LiveChat, Zendesk, and Intercom using custom SDK integrations. Built custom event tracking and lead routing logic, with CRM handoff into HubSpot and Salesforce to carry conversation context through to sales. The same integration patterns carried from the marketing site into the product portal.',
     },
     {
       title: 'Pricing & Conversion Optimization',
@@ -125,25 +136,23 @@ export default function Home() {
       title: 'Cross-Functional Technical Leadership',
       description: 'Served as the technical representative across cross-departmental projects — translating engineering constraints into plain language for stakeholders, representing the team on roadmaps and scopes of work, and building out the intake system (GravityForms + JIRA API) that managed project requests across 90 GitHub repositories.',
     },
+    {
+      title: 'Greenfield & Brownfield',
+      description: 'Comfortable building from zero and inheriting what already exists. Built products like Velocitize and Decode from scratch, making early architecture decisions with no prior constraints. Also took ownership of established codebases — wpengine.com, StudioPress, the agency directory — where the work was about understanding what was already there, adding without breaking, and modernizing incrementally. Both require different instincts and the ability to switch between them is what lets you operate across a full product lifecycle.',
+    },
   ];
 
   const wpeProjects = [
     {
-      title: 'Managed WordPress Pricing',
-      description: 'Implemented pricing pages across 4 managed WordPress plans. Built billing toggles, feature comparison tables, and Salesforce CRM pipelines. A/B tested plan positioning — contributed to 185% eCommerce plan purchase growth and 289% signups increase.',
-      tags: ['React', 'PHP', 'Segment', 'Salesforce'],
+      title: 'WP Engine Hosting Plans',
+      description: 'Built the purchase funnel across WP Engine\'s hosting plans, bridging two separate systems: the marketing site where users selected plans, billing cycles, and add-ons through a Redux-driven interface with API-driven localized pricing in USD, EUR, AUD, and CAD, and the product portal where provisioning took place after purchase. Managed the state handoff between them so customer selections carried through to account creation without loss. Wired into Salesforce CRM pipelines. A/B tested plan positioning using Optimizely, contributing to 185% purchase growth in the eCommerce tier — WP Engine\'s dedicated platform for high-traffic online stores and enterprise-scale storefronts handling millions of visitors per month.',
+      tags: ['React', 'Redux', 'PHP', 'Salesforce', 'Optimizely', 'Localized Pricing', 'REST API'],
       href: 'https://wpengine.com/plans/',
     },
     {
-      title: 'eCommerce (WooCommerce) Pricing',
-      description: 'Built the WooCommerce hosting pricing pages from scratch. Implemented feature differentiation UI and ran pricing experiments with Google Optimize to drive plan upgrades across the WooCommerce customer segment.',
-      tags: ['React', 'PHP', 'Google Optimize'],
-      href: 'https://wpengine.com/ecommerce-platform-pricing/',
-    },
-    {
       title: 'Agency Partner Portal',
-      description: 'Implemented the WP Engine agency partner portal, supporting the agency program with custom landing pages and reusable components that let partners manage their presence without developer involvement.',
-      tags: ['React', 'Gutenberg Blocks', 'PHP'],
+      description: 'The WP Engine Agency Partner Program was a cornerstone of enterprise acquisition. Agencies referred clients to WP Engine hosting, and WP Engine referred projects to partner agencies. Implemented the program portal and infrastructure that powered this bidirectional referral relationship, including a nightly cron job to sync partner data with the main website and push any updates automatically. Built on the reusable component library to let partners self-manage their presence.',
+      tags: ['React', 'PHP', 'WordPress'],
       href: 'https://wpengine.com/agency-programs/',
     },
     {
@@ -153,27 +162,33 @@ export default function Home() {
       href: 'https://wpengine.com/agency-directory/',
     },
     {
+      title: 'StudioPress',
+      description: 'Built and redesigned StudioPress, WP Engine\'s premium WordPress theme and Genesis Framework platform serving 260K+ customers and 600K+ sites. Rebuilt the site from legacy PHP templates and WYSIWYG editing to a modern Gutenberg and React stack. Added theme search and listing APIs surfaced on wpengine.com, and migrated the StudioPress buyer journey onto wpengine.com to consolidate the purchase funnel.',
+      tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks', 'REST API'],
+      href: 'https://www.studiopress.com',
+    },
+    {
       title: 'Velocitize',
-      description: 'Built and redesigned Velocitize, WP Engine\'s digital marketing publication targeting entrepreneurs, marketers, and agency professionals.',
+      description: 'Built Velocitize from the ground up, WP Engine\'s digital marketing publication.',
       tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks'],
       href: 'https://velocitize.com',
     },
     {
       title: 'Torque Magazine',
-      description: 'Built and redesigned Torque, WP Engine\'s WordPress-focused publication serving developers, designers, and agencies with news, tutorials, and industry content.',
+      description: 'Inherited and modernized Torque, WP Engine\'s WordPress news and tutorials publication. Migrated the site from legacy code to a Gutenberg and React stack, moving away from PHP templates and WYSIWYG editing.',
       tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks'],
       href: 'https://torquemag.io',
     },
     {
-      title: 'StudioPress',
-      description: 'Built and redesigned StudioPress, WP Engine\'s premium WordPress theme and Genesis Framework platform serving 260K+ customers and 600K+ sites.',
-      tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks'],
-      href: 'https://www.studiopress.com',
+      title: 'Decode Conference Platform',
+      description: 'Built the WP Engine Decode conference platform on a specialized WP Engine hosting configuration optimized for scale, including a custom cache-key cookie to serve personalized content while maintaining full-page caching, an email loop for session reminders and updates, and an ultra-lite login system using magic links for frictionless attendee authentication.',
+      tags: ['React', 'WordPress', 'PHP'],
     },
     {
-      title: 'Decode Events Platform',
-      description: 'Built the WP Engine Decode conference event platform using React and WordPress. Handled registration, session management, and attendee experience for WP Engine\'s annual developer conference.',
-      tags: ['React', 'WordPress', 'PHP'],
+      title: 'Flywheel',
+      description: 'Led CRO and frontend modernization for Flywheel, WP Engine\'s managed WordPress hosting brand for designers and agencies. Migrated landing page infrastructure from hardcoded jQuery templates to React components, enabling marketing teams to iterate on layout and copy without developer involvement. Redesigned the pricing structure and buyer journey to improve plan clarity and purchase conversion.',
+      tags: ['WordPress', 'React', 'JavaScript', 'CRO', 'PHP'],
+      href: 'https://getflywheel.com',
     },
   ];
 
@@ -191,7 +206,7 @@ export default function Home() {
     {
       name: "Script Queries",
       url: "https://github.com/cgarza1992/script-queries",
-      description: "PHP scripts for WordPress database management. Exports posts to CSV, validates URLs in bulk, and filters data based on custom criteria.",
+      description: "A collection of WordPress developer utilities: custom Gutenberg blocks for presenting plan data and multi-column layouts that let content editors work without a developer, and database query scripts for post content export, CSV generation, and URL validation across multisite installs.",
     },
     {
       name: "FastSpring Demo",
@@ -201,8 +216,8 @@ export default function Home() {
   ];
 
   const aboutHighlights = [
-    "Background in Advertising & Mass Communication — bridges the gap between technical and non-technical teams",
-    "Contributed to growing and mentoring the WP Engine web team, including the first engineer onboarding program",
+    "Background in Advertising & Mass Communication, bridging the gap between technical and non-technical teams",
+    "Grew and mentored the WP Engine web team from 2 to 14 people, building the first engineer onboarding program, leading peer mentoring, and navigating the team through org change",
     "Focused on translating complex business problems into clean, maintainable engineering solutions",
     "Open to roles that challenge me to grow across the full stack and contribute to teams doing meaningful work",
   ];
