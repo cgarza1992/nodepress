@@ -144,6 +144,12 @@ export default function Home() {
 
   const wpeProjects = [
     {
+      title: 'FastSpring Pricing & Checkout Demo',
+      description: 'A working demo of the pricing and checkout patterns I built for enterprise SaaS clients. Features API-driven localized pricing that adapts currency and amounts to the visitor\'s country, a popup checkout flow, and a split-view embedded checkout where users select plans before purchasing. Includes a live webhook event log showing real-time FastSpring events — orders, subscriptions, refunds — persisted via Prisma and streamed to the UI. Built with Next.js, TypeScript, Tailwind CSS, and Prisma Postgres.',
+      tags: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind CSS', 'REST API', 'Localized Pricing', 'Webhooks'],
+      href: 'https://fastspring.christophergarza.dev',
+    },
+    {
       title: 'WP Engine Hosting Plans',
       description: 'Built the purchase funnel across WP Engine\'s hosting plans, bridging two separate systems: the marketing site where users selected plans, billing cycles, and add-ons through a Redux-driven interface with API-driven localized pricing in USD, EUR, AUD, and CAD, and the product portal where provisioning took place after purchase. Managed the state handoff between them so customer selections carried through to account creation without loss. Wired into Salesforce CRM pipelines. A/B tested plan positioning using Optimizely, contributing to 185% purchase growth in the eCommerce tier — WP Engine\'s dedicated platform for high-traffic online stores and enterprise-scale storefronts handling millions of visitors per month.',
       tags: ['React', 'Redux', 'PHP', 'Salesforce', 'Optimizely', 'Localized Pricing', 'REST API'],
