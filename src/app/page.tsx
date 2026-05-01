@@ -108,6 +108,12 @@ export default function Home() {
       tags: ['React', 'Vue.js', 'TypeScript'],
     },
     {
+      title: 'Partner Directory Demo',
+      description: 'A generalized, open-source version of the partner directory and marketplace infrastructure I built for enterprise clients. Features multi-select filtering by region and category, relevance scoring with paid placement support, URL-synced filter state for shareable links, and a skeleton loading state. Built with Vue 3 and vanilla CSS — no build step, no dependencies.',
+      tags: ['Vue.js', 'JavaScript', 'CSS', 'Open Source'],
+      href: 'https://partners.christophergarza.dev',
+    },
+    {
       title: 'ShipStation Partner Ecosystem',
       description: 'Built the ShipStation partner ecosystem, including a public-facing carrier and integration directory spanning hundreds of partners across carriers, marketplaces, and eCommerce platforms. Powered by a REST API data layer that served as the single source of truth across Auctane brands. Included relevancy searching with weighted scoring so the most relevant partners surfaced based on user context, and an authenticated self-serve portal with SSO/OAuth2 (OIDC) so partners could log in and manage their own listings directly.',
       tags: ['React', 'PHP', 'TypeScript', 'REST API', 'OAuth2', 'OIDC'],
