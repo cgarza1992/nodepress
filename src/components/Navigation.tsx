@@ -61,6 +61,14 @@ export function Navigation() {
             );
           })}
           <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium px-4 py-1.5 rounded-full border border-blue-500/60 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10 transition-colors"
+          >
+            Resume
+          </a>
+          <a
             href={storybookUrl}
             target="_blank"
             rel="noopener noreferrer"
@@ -114,6 +122,15 @@ export function Navigation() {
               </a>
             );
           })}
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={handleNavClick}
+            className="mt-3 text-sm font-medium px-4 py-2 rounded-full border border-blue-500/60 text-blue-600 dark:text-blue-400 hover:bg-blue-500/10 transition-colors w-fit"
+          >
+            Resume
+          </a>
           <a
             href={storybookUrl}
             target="_blank"

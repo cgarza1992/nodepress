@@ -255,7 +255,7 @@ export default function Home() {
         <AboutSection
           profileImage="https://avatars.githubusercontent.com/u/17697283?v=4"
           title="Christopher Garza"
-          bio="I started in Advertising & Mass Communication, taught myself to code, and spent nearly 7 years at WP Engine before moving to Auctane. That non-traditional path shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage, currently building out a custom 1985 BMW K100 or riding my café racer Bonneville T100 through the Texas hill country."
+          bio="I started in Advertising & Mass Communication. Graduate coursework in JavaScript, PHP, and web development was my entry point into programming, but the courses hit a ceiling fast. My professors couldn't keep up with my questions, so the real learning happened on my own. That self-driven path led to nearly 7 years at WP Engine before moving to Auctane. The non-traditional background shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage, currently building out a custom 1985 BMW K100 or riding my café racer Bonneville T100 through the Texas hill country."
           highlights={aboutHighlights}
         />
 
