@@ -120,10 +120,10 @@ body {
 .comp-nav-forms { animation: compNavForms 6s ease-in-out infinite; color: #64748b; }
 .comp-nav-cards { animation: compNavCards 6s ease-in-out infinite; color: #64748b; }
 
-/* nav tabs match each brand: ShipStation teal · ShipEngine navy · WP Engine teal */
-@keyframes compNavBtns  { 0%,28%  { background:#1a9fc025; color:#1a9fc0; } 33%,96%  { background:transparent; color:#ffffff30; } 100% { background:#1a9fc025; color:#1a9fc0; } }
-@keyframes compNavForms { 0%,30%  { background:transparent; color:#ffffff30; } 33%,61%  { background:#1B3A8F30; color:#7b9fe8; } 65%,100% { background:transparent; color:#ffffff30; } }
-@keyframes compNavCards { 0%,63%  { background:transparent; color:#ffffff30; } 67%,95%  { background:#CC202725; color:#e05a5f; } 100% { background:transparent; color:#ffffff30; } }
+/* nav tabs match each brand: ShipStation green · ShipEngine green · Stamps red */
+@keyframes compNavBtns  { 0%,28%  { background:#04E66420; color:#04E664; } 33%,96%  { background:transparent; color:#ffffff30; } 100% { background:#04E66420; color:#04E664; } }
+@keyframes compNavForms { 0%,30%  { background:transparent; color:#ffffff30; } 33%,61%  { background:#23EE8820; color:#23EE88; } 65%,100% { background:transparent; color:#ffffff30; } }
+@keyframes compNavCards { 0%,63%  { background:transparent; color:#ffffff30; } 67%,95%  { background:#4E44D925; color:#8f8ae8; } 100% { background:transparent; color:#ffffff30; } }
 
 /* ─── Decode preview animations (5s loop) ─── */
 

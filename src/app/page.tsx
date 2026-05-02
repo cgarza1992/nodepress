@@ -85,14 +85,14 @@ export default function Home() {
     {
       title: 'ShipStation Pricing Pages',
       description: 'Implemented pricing pages across the Starter, Standard, and Premium plans — plan selectors, feature comparison tables, and A/B tested CTA copy. Led Auctane\'s migration to Segment to personalize plan recommendations based on user profile.',
-      tags: ['React', 'TypeScript', 'Segment', 'Tray.io', 'HubSpot'],
+      tags: ['React', 'TypeScript', 'Segment', 'Salesforce', 'Tray.io', 'HubSpot', 'A/B Testing'],
       href: 'https://www.shipstation.com/pricing/',
       image: '/brands/Auctane/Shipstation/shipstation-pricing-page.png',
     },
     {
       title: 'ShipEngine Pricing',
       description: 'Rebuilt the ShipEngine pricing page end-to-end. Implemented the API pricing calculator and developer-focused feature comparison. Used Segment to serve tailored content to developer vs. business personas via Tray.io enterprise lead routing.',
-      tags: ['React', 'TypeScript', 'Segment', 'Tray.io'],
+      tags: ['React', 'TypeScript', 'Segment', 'Salesforce', 'Tray.io', 'A/B Testing'],
       href: 'https://www.shipengine.com/pricing/',
       image: '/brands/Auctane/Shipengine/shipengine-pricing-page.png',
     },
@@ -122,6 +122,34 @@ export default function Home() {
       tags: ['React', 'PHP', 'TypeScript', 'REST API', 'OAuth2', 'OIDC'],
       href: 'https://www.shipstation.com/partners/',
       image: '/brands/Auctane/Shipstation/shipstation-partners-page.png',
+    },
+    {
+      title: 'Stamps.com',
+      description: 'Contributed to the Stamps.com site redesign using the shared Auctane component library, implementing updated pages for Auctane\'s postage and shipping brand serving small businesses and home offices. A/B tested signup and account creation flows — contributing to a +6.6% lift in accounts created.',
+      tags: ['React', 'TypeScript', 'A/B Testing', 'Segment', 'Component Library'],
+      href: 'https://www.stamps.com',
+      image: '/brands/Auctane/Stamps/stamps-homepage.png',
+    },
+    {
+      title: 'GlobalPost',
+      description: 'Led the GlobalPost site redesign using the shared Auctane component library, applying GlobalPost\'s branding across a rebuilt marketing site for Auctane\'s international shipping subsidiary serving 220+ countries. Integrated the GlobalPost tracking API into a full package tracking user journey — letting ShipStation merchants and their end customers follow shipments in real time from the ShipStation interface through to international delivery confirmation.',
+      tags: ['React', 'TypeScript', 'REST API', 'Segment', 'Component Library'],
+      href: 'https://www.globalpost.com',
+      image: '/brands/Auctane/GlobalPost/globalpost-homepage.png',
+    },
+    {
+      title: 'MetaPack',
+      description: 'Implemented the MetaPack site redesign using the shared Auctane component library, applying MetaPack\'s distinct enterprise branding across a new site architecture. MetaPack is Auctane\'s carrier management and delivery experience platform serving large-scale retailers and logistics operators across Europe.',
+      tags: ['React', 'TypeScript', 'Component Library'],
+      href: 'https://www.metapack.com',
+      image: '/brands/Auctane/MetaPack/metapack-homepage.png',
+    },
+    {
+      title: 'Auctane.com',
+      description: 'Built and maintained the Auctane corporate site — the parent company behind ShipStation, Stamps.com, ShipEngine, GlobalPost, and six other shipping brands. The site serves as the brand umbrella for Auctane\'s enterprise narrative: 3M+ customers worldwide, $200B+ in global transactions, 3B+ orders processed annually across the portfolio. Integrated the Greenhouse ATS API into a branded careers portal, pulling live job listings and surfacing them in a custom-designed experience consistent with Auctane brand standards.',
+      tags: ['React', 'TypeScript', 'WordPress', 'Greenhouse API'],
+      href: 'https://www.auctane.com',
+      image: '/brands/Auctane/Auctane/auctane-homepage.png',
     },
   ];
 

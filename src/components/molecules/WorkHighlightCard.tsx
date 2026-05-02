@@ -85,7 +85,7 @@ export function WorkHighlightCard({ title, description, tags, href, image, video
           </a>
         )}
       </div>
-      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed flex-1 px-6">{displayText}</p>
+      <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed px-6">{displayText}</p>
       {isLong && (
         <button
           onClick={() => setExpanded(!expanded)}
@@ -94,6 +94,7 @@ export function WorkHighlightCard({ title, description, tags, href, image, video
           {expanded ? 'Read less' : 'Read more'}
         </button>
       )}
+      <div className="flex-1" />
       <div className="flex flex-wrap gap-2 px-6 pb-6">
         {tags.map((tag) => (
           <span
