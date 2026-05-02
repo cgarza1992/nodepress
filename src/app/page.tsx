@@ -142,7 +142,7 @@ export default function Home() {
       description: 'Implemented the MetaPack site redesign using the shared Auctane component library, applying MetaPack\'s distinct enterprise branding across a new site architecture. MetaPack is Auctane\'s carrier management and delivery experience platform serving large-scale retailers and logistics operators across Europe.',
       tags: ['React', 'TypeScript', 'Component Library'],
       href: 'https://www.metapack.com',
-      image: '/brands/Auctane/MetaPack/metapack-homepage.png',
+      image: '/brands/Auctane/Metapack/metapack-homepage.png',
     },
     {
       title: 'Auctane.com',
