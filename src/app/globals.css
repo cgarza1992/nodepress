@@ -30,3 +30,113 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ─── FastSpring preview animations (8s loop) ─── */
+
+.fs-usd { animation: fsUSD 8s ease-in-out infinite; }
+.fs-eur { animation: fsEUR 8s ease-in-out infinite; }
+.fs-glow { animation: fsGlow 2.5s ease-in-out infinite; }
+.fs-checkout { animation: fsCheckout 8s ease-in-out infinite; }
+
+@keyframes fsUSD {
+  0%, 44%   { opacity: 1; }
+  50%, 94%  { opacity: 0; }
+  100%      { opacity: 1; }
+}
+@keyframes fsEUR {
+  0%, 44%   { opacity: 0; }
+  50%, 94%  { opacity: 1; }
+  100%      { opacity: 0; }
+}
+@keyframes fsGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(59,130,246,0.25); }
+  50%      { box-shadow: 0 0 20px rgba(59,130,246,0.55), 0 0 4px rgba(59,130,246,0.9); }
+}
+@keyframes fsCheckout {
+  0%, 54%   { transform: translateY(110%); }
+  62%, 90%  { transform: translateY(0%); }
+  98%, 100% { transform: translateY(110%); }
+}
+
+/* ─── Directory preview animations (7s loop) ─── */
+
+.dir-chip { transition: background 0.25s, color 0.25s, border-color 0.25s; }
+.dir-chip-all      { animation: dirChipAll      7s ease-in-out infinite; }
+.dir-chip-analytics { animation: dirChipAnalytics 7s ease-in-out infinite; }
+.dir-chip-payments  { animation: dirChipPayments  7s ease-in-out infinite; }
+
+.dir-card { transition: opacity 0.3s ease; }
+.dir-card-analytics { animation: dirCardAnalytics 7s ease-in-out infinite; }
+.dir-card-payments  { animation: dirCardPayments  7s ease-in-out infinite; }
+.dir-card-other     { animation: dirCardOther     7s ease-in-out infinite; }
+
+/* Timing: 0–14% All · 17–35% Analytics · 38–55% Payments · 58–100% All */
+
+@keyframes dirChipAll {
+  0%, 14%  { background:#2563eb; color:#fff; border-color:#2563eb; }
+  17%,55%  { background:transparent; color:#94a3b8; border-color:#e2e8f0; }
+  58%,100% { background:#2563eb; color:#fff; border-color:#2563eb; }
+}
+@keyframes dirChipAnalytics {
+  0%, 13%  { background:transparent; color:#94a3b8; border-color:#e2e8f0; }
+  17%,35%  { background:#2563eb; color:#fff; border-color:#2563eb; }
+  38%,100% { background:transparent; color:#94a3b8; border-color:#e2e8f0; }
+}
+@keyframes dirChipPayments {
+  0%, 36%  { background:transparent; color:#94a3b8; border-color:#e2e8f0; }
+  40%,55%  { background:#2563eb; color:#fff; border-color:#2563eb; }
+  58%,100% { background:transparent; color:#94a3b8; border-color:#e2e8f0; }
+}
+@keyframes dirCardAnalytics {
+  0%,14%   { opacity:1; }
+  17%,35%  { opacity:1; }
+  38%,55%  { opacity:0.12; }
+  58%,100% { opacity:1; }
+}
+@keyframes dirCardPayments {
+  0%,14%   { opacity:1; }
+  17%,35%  { opacity:0.12; }
+  38%,55%  { opacity:1; }
+  58%,100% { opacity:1; }
+}
+@keyframes dirCardOther {
+  0%,14%   { opacity:1; }
+  17%,55%  { opacity:0.12; }
+  58%,100% { opacity:1; }
+}
+
+/* ─── ComponentLibrary preview animations (6s loop) ─── */
+
+.comp-btns  { animation: compBtns  6s ease-in-out infinite; }
+.comp-forms { animation: compForms 6s ease-in-out infinite; }
+.comp-cards { animation: compCards 6s ease-in-out infinite; }
+
+/* 0–30% Atoms/btns, 33–63% Molecules/forms, 66–96% Organisms/cards */
+@keyframes compBtns  { 0%,28%  { opacity:1; } 33%,96%  { opacity:0; } 100% { opacity:1; } }
+@keyframes compForms { 0%,30%  { opacity:0; } 33%,61%  { opacity:1; } 65%,100% { opacity:0; } }
+@keyframes compCards { 0%,63%  { opacity:0; } 67%,95%  { opacity:1; } 100% { opacity:0; } }
+
+.comp-nav-btns  { animation: compNavBtns  6s ease-in-out infinite; color: #64748b; }
+.comp-nav-forms { animation: compNavForms 6s ease-in-out infinite; color: #64748b; }
+.comp-nav-cards { animation: compNavCards 6s ease-in-out infinite; color: #64748b; }
+
+/* nav tabs match each brand: ShipStation teal · ShipEngine navy · WP Engine teal */
+@keyframes compNavBtns  { 0%,28%  { background:#1a9fc025; color:#1a9fc0; } 33%,96%  { background:transparent; color:#ffffff30; } 100% { background:#1a9fc025; color:#1a9fc0; } }
+@keyframes compNavForms { 0%,30%  { background:transparent; color:#ffffff30; } 33%,61%  { background:#1B3A8F30; color:#7b9fe8; } 65%,100% { background:transparent; color:#ffffff30; } }
+@keyframes compNavCards { 0%,63%  { background:transparent; color:#ffffff30; } 67%,95%  { background:#CC202725; color:#e05a5f; } 100% { background:transparent; color:#ffffff30; } }
+
+/* ─── Decode preview animations (5s loop) ─── */
+
+.decode-login { animation: decodeLogin 5s ease-in-out infinite; }
+.decode-sent  { animation: decodeSent  5s ease-in-out infinite; }
+
+@keyframes decodeLogin {
+  0%,40%  { opacity:1; transform:translateY(0); }
+  50%,90% { opacity:0; transform:translateY(-3px); }
+  100%    { opacity:1; transform:translateY(0); }
+}
+@keyframes decodeSent {
+  0%,42%  { opacity:0; transform:translateY(3px); }
+  52%,88% { opacity:1; transform:translateY(0); }
+  98%,100% { opacity:0; transform:translateY(3px); }
+}

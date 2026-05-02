@@ -12,6 +12,10 @@ import {
 import { GradientText } from '@/components/atoms/GradientText';
 import { AuctaneWork } from '@/components/organisms/AuctaneWork';
 import { WPEngineWork } from '@/components/organisms/WPEngineWork';
+import { TechnicalDemos } from '@/components/organisms/TechnicalDemos';
+import { FastSpringPreview } from '@/components/molecules/FastSpringPreview';
+import { DirectoryPreview } from '@/components/molecules/DirectoryPreview';
+import { ComponentLibraryPreview } from '@/components/molecules/ComponentLibraryPreview';
 
 export default function Home() {
   const skills = [
@@ -83,41 +87,41 @@ export default function Home() {
       description: 'Implemented pricing pages across the Starter, Standard, and Premium plans — plan selectors, feature comparison tables, and A/B tested CTA copy. Led Auctane\'s migration to Segment to personalize plan recommendations based on user profile.',
       tags: ['React', 'TypeScript', 'Segment', 'Tray.io', 'HubSpot'],
       href: 'https://www.shipstation.com/pricing/',
+      image: '/brands/Auctane/Shipstation/shipstation-pricing-page.png',
     },
     {
       title: 'ShipEngine Pricing',
       description: 'Rebuilt the ShipEngine pricing page end-to-end. Implemented the API pricing calculator and developer-focused feature comparison. Used Segment to serve tailored content to developer vs. business personas via Tray.io enterprise lead routing.',
       tags: ['React', 'TypeScript', 'Segment', 'Tray.io'],
       href: 'https://www.shipengine.com/pricing/',
+      image: '/brands/Auctane/Shipengine/shipengine-pricing-page.png',
     },
     {
       title: 'ShipStation Free Trial Signup',
       description: 'Built the ShipStation Free Trial signup flow, including shipment volume segmentation that powered ICP identification at point of entry. Integrated reCAPTCHA v3 and Blackbox.io as part of a cross-organizational anti-fraud initiative to reduce bot-driven trial starts without impacting legitimate signups. Connected the OAuth2/OIDC provisioning flow to handle account creation directly from ShipStation.com into the app. Routed all signups through Segment for persona-based onboarding targeting.',
       tags: ['React', 'TypeScript', 'Segment', 'Tray.io', 'HubSpot', 'OAuth2', 'OIDC', 'reCAPTCHA', 'Blackbox.io'],
       href: 'https://www.shipstation.com/start-a-free-trial/',
+      image: '/brands/Auctane/Shipstation/shipstation-trial-signup-page.png',
     },
     {
       title: 'ShipEngine API Signup',
       description: 'Replaced a bare-bones Gravity Form that was routing developer signups to a single inbox. Rebuilt the ShipEngine API signup with proper CRM integration and Segment routing to profile incoming signups and direct developer vs. business personas through tailored onboarding flows — different messaging, different first-touch sequences, different sales routing based on signup signals.',
       tags: ['React', 'TypeScript', 'Segment', 'Tray.io'],
       href: 'https://www.shipengine.com/signup/',
+      image: '/brands/Auctane/Shipengine/shipengine-signup-page.png',
     },
     {
       title: 'Reusable Component System',
       description: 'Built a library of reusable React and Vue components enabling marketing and content teams to assemble custom landing pages without developer involvement.',
       tags: ['React', 'Vue.js', 'TypeScript'],
-    },
-    {
-      title: 'Partner Directory Demo',
-      description: 'A generalized, open-source version of the partner directory and marketplace infrastructure I built for enterprise clients. Features multi-select filtering by region and category, relevance scoring with paid placement support, URL-synced filter state for shareable links, and a skeleton loading state. Built with Vue 3 and vanilla CSS — no build step, no dependencies.',
-      tags: ['Vue.js', 'JavaScript', 'CSS', 'Open Source'],
-      href: 'https://partners.christophergarza.dev',
+      preview: <ComponentLibraryPreview />,
     },
     {
       title: 'ShipStation Partner Ecosystem',
       description: 'Built the ShipStation partner ecosystem, including a public-facing carrier and integration directory spanning hundreds of partners across carriers, marketplaces, and eCommerce platforms. Powered by a REST API data layer that served as the single source of truth across Auctane brands. Included relevancy searching with weighted scoring so the most relevant partners surfaced based on user context, and an authenticated self-serve portal with SSO/OAuth2 (OIDC) so partners could log in and manage their own listings directly.',
       tags: ['React', 'PHP', 'TypeScript', 'REST API', 'OAuth2', 'OIDC'],
       href: 'https://www.shipstation.com/partners/',
+      image: '/brands/Auctane/Shipstation/shipstation-partners-page.png',
     },
   ];
 
@@ -150,57 +154,78 @@ export default function Home() {
 
   const wpeProjects = [
     {
-      title: 'FastSpring Pricing & Checkout Demo',
-      description: 'A working demo of the pricing and checkout patterns I built for enterprise SaaS clients. Features API-driven localized pricing that adapts currency and amounts to the visitor\'s country, a popup checkout flow, and a split-view embedded checkout where users select plans before purchasing. Includes a live webhook event log showing real-time FastSpring events — orders, subscriptions, refunds — persisted via Prisma and streamed to the UI. Built with Next.js, TypeScript, Tailwind CSS, and Prisma Postgres.',
-      tags: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind CSS', 'REST API', 'Localized Pricing', 'Webhooks'],
-      href: 'https://fastspring.christophergarza.dev',
-    },
-    {
       title: 'WP Engine Hosting Plans',
       description: 'Built the purchase funnel across WP Engine\'s hosting plans, bridging two separate systems: the marketing site where users selected plans, billing cycles, and add-ons through a Redux-driven interface with API-driven localized pricing in USD, EUR, AUD, and CAD, and the product portal where provisioning took place after purchase. Managed the state handoff between them so customer selections carried through to account creation without loss. Wired into Salesforce CRM pipelines. A/B tested plan positioning using Optimizely, contributing to 185% purchase growth in the eCommerce tier — WP Engine\'s dedicated platform for high-traffic online stores and enterprise-scale storefronts handling millions of visitors per month.',
       tags: ['React', 'Redux', 'PHP', 'Salesforce', 'Optimizely', 'Localized Pricing', 'REST API'],
       href: 'https://wpengine.com/plans/',
+      image: '/brands/WP%20Engine/WP%20Engine/wpengine-plans-page.png',
     },
     {
       title: 'Agency Partner Portal',
       description: 'The WP Engine Agency Partner Program was a cornerstone of enterprise acquisition. Agencies referred clients to WP Engine hosting, and WP Engine referred projects to partner agencies. Implemented the program portal and infrastructure that powered this bidirectional referral relationship, including a nightly cron job to sync partner data with the main website and push any updates automatically. Built on the reusable component library to let partners self-manage their presence.',
       tags: ['React', 'PHP', 'WordPress'],
       href: 'https://wpengine.com/agency-programs/',
+      image: '/brands/WP%20Engine/WP%20Engine/wpengine-agency-program-page.png',
     },
     {
       title: 'Agency Directory',
       description: 'Built the WP Engine agency partner directory — a filterable card grid letting businesses find vetted WordPress agencies by specialty, budget, region, and partner tier. Still in use today.',
       tags: ['React', 'WordPress', 'PHP'],
       href: 'https://wpengine.com/agency-directory/',
+      image: '/brands/WP%20Engine/WP%20Engine/wpengine-agency-directory.png',
     },
     {
       title: 'StudioPress',
       description: 'Built and redesigned StudioPress, WP Engine\'s premium WordPress theme and Genesis Framework platform serving 260K+ customers and 600K+ sites. Rebuilt the site from legacy PHP templates and WYSIWYG editing to a modern Gutenberg and React stack. Added theme search and listing APIs surfaced on wpengine.com, and migrated the StudioPress buyer journey onto wpengine.com to consolidate the purchase funnel.',
       tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks', 'REST API'],
       href: 'https://www.studiopress.com',
-    },
-    {
-      title: 'Velocitize',
-      description: 'Built Velocitize from the ground up, WP Engine\'s digital marketing publication.',
-      tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks'],
-      href: 'https://velocitize.com',
+      image: '/brands/WP%20Engine/Studiopress/studiopress-homepage.png',
     },
     {
       title: 'Torque Magazine',
       description: 'Inherited and modernized Torque, WP Engine\'s WordPress news and tutorials publication. Migrated the site from legacy code to a Gutenberg and React stack, moving away from PHP templates and WYSIWYG editing.',
       tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks'],
       href: 'https://torquemag.io',
+      image: '/brands/WP%20Engine/Torque%20Mag/torque-mag-homepage.png',
     },
     {
       title: 'Decode Conference Platform',
       description: 'Built the WP Engine Decode conference platform on a specialized WP Engine hosting configuration optimized for scale, including a custom cache-key cookie to serve personalized content while maintaining full-page caching, an email loop for session reminders and updates, and an ultra-lite login system using magic links for frictionless attendee authentication.',
       tags: ['React', 'WordPress', 'PHP'],
+      image: '/brands/WP%20Engine/De-code/Decode-final-2021-thumbnail.png',
     },
     {
       title: 'Flywheel',
       description: 'Led CRO and frontend modernization for Flywheel, WP Engine\'s managed WordPress hosting brand for designers and agencies. Migrated landing page infrastructure from hardcoded jQuery templates to React components, enabling marketing teams to iterate on layout and copy without developer involvement. Redesigned the pricing structure and buyer journey to improve plan clarity and purchase conversion.',
       tags: ['WordPress', 'React', 'JavaScript', 'CRO', 'PHP'],
       href: 'https://getflywheel.com',
+      image: '/brands/WP%20Engine/Flywheel/flywheel-homepage.png',
+    },
+    {
+      title: 'Velocitize',
+      description: 'Built Velocitize from the ground up, WP Engine\'s digital marketing publication.',
+      tags: ['React', 'WordPress', 'PHP', 'Gutenberg Blocks'],
+      href: 'https://velocitize.com',
+      image: '/brands/WP%20Engine/Velocitize/velocitize-homepage.png',
+    },
+  ];
+
+  const technicalDemos = [
+    {
+      title: 'FastSpring Pricing & Checkout Demo',
+      description: 'A working demo of the pricing and checkout patterns I built for enterprise SaaS clients. Features API-driven localized pricing that adapts currency and amounts to the visitor\'s country, a popup checkout flow, and a split-view embedded checkout where users select plans before purchasing. Includes a live webhook event log showing real-time FastSpring events — orders, subscriptions, refunds — persisted via Prisma and streamed to the UI. Built with Next.js, TypeScript, Tailwind CSS, and Prisma Postgres.',
+      tags: ['Next.js', 'TypeScript', 'Prisma', 'Tailwind CSS', 'REST API', 'Localized Pricing', 'Webhooks'],
+      href: 'https://fastspring.christophergarza.dev',
+      preview: <FastSpringPreview />,
+    },
+    {
+      title: 'Partner Directory Demo',
+      description: 'A generalized, open-source version of the partner directory and marketplace infrastructure I built for enterprise clients. Features multi-select filtering by region and category, relevance scoring with paid placement support, URL-synced filter state for shareable links, and a skeleton loading state. Built with Vue 3 and vanilla CSS — no build step, no dependencies.',
+      tags: ['Vue.js', 'JavaScript', 'CSS', 'Open Source'],
+      href: process.env.NODE_ENV === 'development'
+        ? 'http://localhost:3001'
+        : 'https://partners.christophergarza.dev',
+      preview: <DirectoryPreview />,
     },
   ];
 
@@ -259,6 +284,8 @@ export default function Home() {
           narrative={wpeNarrative}
           projects={wpeProjects}
         />
+
+        <TechnicalDemos demos={technicalDemos} />
 
         <OpenSourceProjects projects={githubProjects} />
 
