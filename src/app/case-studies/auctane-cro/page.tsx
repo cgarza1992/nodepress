@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
 
@@ -17,6 +18,7 @@ type Test = {
   results: string;
   tags: string[];
   highlight?: boolean;
+  images?: string[];
 };
 
 const homepageTests: Test[] = [
@@ -26,6 +28,7 @@ const homepageTests: Test[] = [
     hypothesis: 'Keeping the original CTA and main image while swapping in new copy and callouts would improve conversion over the prior redesign, which had shown low engagement on certain sections.',
     results: 'Flat overall. ICP slightly worse (-4%, not stat sig). Scroll depth dropped significantly: 8% fewer users scrolled past the header. Confirmed copy changes alone were not the lever. Led to the decision to test layout and content length directly.',
     tags: ['Homepage', 'Copy'],
+    images: ['/case-studies/auctane-cro/page-13.png'],
   },
   {
     name: 'Multi-Headline Test',
@@ -34,6 +37,7 @@ const homepageTests: Test[] = [
     results: '"Big Shipping Power. Small Shipping Costs." showed +5.4% overall trial lift with +9.3% ICP, the strongest individual result across all homepage copy tests. The aspirational "sensational" variant was flat. "Shipping Power" became the established control for subsequent redesign tests.',
     tags: ['Homepage', 'Copy', 'A/B'],
     highlight: true,
+    images: ['/case-studies/auctane-cro/page-16.png'],
   },
   {
     name: 'RD4: Shortened Content',
@@ -42,6 +46,7 @@ const homepageTests: Test[] = [
     results: '+2.8% all trial conversions, non-ICP +3.7%. ICP marginally worse (-0.85%). Channel breakdown revealed more signal: Campaigns +4%, Organic +14% ICP. Direct, Paid, and Referral traffic performed worse (-3%, -2%, -6%). Established channel-level segmentation as a required lens for all future tests.',
     tags: ['Homepage', 'Redesign', 'Segmentation'],
     highlight: true,
+    images: ['/case-studies/auctane-cro/page-11.png', '/case-studies/auctane-cro/page-07.png'],
   },
   {
     name: 'App UI Background Test',
@@ -50,6 +55,7 @@ const homepageTests: Test[] = [
     results: 'Flat overall (-1% combined). ICP trials up +12%, non-ICP down -5%. The design worked for enterprise buyers who valued software evidence; smaller businesses needed social proof and simplicity instead. Hardened the ICP/non-ICP segmentation as a durable testing framework.',
     tags: ['Homepage', 'UI', 'ICP'],
     highlight: true,
+    images: ['/case-studies/auctane-cro/page-04.png'],
   },
   {
     name: 'RD4 V2: UI Adjustment',
@@ -57,6 +63,7 @@ const homepageTests: Test[] = [
     hypothesis: '"Start Shipping Now" had performed well in control. Pairing it with improved visual contrast and the "Shipping Power" copy from the multi-headline test would drive overall lift.',
     results: '+4% trials overall (ICP +2%, non-ICP +5%). Direct traffic bucked the trend: -8.7% overall, ICP -10%, non-ICP -6%. Identified direct as a distinct audience requiring its own dedicated LP rather than further global optimizations.',
     tags: ['Homepage', 'CTA', 'UI'],
+    images: ['/case-studies/auctane-cro/page-05.png'],
   },
   {
     name: 'ICP-Focused LP: Direct Traffic Only',
@@ -64,6 +71,7 @@ const homepageTests: Test[] = [
     hypothesis: 'Given consistent direct-traffic underperformance across prior redesign tests, tailored messaging for enterprise/direct audiences would recover that channel\'s conversion rate.',
     results: '+6% ICP leads through mid-December. Results flattened during holiday weeks (12/22 – 1/2); organic demand dropped and distorted the signal. Follow-up test in progress to re-run with clean non-holiday traffic. Most promising channel-specific test to date.',
     tags: ['Landing Page', 'ICP', 'Direct'],
+    images: ['/case-studies/auctane-cro/page-02.png', '/case-studies/auctane-cro/page-03.png'],
   },
 ];
 
@@ -74,6 +82,7 @@ const trialTests: Test[] = [
     hypothesis: 'Prior trial page tests adding UI elements and copy produced little or negative lift. Stripping the page to a single-column form would reduce friction.',
     results: '-9.3% overall. ICP marginally better (+1.4%). Non-ICP significantly worse (-12.6%). Removing surrounding context (value props, testimonials) eliminated the reassurance smaller businesses needed before committing to a trial. The form alone was not enough.',
     tags: ['Trial Page', 'Form', 'Layout'],
+    images: ['/case-studies/auctane-cro/page-15.png'],
   },
   {
     name: 'Shipment Volume Reorder',
@@ -82,6 +91,7 @@ const trialTests: Test[] = [
     results: 'ICP leads +14%, non-ICP -24% (stat sig loss, stopped early). The clearest example of the ICP/non-ICP tradeoff in the test program: aggressively optimizing for enterprise qualification created friction for the majority of trial visitors. Requires a conditional or segmented form experience rather than a single field change.',
     tags: ['Trial Page', 'Form', 'ICP'],
     highlight: true,
+    images: ['/case-studies/auctane-cro/page-01.png'],
   },
 ];
 
@@ -93,6 +103,7 @@ const stampsTests: Test[] = [
     results: '+6.6% accounts created, +8% registration views, +5% Step 1 profile completions. The only segment that did not improve was referral account creation. Design and copy elements were shipped directly to production and are forming the foundation for all subsequent Stamps.com page redesigns.',
     tags: ['Homepage', 'Redesign', 'Registration'],
     highlight: true,
+    images: ['/case-studies/auctane-cro/page-08.png'],
   },
   {
     name: 'Homepage Redesign, Part 2',
@@ -100,31 +111,52 @@ const stampsTests: Test[] = [
     hypothesis: 'Promoting additional highly-engaged elements higher on the page would compound the gains from Part 1.',
     results: 'Consistent improvements across all funnel metrics: accounts created 0.80% → 0.81%, WebReg visits 6.21% → 6.64%, Step 1 completions 1.92% → 1.98%. Referral account creation slightly regressed (0.97% → 0.93%). Demonstrated that incremental iteration on an already-winning design continues to compound.',
     tags: ['Homepage', 'Funnel', 'Iteration'],
+    images: ['/case-studies/auctane-cro/page-09.png'],
   },
 ];
 
 function TestCard({ test }: { test: Test }) {
+  const hasImages = test.images && test.images.length > 0;
   return (
-    <div className={`rounded-xl border p-6 ${test.highlight ? 'border-blue-500/40 bg-white dark:bg-slate-800/60' : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/30'}`}>
-      <div className="flex items-start justify-between gap-4 mb-4">
-        <div>
-          <h3 className="text-base font-semibold text-slate-900 dark:text-white">{test.name}</h3>
-          <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">{test.date}</p>
-        </div>
-        <div className="flex flex-wrap gap-1.5 justify-end shrink-0">
-          {test.tags.map(tag => (
-            <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">{tag}</span>
+    <div className={`rounded-xl border overflow-hidden ${test.highlight ? 'border-blue-500/40 bg-white dark:bg-slate-800/60' : 'border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/30'}`}>
+      {hasImages && (
+        <div className={`grid ${test.images!.length > 1 ? 'grid-cols-2' : 'grid-cols-1'} divide-x divide-slate-100 dark:divide-slate-700`}>
+          {test.images!.map((src) => (
+            <div key={src} className="overflow-hidden bg-slate-50 dark:bg-slate-900">
+              <Image
+                src={src}
+                alt={test.name}
+                width={0}
+                height={0}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
+                style={{ width: '100%', height: 'auto', display: 'block' }}
+              />
+            </div>
           ))}
         </div>
-      </div>
-      <div className="grid md:grid-cols-2 gap-6">
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">Hypothesis</p>
-          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{test.hypothesis}</p>
+      )}
+      <div className="p-6">
+        <div className="flex items-start justify-between gap-4 mb-4">
+          <div>
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white">{test.name}</h3>
+            <p className="text-xs text-slate-400 dark:text-slate-500 mt-0.5">{test.date}</p>
+          </div>
+          <div className="flex flex-wrap gap-1.5 justify-end shrink-0">
+            {test.tags.map(tag => (
+              <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400">{tag}</span>
+            ))}
+          </div>
         </div>
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">Results & Learning</p>
-          <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{test.results}</p>
+        <div className="grid md:grid-cols-2 gap-6">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">Hypothesis</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{test.hypothesis}</p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-2">Results & Learning</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{test.results}</p>
+          </div>
         </div>
       </div>
     </div>
