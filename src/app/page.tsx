@@ -87,6 +87,7 @@ export default function Home() {
       description: 'Implemented pricing pages across the Starter, Standard, and Premium plans — plan selectors, feature comparison tables, and A/B tested CTA copy. Led Auctane\'s migration to Segment to personalize plan recommendations based on user profile.',
       tags: ['React', 'TypeScript', 'Segment', 'Salesforce', 'Tray.io', 'HubSpot', 'A/B Testing'],
       href: 'https://www.shipstation.com/pricing/',
+      caseStudy: '/case-studies/auctane-cro',
       image: '/brands/Auctane/Shipstation/shipstation-pricing-page.png',
     },
     {
@@ -101,6 +102,7 @@ export default function Home() {
       description: 'Built the ShipStation Free Trial signup flow, including shipment volume segmentation that powered ICP identification at point of entry. Integrated reCAPTCHA v3 and Blackbox.io as part of a cross-organizational anti-fraud initiative to reduce bot-driven trial starts without impacting legitimate signups. Connected the OAuth2/OIDC provisioning flow to handle account creation directly from ShipStation.com into the app. Routed all signups through Segment for persona-based onboarding targeting.',
       tags: ['React', 'TypeScript', 'Segment', 'Tray.io', 'HubSpot', 'OAuth2', 'OIDC', 'reCAPTCHA', 'Blackbox.io'],
       href: 'https://www.shipstation.com/start-a-free-trial/',
+      caseStudy: '/case-studies/auctane-cro',
       image: '/brands/Auctane/Shipstation/shipstation-trial-signup-page.png',
     },
     {
@@ -128,6 +130,7 @@ export default function Home() {
       description: 'Contributed to the Stamps.com site redesign using the shared Auctane component library, implementing updated pages for Auctane\'s postage and shipping brand serving small businesses and home offices. A/B tested signup and account creation flows — contributing to a +6.6% lift in accounts created.',
       tags: ['React', 'TypeScript', 'A/B Testing', 'Segment', 'Component Library'],
       href: 'https://www.stamps.com',
+      caseStudy: '/case-studies/auctane-cro',
       image: '/brands/Auctane/Stamps/stamps-homepage.png',
     },
     {
@@ -186,6 +189,7 @@ export default function Home() {
       description: 'Built the purchase funnel across WP Engine\'s hosting plans, bridging two separate systems: the marketing site where users selected plans, billing cycles, and add-ons through a Redux-driven interface with API-driven localized pricing in USD, EUR, AUD, and CAD, and the product portal where provisioning took place after purchase. Managed the state handoff between them so customer selections carried through to account creation without loss. Wired into Salesforce CRM pipelines. A/B tested plan positioning using Optimizely, contributing to 185% purchase growth in the eCommerce tier — WP Engine\'s dedicated platform for high-traffic online stores and enterprise-scale storefronts handling millions of visitors per month.',
       tags: ['React', 'Redux', 'PHP', 'Salesforce', 'Optimizely', 'Localized Pricing', 'REST API'],
       href: 'https://wpengine.com/plans/',
+      caseStudy: '/case-studies/wpe-plans',
       image: '/brands/WP%20Engine/WP%20Engine/wpengine-plans-page.png',
     },
     {
