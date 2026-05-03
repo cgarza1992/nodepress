@@ -8,6 +8,7 @@ interface WorkHighlightCardProps {
   description: string;
   tags: string[];
   href?: string;
+  caseStudy?: string;
   image?: string;
   video?: string;
   preview?: ReactNode;
@@ -15,7 +16,7 @@ interface WorkHighlightCardProps {
 
 const CHAR_LIMIT = 180;
 
-export function WorkHighlightCard({ title, description, tags, href, image, video, preview }: WorkHighlightCardProps) {
+export function WorkHighlightCard({ title, description, tags, href, caseStudy, image, video, preview }: WorkHighlightCardProps) {
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -74,16 +75,26 @@ export function WorkHighlightCard({ title, description, tags, href, image, video
       )}
       <div className="flex items-start justify-between gap-4 px-6 pt-2">
         <h4 className="text-slate-900 dark:text-white font-semibold text-base leading-snug">{title}</h4>
-        {href && (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-xs text-blue-600 dark:text-blue-400 whitespace-nowrap shrink-0 hover:text-cyan-500 transition-colors cursor-pointer"
-          >
-            View Live →
-          </a>
-        )}
+        <div className="flex items-center gap-3 shrink-0">
+          {caseStudy && (
+            <a
+              href={caseStudy}
+              className="text-xs text-blue-600 dark:text-blue-400 whitespace-nowrap hover:text-cyan-500 transition-colors cursor-pointer font-medium"
+            >
+              Case Study →
+            </a>
+          )}
+          {href && (
+            <a
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap hover:text-blue-500 transition-colors cursor-pointer"
+            >
+              View Live →
+            </a>
+          )}
+        </div>
       </div>
       <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed px-6">{displayText}</p>
       {isLong && (
