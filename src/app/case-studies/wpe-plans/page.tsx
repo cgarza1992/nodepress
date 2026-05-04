@@ -18,7 +18,7 @@ const iterations = [
     year: '2016',
     label: 'Inherited from Agency',
     src: '/case-studies/wpe-plans/2016-plan-tiles.png',
-    description: 'The original plan tiles when I joined as an intern. Inherited from an agency using the Genesis theme — static, no multicurrency, no localization.',
+    description: 'The original plan tiles when I joined as an intern. Inherited from an agency using the Genesis theme: static, no multicurrency, no localization.',
     href: 'https://web.archive.org/web/20160708082158/https://wpengine.com/plans/',
   },
   {
@@ -32,7 +32,7 @@ const iterations = [
     year: '2021',
     label: 'Tabbed Plan Slider',
     src: '/case-studies/wpe-plans/2021-plan-tiles-tabbed.png',
-    description: 'A tabbed slider letting users navigate across product types and plan sizes. Added multicurrency and geolocated pricing via the in-house billing API. The tabs solved product navigation but hid plans behind clicks — most users never saw what was behind each tab.',
+    description: 'A tabbed slider letting users navigate across product types and plan sizes. Added multicurrency and geolocated pricing via the in-house billing API. The tabs solved product navigation but hid plans behind clicks; most users never saw what was behind each tab.',
     href: 'https://web.archive.org/web/20210502003904/https://wpengine.com/plans/',
   },
   {
@@ -52,18 +52,18 @@ const iterations = [
     year: '2022',
     label: 'Localized Pricing (GBP)',
     src: '/case-studies/wpe-plans/2022-plans-tiles-gbp-state.png',
-    description: 'Geolocated pricing rendered in the visitor\'s local currency — GBP, EUR, AUD, CAD — powered by the billing API. Prices updated without a page reload based on detected region.',
+    description: 'Geolocated pricing rendered in the visitor\'s local currency (GBP, EUR, AUD, CAD), powered by the billing API. Prices updated without a page reload based on detected region.',
   },
   {
     year: '2023+',
-    label: 'Current — React + Redux',
+    label: 'Current: React + Redux',
     images: [
       { src: '/brands/WP%20Engine/WP%20Engine/short-current-wpengine-plans-page.png', caption: 'Standard Plans' },
       { src: '/brands/WP%20Engine/WP%20Engine/short-current-wpengine-ecommerce-plans-page.png', caption: 'eCommerce Plans' },
-      { src: '/brands/WP%20Engine/WP%20Engine/long-current-wpengine-plans-page.png', caption: 'Standard Plans — full page' },
-      { src: '/brands/WP%20Engine/WP%20Engine/long-current-wpengine-ecommerce-plans-page.png', caption: 'eCommerce Plans — full page' },
+      { src: '/brands/WP%20Engine/WP%20Engine/long-current-wpengine-plans-page.png', caption: 'Standard Plans (full page)' },
+      { src: '/brands/WP%20Engine/WP%20Engine/long-current-wpengine-ecommerce-plans-page.png', caption: 'eCommerce Plans (full page)' },
     ],
-    description: 'The final form of the plans page, built in React with Redux for global state management. The eCommerce swimlane became its own full-page experience — purpose-built for high-traffic storefronts, with distinct plan sizes, messaging, and a sales-assisted path for enterprise tiers. That separation is what drove +185% eCommerce plan purchases and +289% sales-assisted bookings. Much of the reactive state has since been simplified as the page stabilized, but the swimlane structure and UX patterns established here remain in place today.',
+    description: 'The final form of the plans page, built in React with Redux for global state management. The eCommerce swimlane became its own full-page experience, purpose-built for high-traffic storefronts with distinct plan sizes, messaging, and a sales-assisted path for enterprise tiers. That separation is what drove +185% eCommerce plan purchases and +289% sales-assisted bookings. Much of the reactive state has since been simplified as the page stabilized, but the swimlane structure and UX patterns established here remain in place today.',
   },
 ];
 
@@ -89,7 +89,7 @@ export default function WPEPlansPage() {
           WP Engine Hosting Plans
         </h1>
         <p className="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed">
-          Six years of iterating on WP Engine&apos;s core purchase funnel — from an agency-built static page to a React-powered, geolocated, A/B-tested swimlane experience that drove the company&apos;s most significant conversion lift.
+          Six years of iterating on WP Engine&apos;s core purchase funnel, from an agency-built static page to a React-powered, geolocated, A/B-tested swimlane experience that drove the company&apos;s most significant conversion lift.
         </p>
       </header>
 
@@ -114,7 +114,7 @@ export default function WPEPlansPage() {
           <div>
             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">The Problem</h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              The plans page offered solution-based packages with 5 unique plan sizes across 4 different tabs. Most plans were hidden behind tab interactions, making it unclear what options existed. WP Engine wasn&apos;t effectively showcasing the value of each solution, causing confusion and decision paralysis — particularly for the new eCommerce tier.
+              The plans page offered solution-based packages with 5 unique plan sizes across 4 different tabs. Most plans were hidden behind tab interactions, making it unclear what options existed. WP Engine wasn&apos;t effectively showcasing the value of each solution, causing confusion and decision paralysis, particularly for the new eCommerce tier.
             </p>
           </div>
           <div>
