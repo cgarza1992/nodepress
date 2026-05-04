@@ -23,14 +23,6 @@ type Test = {
 
 const homepageTests: Test[] = [
   {
-    name: 'RD3 Follow-Up: Header Copy',
-    date: 'July 15 – Aug 1, 2025 · 17 days · 156K visitors',
-    hypothesis: 'Keeping the original CTA and main image while swapping in new copy and callouts would improve conversion over the prior redesign, which had shown low engagement on certain sections.',
-    results: 'Flat overall. ICP slightly worse (-4%, not stat sig). Scroll depth dropped significantly: 8% fewer users scrolled past the header. Confirmed copy changes alone were not the lever. Led to the decision to test layout and content length directly.',
-    tags: ['Homepage', 'Copy'],
-    images: ['/case-studies/auctane-cro/page-13.png'],
-  },
-  {
     name: 'Multi-Headline Test',
     date: 'Aug 19 – 28, 2025 · 9 days · 108K visitors',
     hypothesis: 'Testing three headline variants ("Goodbye Busywork, Hello Business Growth," "Big Shipping Power. Small Shipping Costs.," and "Take your shipping from so-so to sensational") to identify which messaging frame converts best.',
@@ -65,25 +57,9 @@ const homepageTests: Test[] = [
     tags: ['Homepage', 'CTA', 'UI'],
     images: ['/case-studies/auctane-cro/page-05.png'],
   },
-  {
-    name: 'ICP-Focused LP: Direct Traffic Only',
-    date: 'Dec 3, 2025 – Jan 6, 2026 · 34 days',
-    hypothesis: 'Given consistent direct-traffic underperformance across prior redesign tests, tailored messaging for enterprise/direct audiences would recover that channel\'s conversion rate.',
-    results: '+6% ICP leads through mid-December. Results flattened during holiday weeks (12/22 – 1/2); organic demand dropped and distorted the signal. Follow-up test in progress to re-run with clean non-holiday traffic. Most promising channel-specific test to date.',
-    tags: ['Landing Page', 'ICP', 'Direct'],
-    images: ['/case-studies/auctane-cro/page-02.png', '/case-studies/auctane-cro/page-03.png'],
-  },
 ];
 
 const trialTests: Test[] = [
-  {
-    name: 'Form-Only Layout',
-    date: 'Aug 19 – 25, 2025 · 6 days',
-    hypothesis: 'Prior trial page tests adding UI elements and copy produced little or negative lift. Stripping the page to a single-column form would reduce friction.',
-    results: '-9.3% overall. ICP marginally better (+1.4%). Non-ICP significantly worse (-12.6%). Removing surrounding context (value props, testimonials) eliminated the reassurance smaller businesses needed before committing to a trial. The form alone was not enough.',
-    tags: ['Trial Page', 'Form', 'Layout'],
-    images: ['/case-studies/auctane-cro/page-15.png'],
-  },
   {
     name: 'Shipment Volume Reorder',
     date: 'Dec 11 – 17, 2025 · 6 days',
