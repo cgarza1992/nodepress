@@ -183,7 +183,7 @@ export default function AuctaneCROPage() {
           <div>
             <h2 className="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">How Tests Were Run</h2>
             <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              All tests ran through Optimizely with traffic segmented by ICP (100+ shipments/month) and non-ICP (&lt;100 shipments/month), and further broken out by channel: Direct, Organic, Campaign, Referral, and Paid. That granularity exposed patterns that aggregate results would have buried.
+              All tests ran through Optimizely with traffic segmented by ICP (high-volume enterprise shippers) and non-ICP (SMB users), and further broken out by channel: Direct, Organic, Campaign, Referral, and Paid. That granularity exposed patterns that aggregate results would have buried.
             </p>
           </div>
           <div>
