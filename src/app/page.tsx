@@ -297,7 +297,7 @@ export default function Home() {
 
         <Hero
           title={<>Senior Software Engineer<br /><GradientText>Frontend</GradientText></>}
-          subtitle="Engineer at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          subtitle="I work at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
           ctaSecondary={{ text: "View GitHub", href: "https://github.com/cgarza1992" }}
