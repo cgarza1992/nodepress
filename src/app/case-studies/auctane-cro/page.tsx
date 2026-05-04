@@ -64,7 +64,7 @@ const trialTests: Test[] = [
     name: 'Shipment Volume Reorder',
     date: 'Dec 11 – 17, 2025 · 6 days',
     hypothesis: 'Surfacing high-volume shipment options (7,500+) at the top of the volume selector would better serve ICP users who self-identify there.',
-    results: 'ICP leads +14%, non-ICP -24% (stat sig loss, stopped early). The clearest example of the ICP/non-ICP tradeoff in the test program: aggressively optimizing for enterprise qualification created friction for the majority of trial visitors. Requires a conditional or segmented form experience rather than a single field change.',
+    results: 'Stopped after 6 days when non-ICP loss hit statistical significance at -24%. ICP leads were up +14%, but allowing the test to keep running would have burned real volume. The data was unambiguous: a single field change can\'t serve both audiences. The right solution is a conditional form experience that qualifies enterprise users without adding friction for everyone else — a finding that reshaped how subsequent trial page work was scoped.',
     tags: ['Trial Page', 'Form', 'ICP'],
     highlight: true,
     images: ['/case-studies/auctane-cro/page-01.png'],
