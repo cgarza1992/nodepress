@@ -25,3 +25,4 @@ export { PlanBadge } from './atoms/PlanBadge';
 // Shared
 export { SectionHeader } from './SectionHeader';
 export { ProjectCard } from './ProjectCard';
+export { CopyButton } from './CopyButton';
