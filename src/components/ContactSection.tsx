@@ -1,7 +1,3 @@
-'use client';
-
-import { CopyButton } from './CopyButton';
-
 interface ContactSectionProps {
   email: string;
   message: string;
@@ -16,20 +12,11 @@ export function ContactSection({ email, message, linkedin }: ContactSectionProps
           Get In Touch
         </p>
         <h2 className="text-4xl font-bold mb-6 text-slate-900 dark:text-white">
-          Let&apos;s Connect
+          Let's Connect
         </h2>
         <p className="text-lg text-slate-700 dark:text-slate-300 mb-8">
           {message}
         </p>
-
-        {/* Email address display with copy button */}
-        <div className="inline-flex items-center gap-2 mb-8 px-4 py-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-          <span className="text-sm font-mono text-slate-600 dark:text-slate-300 select-all">
-            {email}
-          </span>
-          <CopyButton textToCopy={email} ariaLabel="Copy email address" />
-        </div>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href={`mailto:${email}`}
