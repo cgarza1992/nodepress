@@ -48,7 +48,7 @@ export function buildMetadata({
 
   return {
     metadataBase: new URL(siteConfig.domain),
-    title: `${title} | Christopher Garza`,
+    title: `${title} | ${siteConfig.name}`,
     description,
     alternates: {
       canonical: url,
