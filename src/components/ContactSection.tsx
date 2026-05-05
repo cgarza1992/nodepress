@@ -1,6 +1,6 @@
 'use client';
 
-import { CopyButton } from './CopyButton';
+import { CopyButton } from '@/components/CopyButton';
 
 interface ContactSectionProps {
   email: string;
