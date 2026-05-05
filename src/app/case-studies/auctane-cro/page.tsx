@@ -1,6 +1,38 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
+import { buildMetadata, siteConfig } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Auctane CRO Program Case Study',
+  description: 'A systematic A/B testing program across ShipStation and Stamps.com driving ICP trial conversion lifts up to +14% — and the insight that enterprise and SMB users require fundamentally different experiences.',
+  path: '/case-studies/auctane-cro',
+  type: 'article',
+  publishedTime: '2026-05-03',
+  modifiedTime: '2026-05-04',
+});
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Auctane CRO Program — Systematic A/B Testing Across ShipStation and Stamps.com',
+  datePublished: '2026-05-03',
+  dateModified: '2026-05-04',
+  author: {
+    '@type': 'Person',
+    name: siteConfig.author.name,
+    url: siteConfig.domain,
+  },
+  publisher: {
+    '@type': 'Person',
+    name: siteConfig.author.name,
+  },
+  image: siteConfig.defaultOgImage,
+  mainEntityOfPage: `${siteConfig.domain}/case-studies/auctane-cro`,
+  description: 'A systematic A/B testing program across ShipStation and Stamps.com driving ICP trial conversion lifts up to +14% — and the insight that enterprise and SMB users require fundamentally different experiences.',
+};
 
 const topMetrics = [
   { value: '+14%', label: 'ICP Trial CVR, Organic Channel', brand: 'ShipStation' },
@@ -142,6 +174,7 @@ function TestCard({ test }: { test: Test }) {
 export default function AuctaneCROPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-white">
+      <JsonLd data={articleSchema} />
       <Navigation />
 
       <div className="max-w-5xl mx-auto px-6 pt-8">

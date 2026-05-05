@@ -1,6 +1,38 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Navigation } from '@/components/Navigation';
+import { buildMetadata, siteConfig } from '@/lib/seo';
+import { JsonLd } from '@/components/JsonLd';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'WP Engine Hosting Plans Case Study',
+  description: 'Six years iterating on WP Engine\'s core purchase funnel — from a static agency-built page to a React + Redux swimlane experience that drove 185% eCommerce plan growth and 289% sales-assisted bookings.',
+  path: '/case-studies/wpe-plans',
+  type: 'article',
+  publishedTime: '2026-05-03',
+  modifiedTime: '2026-05-04',
+});
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'WP Engine Hosting Plans — Six Years of Purchase Funnel Iteration',
+  datePublished: '2026-05-03',
+  dateModified: '2026-05-04',
+  author: {
+    '@type': 'Person',
+    name: siteConfig.author.name,
+    url: siteConfig.domain,
+  },
+  publisher: {
+    '@type': 'Person',
+    name: siteConfig.author.name,
+  },
+  image: siteConfig.defaultOgImage,
+  mainEntityOfPage: `${siteConfig.domain}/case-studies/wpe-plans`,
+  description: 'Six years iterating on WP Engine\'s core purchase funnel — from a static agency-built page to a React + Redux swimlane experience that drove 185% eCommerce plan growth and 289% sales-assisted bookings.',
+};
 
 const metrics = [
   { value: '+22%', label: 'Transactions' },
@@ -70,6 +102,7 @@ const iterations = [
 export default function WPEPlansPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-gradient-to-br dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-white">
+      <JsonLd data={articleSchema} />
       <Navigation />
 
       {/* Back nav */}
