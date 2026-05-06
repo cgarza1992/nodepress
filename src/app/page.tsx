@@ -32,7 +32,7 @@ export default function Home() {
     },
     {
       category: "Frameworks & Technologies",
-      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "Grunt/Gulp", "Node Package Manager (NPM) / Yarn", "Composer", "WP-CLI", "Prisma"],
+      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "Node Package Manager (NPM) / Yarn", "Composer", "WP-CLI", "Prisma"],
     },
     {
       category: "APIs & Integrations",
@@ -40,7 +40,7 @@ export default function Home() {
     },
     {
       category: "Testing & Quality",
-      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing (Playwright / GitHub Actions CI)", "JSHint / JSLint"],
+      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing (Playwright / GitHub Actions CI)"],
     },
     {
       category: "Practices",
@@ -303,8 +303,10 @@ export default function Home() {
         <Navigation />
 
         <Hero
-          title={<>Senior Software Engineer<br /><GradientText>Frontend</GradientText></>}
-          subtitle="I work at the seam of marketing and engineering, building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, data pipelines to component libraries. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 9+ years · Austin</>}
+          title="Christopher Garza"
+          subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          statusLine="Austin, TX · Remote-friendly · Available immediately, May 2026"
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
           ctaSecondary={{ text: "View GitHub", href: "https://github.com/cgarza1992" }}
