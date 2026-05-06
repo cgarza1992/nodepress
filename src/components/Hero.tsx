@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import NextImage from 'next/image';
 
 interface CTA {
   text: string;
@@ -51,9 +52,12 @@ export function Hero({ title, subtitle, image, ctaPrimary, ctaSecondary }: HeroP
         <div className="flex justify-center">
           <div className="relative">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-xl blur-2xl opacity-20"></div>
-            <img
+            <NextImage
               src={image}
-              alt="Christopher on motorcycle"
+              alt="Christopher Garza on his motorcycle"
+              width={320}
+              height={320}
+              priority
               className="relative rounded-xl shadow-2xl border-2 border-slate-200 dark:border-slate-700 w-full max-w-xs object-cover"
             />
           </div>

@@ -1,5 +1,5 @@
-'use client';
-
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 import {
   Navigation,
   Hero,
@@ -16,6 +16,13 @@ import { TechnicalDemos } from '@/components/organisms/TechnicalDemos';
 import { FastSpringPreview } from '@/components/molecules/FastSpringPreview';
 import { DirectoryPreview } from '@/components/molecules/DirectoryPreview';
 import { ComponentLibraryPreview } from '@/components/molecules/ComponentLibraryPreview';
+
+export const metadata: Metadata = buildMetadata({
+  title: 'Senior Software Engineer, Frontend',
+  description: 'Senior Software Engineer, Frontend at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products. React • TypeScript • Next.js • Node.js',
+  path: '/',
+  type: 'website',
+});
 
 export default function Home() {
   const skills = [

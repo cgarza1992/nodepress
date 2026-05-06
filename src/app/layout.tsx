@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { buildMetadata, siteConfig } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +15,35 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Christopher Garza | Senior Software Engineer, Frontend",
-  description: "Senior Software Engineer, Frontend at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products. React • TypeScript • Next.js • Node.js",
+export const metadata: Metadata = buildMetadata({
+  title: "Senior Software Engineer, Frontend",
+  description: siteConfig.description,
+  path: "/",
+  type: "website",
+});
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.author.name,
+  url: siteConfig.domain,
+  image: siteConfig.author.image,
+  jobTitle: siteConfig.jobTitle,
+  description:
+    "Senior Software Engineer, Frontend at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products.",
+  knowsAbout: [
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Vue.js",
+    "Node.js",
+    "Conversion Rate Optimization",
+    "A/B Testing",
+    "Component Architecture",
+    "Analytics Infrastructure",
+    "Segment",
+  ],
+  sameAs: [...siteConfig.author.sameAs],
 };
 
 export default function RootLayout({
@@ -29,6 +57,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
+        <JsonLd data={personSchema} />
         <Providers>{children}</Providers>
       </body>
     </html>

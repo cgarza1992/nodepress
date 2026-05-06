@@ -15,6 +15,7 @@ export const siteConfig = {
     ],
   },
   locale: "en_US",
+  // TODO: replace with designed 1200x630 OG image (current file is a placeholder under 30KB)
   defaultOgImage: "https://www.christophergarza.dev/og/default.png",
 } as const;
 

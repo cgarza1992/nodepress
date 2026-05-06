@@ -1,3 +1,5 @@
+import NextImage from 'next/image';
+
 interface AboutSectionProps {
   profileImage: string;
   title: string;
@@ -33,10 +35,12 @@ export function AboutSection({ profileImage, title, bio, highlights }: AboutSect
         </div>
 
         <div className="flex justify-center md:justify-end">
-          <img
+          <NextImage
             src={profileImage}
-            alt="Profile"
-            className="w-64 h-64 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl"
+            alt="Christopher Garza profile photo"
+            width={256}
+            height={256}
+            className="w-64 h-64 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-xl object-cover"
           />
         </div>
       </div>
