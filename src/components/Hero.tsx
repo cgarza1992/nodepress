@@ -7,27 +7,32 @@ interface CTA {
 }
 
 interface HeroProps {
+  eyebrow: ReactNode;
   title: ReactNode;
   subtitle: string;
+  statusLine: string;
   image: string;
   ctaPrimary: CTA;
   ctaSecondary: CTA;
 }
 
-export function Hero({ title, subtitle, image, ctaPrimary, ctaSecondary }: HeroProps) {
+export function Hero({ eyebrow, title, subtitle, statusLine, image, ctaPrimary, ctaSecondary }: HeroProps) {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20 md:py-32">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="space-y-6">
           <div>
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 dark:text-blue-400 mb-4">
-              Christopher Garza
+              {eyebrow}
             </p>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
               {title}
             </h1>
             <p className="text-xl text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">
               {subtitle}
+            </p>
+            <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
+              {statusLine}
             </p>
           </div>
 
