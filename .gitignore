@@ -61,4 +61,4 @@ storybook-static
 
 # misc
 .DS_Store
-*.pem
+*.pem.claude/AUDIT_*.md
