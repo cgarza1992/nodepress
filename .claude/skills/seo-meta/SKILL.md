@@ -45,7 +45,7 @@ export const metadata = buildMetadata({
 });
 ```
 
-The helper handles: title suffix (` | Christopher Garza`), absolute URLs, canonical, og:* tags, locale, and `metadataBase`. It does not emit any `twitter:*` tags — those are intentionally absent and must stay that way.
+The helper handles: title suffix (` | Christopher Garza`), absolute URLs, canonical, og:* tags, locale, and `metadataBase`. It does not set `twitter` fields explicitly — see the Twitter tags policy below for why.
 
 ## Required tag shape on every page
 
@@ -99,6 +99,18 @@ LinkedIn matters most for this site — recruiters share links there constantly,
 - **One default image, optional per-route overrides** — `/og/default.png` for everything; case studies may add `/og/{slug}.png`
 
 If a per-route OG image is referenced but the file doesn't exist in `/public/og/`, that's a block.
+
+## Twitter tags policy
+
+Next.js 16 automatically derives `twitter:*` tags from the `openGraph` block in a Metadata object. These framework-emitted tags are acceptable — their content mirrors the OG block, which is the whole point of having OG metadata in the first place. Suppressing them is not possible without dropping the `openGraph` block entirely (verified empirically: setting `twitter: null` or casting individual fields to `null` does not prevent emission; Next.js 16 `postProcessMetadata()` and `resolveTwitter()` unconditionally backfill twitter title/description/image from openGraph).
+
+What's forbidden is **manually adding** `twitter:*` fields. Specifically:
+
+- Setting `twitter.card`, `twitter.creator`, `twitter.site`, or any `twitter` property in a Metadata export
+- Hardcoding `<meta name="twitter:*">` tags in JSX
+- Overriding the framework's auto-derived twitter content with platform-specific copy
+
+Manual twitter metadata implies platform-specific tuning that the site doesn't need. Let the framework do it; don't fight it.
 
 ## Structured data (JSON-LD)
 
@@ -198,7 +210,7 @@ The Storybook (`storybook.christophergarza.dev`) and demo subdomains (`fastsprin
 - Any new public page is missing a unique `<title>` or `meta description`
 - Any page assembles metadata by hand instead of calling `buildMetadata`
 - The domain, site name, or socials are hardcoded outside `src/lib/seo.ts`
-- Any `twitter:*` meta tag is introduced in the diff
+- Any manually-set `twitter:*` field is introduced (Metadata.twitter export, hardcoded meta tag, etc.) — framework-emitted twitter tags from openGraph are fine
 - `og:image` is missing, points to a non-existent file in `/public/og/`, or uses HTTP
 - `og:image` dimensions don't match `og:image:width` / `og:image:height`
 - Canonical is missing, points to dev/staging, includes query params, or omits `www.`
