@@ -25,7 +25,7 @@ export function Hero({ eyebrow, title, subtitle, statusLine, image, ctaPrimary, 
             <p className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 dark:text-blue-400 mb-4">
               {eyebrow}
             </p>
-            <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
+            <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-slate-900 dark:text-white">
               {title}
             </h1>
             <p className="text-xl text-slate-700 dark:text-slate-300 max-w-2xl leading-relaxed">

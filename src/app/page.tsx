@@ -305,7 +305,7 @@ export default function Home() {
         <Hero
           eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 9+ years · Austin</>}
           title="Christopher Garza"
-          subtitle="Senior frontend engineer who ships features, owns systems, and measures outcomes. Nine years across React, TypeScript, Next.js, Vue, and full-stack adjacent work — building component libraries, pricing systems, A/B testing infrastructure, and analytics pipelines for enterprise SaaS at WP Engine and Auctane. Comfortable owning a feature end-to-end, leading a small team, or being the technical voice in cross-functional planning. The work shows up in the metrics, not just the repo."
+          subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           statusLine="Austin, TX · Remote-friendly · Available immediately, May 2026"
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
