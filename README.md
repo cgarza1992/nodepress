@@ -172,3 +172,4 @@ MIT
 ## Acknowledgments
 
 Built as a learning project to develop production-grade full-stack engineering skills, with inspiration from WordPress, Ghost, and modern headless CMS platforms.
+
