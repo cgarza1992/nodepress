@@ -2,6 +2,12 @@
 
 A self-hosted CMS built to replace WordPress's aging architecture. NodePress swaps MySQL for PostgreSQL with real relational integrity, eliminates the PHP-to-React block duplication problem, and removes the need for plugin middleware like ACF. Built with Next.js, Prisma, and TypeScript.
 
+## Status (May 2026)
+
+This repo currently serves two purposes. The deployed site at [christophergarza.dev](https://www.christophergarza.dev) is built from `src/app/`, the components in `src/components/`, and the SEO helpers in `src/lib/seo.ts`. The CMS layer (auth, Prisma user model, planned admin and WYSIWYG content editing) is being built in parallel and will eventually back the portfolio's content layer.
+
+When the CMS is feature-complete this repo will split into two: `christophergarza.dev` for the portfolio and `nodepress` for the CMS. For now, both live here.
+
 ## Why Not WordPress?
 
 - **No real relational database** - MySQL lacks proper foreign keys and cascading constraints. NodePress uses PostgreSQL with enforced relationships and UUID-based keys.
@@ -10,12 +16,12 @@ A self-hosted CMS built to replace WordPress's aging architecture. NodePress swa
 
 ## Tech Stack
 
-- **Framework:** Next.js 14 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Database:** PostgreSQL 16
 - **ORM:** Prisma 6
 - **Authentication:** NextAuth.js v4
-- **Styling:** Tailwind CSS 3
+- **Styling:** Tailwind CSS 4
 - **Containerization:** Docker + Docker Compose
 - **Password Hashing:** bcrypt
 
