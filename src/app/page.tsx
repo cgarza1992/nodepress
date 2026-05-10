@@ -295,7 +295,7 @@ export default function Home() {
     "Background in Advertising & Mass Communication, bridging the gap between technical and non-technical teams",
     "Grew and mentored the WP Engine web team from 2 to 14 people, building the first engineer onboarding program, leading peer mentoring, and navigating the team through org change",
     "Focused on translating complex business problems into clean, maintainable engineering solutions",
-    "Looking for senior frontend roles where the frontend is a revenue surface, not a thin layer over an API",
+    "Open to senior frontend roles, especially ones where the frontend connects to business outcomes: pricing, conversion, analytics",
   ];
 
   return (
