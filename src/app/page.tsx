@@ -28,23 +28,23 @@ export default function Home() {
   const skills = [
     {
       category: "Languages & Markup",
-      items: ["JavaScript", "TypeScript", "PHP", "Cascading Style Sheets (CSS)", "HyperText Markup Language 5 (HTML5)", "JavaScript XML (JSX)", "TypeScript XML (TSX)"],
+      items: ["JavaScript", "TypeScript", "PHP", "CSS", "HTML5", "JSX", "TSX"],
     },
     {
       category: "Frameworks & Technologies",
-      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "Node Package Manager (NPM) / Yarn", "Composer", "WP-CLI", "Prisma"],
+      items: ["React", "Vue.js", "Next.js", "Tailwind CSS", "Sass", "Webpack", "NPM / Yarn", "Composer", "WP-CLI", "Prisma", "Storybook"],
     },
     {
       category: "APIs & Integrations",
-      items: ["Representational State Transfer (REST) APIs", "HubSpot", "Salesforce", "Segment", "Google Accounts (OAuth2 / OIDC)", "Google Optimize", "Optimizely", "CircleCI", "GitHub Actions", "Git/GitHub", "Claude Artificial Intelligence (AI) / Model Context Protocol (MCP)"],
+      items: ["REST APIs", "HubSpot", "Salesforce", "Segment", "OAuth2 / OIDC", "Google Optimize", "Optimizely", "CircleCI", "GitHub Actions", "Git/GitHub", "Claude / MCP"],
     },
     {
       category: "Testing & Quality",
-      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing (Playwright / GitHub Actions CI)"],
+      items: ["Jest", "PHPUnit", "Codeception", "PHPSpec", "Visual Regression Testing", "Storybook"],
     },
     {
       category: "Practices",
-      items: ["A/B Testing", "Test-Driven Development (TDD)", "Object-Oriented Programming (OOP)", "Functional Programming", "Continuous Integration / Deployment (CI/CD)", "Performance Optimization"],
+      items: ["A/B Testing", "TDD", "OOP", "Functional Programming", "CI/CD", "Performance Optimization"],
     },
     {
       category: "Leadership & Collaboration",
