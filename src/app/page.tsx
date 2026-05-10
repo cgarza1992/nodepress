@@ -342,7 +342,7 @@ export default function Home() {
         <ContactSection
           email="christopher.pgarza@gmail.com"
           linkedin="https://www.linkedin.com/in/christopher-garza-dev/"
-          message="I am interviewing for senior to senior-staff frontend roles, growth-stage SaaS preferred. Austin or remote. Reply within 24 hours."
+          message="I am interviewing for senior frontend roles, growth-stage SaaS preferred. Austin or remote. Reply within 24 hours."
         />
 
         <Footer year={2026} name="Christopher Garza" />
