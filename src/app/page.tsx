@@ -295,7 +295,7 @@ export default function Home() {
     "Background in Advertising & Mass Communication, bridging the gap between technical and non-technical teams",
     "Grew and mentored the WP Engine web team from 2 to 14 people, building the first engineer onboarding program, leading peer mentoring, and navigating the team through org change",
     "Focused on translating complex business problems into clean, maintainable engineering solutions",
-    "Open to roles that challenge me to grow across the full stack and contribute to teams doing meaningful work",
+    "Looking for senior to senior-staff frontend roles where the frontend is a revenue surface, not a thin layer over an API",
   ];
 
   return (
@@ -305,7 +305,7 @@ export default function Home() {
         <Hero
           eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 9+ years · Austin</>}
           title="Christopher Garza"
-          subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. The work shows up in the metrics, not just the repo."
           statusLine="Austin, TX · Remote-friendly · Available immediately, May 2026"
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
@@ -335,7 +335,7 @@ export default function Home() {
         <AboutSection
           profileImage="https://avatars.githubusercontent.com/u/17697283?v=4"
           title="Christopher Garza"
-          bio="I started in Advertising & Mass Communication. Graduate coursework in JavaScript, PHP, and web development was my entry point into programming, but the courses hit a ceiling fast. My professors couldn't keep up with my questions, so the real learning happened on my own. That self-driven path led to nearly 7 years at WP Engine before moving to Auctane. The non-traditional background shaped how I work: I care about the business problem as much as the technical solution, I communicate clearly across teams, and I build things that are meant to last. When I'm not at a keyboard I'm in the garage, currently building out a custom 1985 BMW K100 or riding my café racer Bonneville T100 through the Texas hill country."
+          bio="I started in Advertising and Mass Communication. Graduate coursework in JavaScript, PHP, and web development was my entry point into programming, and the rest came from shipping production work, first as a WP Engine intern, then over six and a half years there, then at Auctane. The non-traditional path is why I care about the business problem as much as the technical solution. I learned to write code by trying to make a product convert better. When I am not at a keyboard I am in the garage, currently building out a custom 1985 BMW K100 or riding my cafe racer Bonneville T100 through the Texas hill country."
           highlights={aboutHighlights}
         />
 
