@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, siteConfig } from '@/lib/seo';
 import {
   Navigation,
   Hero,
@@ -340,7 +340,7 @@ export default function Home() {
         />
 
         <ContactSection
-          email="christopher.pgarza@gmail.com"
+          email={siteConfig.author.email}
           linkedin="https://www.linkedin.com/in/christopher-garza-dev/"
           message="I am interviewing for senior frontend roles, growth-stage SaaS preferred. Austin or remote. Reply within 24 hours."
         />
