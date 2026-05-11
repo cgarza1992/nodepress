@@ -112,7 +112,7 @@ export function CopyButton({ textToCopy, ariaLabel = 'Copy email address' }: Cop
         title={copied ? 'Copied!' : error ? 'Copy failed — try manually' : 'Copy email address'}
         className={[
           'inline-flex items-center justify-center',
-          'w-8 h-8 rounded-md',
+          'w-8 h-8 rounded-md cursor-pointer',
           'transition-all duration-200',
           'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2',
           'focus-visible:ring-blue-500 dark:focus-visible:ring-blue-400',
