@@ -18,7 +18,7 @@ type Story = StoryObj<typeof ContactSection>;
 
 export const Default: Story = {
   args: {
-    email: 'christopher.pgarza@gmail.com',
+    email: 'cpg@christophergarza.dev',
     linkedin: 'https://www.linkedin.com/in/christopher-garza-dev/',
     message: "Open to opportunities that challenge me to grow. Whether it's a new role, a project, or just want to connect — I'd love to hear from you.",
   },

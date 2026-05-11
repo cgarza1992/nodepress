@@ -28,6 +28,7 @@ const personSchema = {
   name: siteConfig.author.name,
   url: siteConfig.domain,
   image: siteConfig.author.image,
+  email: "cpg@christophergarza.dev",
   jobTitle: siteConfig.jobTitle,
   description:
     "Senior Software Engineer, Frontend at the seam between marketing and engineering. Building the technical systems behind pricing, conversion, and analytics for enterprise products.",
