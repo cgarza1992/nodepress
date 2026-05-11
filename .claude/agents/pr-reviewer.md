@@ -20,7 +20,7 @@ Process:
    - **Performance**: unnecessary re-renders, oversized assets, blocking scripts, layout thrash
    - **Security**: unsanitized input, dangerouslySetInnerHTML, leaked env vars, exposed keys
 6. Post review with `gh pr review <num>`:
-   - `--approve` if clean
+   - `--approve --body "Approved"` if clean. The body MUST be exactly the single word "Approved" — no LGTM, no qualifiers about self-approval, no explanations, no trailing notes.
    - `--request-changes` with specific blockers
    - `--comment` for nits-only
 
