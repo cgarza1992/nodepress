@@ -1,10 +1,11 @@
 # Portfolio Repo
 
 ## Stack
-- Framework: <Next.js 15 / Astro / Vite+React / etc>
+- Framework: Next.js 16 (App Router)
 - Language: TypeScript (strict)
-- Styling: <Tailwind / CSS modules / etc>
-- Content: <MDX / sanity / etc>
+- Database/ORM: Prisma
+- Styling: Tailwind
+- Content: Plain components for now; planned migration to database-backed content with WYSIWYG editing
 
 ## Conventions
 - Components in `src/components/`, one per file, PascalCase filenames
@@ -25,3 +26,10 @@
 - Dependency upgrades (separate PR)
 - Schema/content model changes
 - Anything touching `src/lib/analytics/` (manual review only)
+
+## PR and commit authorship
+
+- Never add AI attribution footers, generation notices, or co-author trailers to PR descriptions or commit messages.
+- Specifically forbidden: any variant of "Generated with Claude Code", the robot emoji footer, "Co-Authored-By: Claude", or similar attribution lines.
+- When invoking `gh pr create`, the `--body` value ends with the last substantive content (acceptance criteria, testing notes, file changes). No footer, no separator, no trailing attribution.
+- The Git author is whatever the local Git config specifies. Do not override or append to it.
