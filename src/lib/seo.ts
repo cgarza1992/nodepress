@@ -9,6 +9,7 @@ export const siteConfig = {
   author: {
     name: "Christopher Garza",
     image: "https://www.christophergarza.dev/profile_triumph_pic.jpg",
+    email: "cpg@christophergarza.dev",
     sameAs: [
       "https://github.com/cgarza1992",
       "https://www.linkedin.com/in/christopher-garza-dev/",
