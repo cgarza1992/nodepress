@@ -35,7 +35,7 @@ export function ContactSection({ email, message, linkedin }: ContactSectionProps
             href={`mailto:${email}`}
             className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-bold rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 text-center"
           >
-            Send Me an Email
+            Contact Me
           </a>
           <a
             href={linkedin}
