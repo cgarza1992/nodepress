@@ -117,6 +117,17 @@
     border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--sunk)}
   .demo-stage iframe{width:1280px;height:800px;border:0;transform-origin:top left;transform:scale(calc(100cqw / 1280px))}
   .demo-note{margin-top:10px;font-size:13px;color:var(--faint)}
+
+  /* Accessibility callout */
+  .a11y{margin-top:40px;border-radius:16px;border:1px solid var(--line);background:var(--raise);box-shadow:var(--shadow);overflow:hidden}
+  .a11y .hd{padding:20px 24px 2px}
+  .a11y .hd .tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:700}
+  .a11y .hd h2{margin:7px 0 0;font-size:22px;letter-spacing:-.012em;font-weight:800;color:var(--ink);text-wrap:balance}
+  .a11y .lede{margin:10px 0 0;padding:0 24px;color:var(--muted);max-width:62ch;font-size:15.5px}
+  .a11y ul{list-style:none;margin:16px 0 0;padding:6px 24px 24px;display:flex;flex-direction:column;gap:13px}
+  .a11y li{position:relative;padding-left:24px;color:var(--ink);font-size:15.5px;max-width:64ch}
+  .a11y li::before{content:"";position:absolute;left:2px;top:9px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+  .a11y li b{font-weight:700}
 </style>
 </head>
 <body>
@@ -140,6 +151,24 @@
       <span class="promise"><span class="dot"></span><b>Never submits</b>&nbsp;you send it</span>
     </div>
   </header>
+
+  <section class="a11y">
+    <div class="hd">
+      <span class="tag">Why it exists</span>
+      <h2>Made to limit how much you move</h2>
+    </div>
+    <p class="lede">A job hunt means entering the same details by hand, form after form, while jumping between
+      your resume, a notes file, and the application tab. If typing or mouse movement is hard on your hands,
+      that adds up fast. This is built to shrink it to as little movement as possible.</p>
+    <ul>
+      <li><b>Enter it once.</b> Your details are saved, so every form fills from one profile instead of you
+        re-typing your name, history, and answers on each application.</li>
+      <li><b>Stay on one page.</b> It fills the form you are already on, so you are not hunting across windows
+        and documents to copy your information over by hand.</li>
+      <li><b>One click when it is unsure.</b> If the local model hiccups, every field is a single click to
+        copy, so nothing forces you into extra typing or mouse travel.</li>
+    </ul>
+  </section>
 
   <div class="sechead">See it in action</div>
   <p>The actual extension running on a sample form with placeholder data. It scans the page, matches your
