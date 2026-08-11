@@ -115,7 +115,7 @@
   /* Live demo embed: scale the 1280x800 demo to the column width via container units */
   .demo-stage{margin:16px 0 0;width:100%;aspect-ratio:1280/800;container-type:size;overflow:hidden;
     border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--sunk)}
-  .demo-stage iframe{width:1280px;height:800px;border:0;transform-origin:top left;transform:scale(calc(100cqw / 1280))}
+  .demo-stage iframe{width:1280px;height:800px;border:0;transform-origin:top left;transform:scale(calc(100cqw / 1280px))}
   .demo-note{margin-top:10px;font-size:13px;color:var(--faint)}
 </style>
 </head>
@@ -145,7 +145,7 @@
   <p>A real run on a sample form with placeholder data: it scans the page, matches your saved details, and shows
     you every field before anything is filled. Nothing here is real, and it never submits.</p>
   <div class="demo-stage">
-    <iframe src="/autofill/demo.html" title="Job Application Autofill live demo" loading="lazy" scrolling="no"></iframe>
+    <iframe src="/autofill/demo.html?v=2" title="Job Application Autofill live demo" loading="lazy" scrolling="no"></iframe>
   </div>
   <p class="demo-note">Live demo, looping with sample data.</p>
 
