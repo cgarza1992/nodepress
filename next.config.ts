@@ -21,8 +21,14 @@ const nextConfig: NextConfig = {
       {
         // The live in-action demo (/autofill) is a static, self-contained mock with
         // nothing to clickjack; allow our own pages to frame just this one file.
+        // must-revalidate means browsers refetch it whenever it changes, so a new
+        // build is picked up immediately with no cache-busting param to maintain.
         source: '/autofill/demo.html',
-        headers: [{ key: 'X-Frame-Options', value: 'SAMEORIGIN' }, ...base],
+        headers: [
+          { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+          { key: 'Cache-Control', value: 'public, max-age=0, must-revalidate' },
+          ...base,
+        ],
       },
       {
         // Everything else stays DENY — no framing at all.
