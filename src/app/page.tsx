@@ -294,8 +294,8 @@ export default function Home() {
 
   const independentProjects = [
     {
-      title: 'Job Application Autofill — Accessibility Tool',
-      description: 'A Chrome extension (Manifest V3) that fills repetitive job-application forms from one profile you save locally, so applying doesn\'t mean retyping your name, work history, and essays into every portal by hand. Built as an accessibility tool first, for people (myself included) who find repetitive computer tasks physically hard. It never clicks Submit: it fills, shows everything in a review panel, and you confirm and send. It never touches EEO/demographic questions unless you opt in and provide your own answers, keeps all data on your machine (no account, no telemetry), and can draft essay answers with a local AI (Ollama) in your own voice. Handles the awkward widgets — react-select dropdowns, typeaheads, split-date pickers, résumé upload — across Workday, Greenhouse, and Ashby, with a graceful fallback for iframe-embedded forms. Accessible throughout: real labels, keyboard navigation, focus management, live status announcements, and colorblind-safe status cues.',
+      title: 'Job Application Autofill: Accessibility Tool',
+      description: 'An accessibility-first Chrome extension (Manifest V3), built for people (myself included) who find the repetitive typing that job applications demand physically hard. Save your profile once and it fills the forms for you, so applying no longer means re-entering your name, work history, and essays into every portal by hand. Accessibility runs through the whole tool: real labels, full keyboard navigation, focus management, live screen-reader status announcements, and colorblind-safe status cues, all to keep strain low. You stay in control: it never clicks Submit (it fills, shows a review panel, and you confirm and send), never touches EEO/demographic questions unless you opt in with your own answers, and keeps all data on your machine (no account, no telemetry). It can draft essay answers with a local AI (Ollama) in your own voice, and handles the awkward widgets (react-select dropdowns, typeaheads, split-date pickers, résumé upload) across Workday, Greenhouse, and Ashby, with a graceful fallback for iframe-embedded forms.',
       tags: ['Chrome Extension', 'Manifest V3', 'TypeScript', 'Accessibility', 'Local AI (Ollama)', 'Privacy-first'],
       preview: (
         <video
@@ -315,8 +315,8 @@ export default function Home() {
       },
     },
     {
-      title: 'Atlas — AI Chief of Staff for PMs',
-      description: 'An AI chief of staff for project managers and SMB delivery teams — real-time intelligence across projects, clients, and team health without leaving the tools they already use. Includes a live call co-pilot with transcription, sentiment tracking, and agenda coaching; a delivery control panel with burndown, blockers, and velocity; and chat over meeting history and project data. Built with a FastAPI (Python) backend and a Next.js + TypeScript frontend, with BM25 full-text retrieval, a sentiment/morale engine, and a Teamwork integration. Supports a fully local LLM mode so sensitive project data never leaves the machine.',
+      title: 'Atlas: AI Chief of Staff for PMs',
+      description: 'An AI chief of staff for project managers and SMB delivery teams: real-time intelligence across projects, clients, and team health without leaving the tools they already use. Includes a live call co-pilot with transcription, sentiment tracking, and agenda coaching; a delivery control panel with burndown, blockers, and velocity; and chat over meeting history and project data. Built with a FastAPI (Python) backend and a Next.js + TypeScript frontend, with BM25 full-text retrieval, a sentiment/morale engine, and a Teamwork integration. Supports a fully local LLM mode so sensitive project data never leaves the machine.',
       tags: ['Next.js', 'TypeScript', 'FastAPI', 'Python', 'AI', 'Local LLM', 'RAG'],
       image: '/atlas/atlas-core-dashboard.png',
       requestAccess: {
@@ -348,7 +348,7 @@ export default function Home() {
         />
 
         <IndependentWork
-          description={<>Available for freelance, contract, and full-time work. Between roles I&apos;ve been using the time to build the tools and products I always wanted to use but couldn&apos;t find — accessible, privacy-first software shipped end to end across frontend, backend, and local AI. A few of them are below.</>}
+          description={<>Available for freelance, contract, and full-time work. Between roles I&apos;ve been using the time to build the tools and products I always wanted to use but couldn&apos;t find: accessible, privacy-first software shipped end to end across frontend, backend, and local AI. A few of them are below.</>}
           projects={independentProjects}
         />
 
