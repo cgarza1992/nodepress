@@ -10,6 +10,7 @@ import {
   Footer,
 } from '@/components';
 import { GradientText } from '@/components/atoms/GradientText';
+import { IndependentWork } from '@/components/organisms/IndependentWork';
 import { AuctaneWork } from '@/components/organisms/AuctaneWork';
 import { WPEngineWork } from '@/components/organisms/WPEngineWork';
 import { TechnicalDemos } from '@/components/organisms/TechnicalDemos';
@@ -291,6 +292,27 @@ export default function Home() {
     },
   ];
 
+  const independentProjects = [
+    {
+      title: 'Job Application Autofill — Accessibility Tool',
+      description: 'A Chrome extension (Manifest V3) that fills repetitive job-application forms from one profile you save locally, so applying doesn\'t mean retyping your name, work history, and essays into every portal by hand. Built as an accessibility tool first, for people (myself included) who find repetitive computer tasks physically hard. It never clicks Submit: it fills, shows everything in a review panel, and you confirm and send. It never touches EEO/demographic questions unless you opt in and provide your own answers, keeps all data on your machine (no account, no telemetry), and can draft essay answers with a local AI (Ollama) in your own voice. Handles the awkward widgets — react-select dropdowns, typeaheads, split-date pickers, résumé upload — across Workday, Greenhouse, and Ashby, with a graceful fallback for iframe-embedded forms. Accessible throughout: real labels, keyboard navigation, focus management, live status announcements, and colorblind-safe status cues.',
+      tags: ['Chrome Extension', 'Manifest V3', 'TypeScript', 'Accessibility', 'Local AI (Ollama)', 'Privacy-first'],
+      requestAccess: {
+        label: 'Request access',
+        href: `mailto:${siteConfig.author.email}?subject=${encodeURIComponent('Access request: Job Application Autofill')}&body=${encodeURIComponent("Hi Christopher,\n\nI'd like access to try the Job Application Autofill extension.\n\n")}`,
+      },
+    },
+    {
+      title: 'Atlas — AI Chief of Staff for PMs',
+      description: 'An AI chief of staff for project managers and SMB delivery teams — real-time intelligence across projects, clients, and team health without leaving the tools they already use. Includes a live call co-pilot with transcription, sentiment tracking, and agenda coaching; a delivery control panel with burndown, blockers, and velocity; and chat over meeting history and project data. Built with a FastAPI (Python) backend and a Next.js + TypeScript frontend, with BM25 full-text retrieval, a sentiment/morale engine, and a Teamwork integration. Supports a fully local LLM mode so sensitive project data never leaves the machine.',
+      tags: ['Next.js', 'TypeScript', 'FastAPI', 'Python', 'AI', 'Local LLM', 'RAG'],
+      requestAccess: {
+        label: 'Request a demo',
+        href: `mailto:${siteConfig.author.email}?subject=${encodeURIComponent('Demo request: Atlas')}&body=${encodeURIComponent("Hi Christopher,\n\nI'd like a demo of Atlas.\n\n")}`,
+      },
+    },
+  ];
+
   const aboutHighlights = [
     "Background in Advertising & Mass Communication, bridging the gap between technical and non-technical teams",
     "Grew and mentored the WP Engine web team from 2 to 14 people, building the first engineer onboarding program, leading peer mentoring, and navigating the team through org change",
@@ -306,10 +328,15 @@ export default function Home() {
           eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 9+ years · Austin</>}
           title="Christopher Garza"
           subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
-          statusLine="Austin, TX · Remote-friendly · Available immediately, May 2026"
+          statusLine="Austin, TX · Remote-friendly · Available for freelance, contract & full-time"
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
           ctaSecondary={{ text: "View GitHub", href: "https://github.com/cgarza1992" }}
+        />
+
+        <IndependentWork
+          description={<>Available for freelance, contract, and full-time work. Between roles I&apos;ve been using the time to build the tools and products I always wanted to use but couldn&apos;t find — accessible, privacy-first software shipped end to end across frontend, backend, and local AI. A few of them are below.</>}
+          projects={independentProjects}
         />
 
         <AuctaneWork
