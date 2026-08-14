@@ -297,6 +297,18 @@ export default function Home() {
       title: 'Job Application Autofill — Accessibility Tool',
       description: 'A Chrome extension (Manifest V3) that fills repetitive job-application forms from one profile you save locally, so applying doesn\'t mean retyping your name, work history, and essays into every portal by hand. Built as an accessibility tool first, for people (myself included) who find repetitive computer tasks physically hard. It never clicks Submit: it fills, shows everything in a review panel, and you confirm and send. It never touches EEO/demographic questions unless you opt in and provide your own answers, keeps all data on your machine (no account, no telemetry), and can draft essay answers with a local AI (Ollama) in your own voice. Handles the awkward widgets — react-select dropdowns, typeaheads, split-date pickers, résumé upload — across Workday, Greenhouse, and Ashby, with a graceful fallback for iframe-embedded forms. Accessible throughout: real labels, keyboard navigation, focus management, live status announcements, and colorblind-safe status cues.',
       tags: ['Chrome Extension', 'Manifest V3', 'TypeScript', 'Accessibility', 'Local AI (Ollama)', 'Privacy-first'],
+      preview: (
+        <video
+          src="/autofill/autofill-demo.mp4"
+          poster="/autofill/autofill-demo-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          aria-label="The Job Application Autofill extension scanning a sample job form and filling it through a review panel"
+          className="w-full aspect-[16/10] object-cover bg-slate-900"
+        />
+      ),
       requestAccess: {
         label: 'Request access',
         href: `mailto:${siteConfig.author.email}?subject=${encodeURIComponent('Access request: Job Application Autofill')}&body=${encodeURIComponent("Hi Christopher,\n\nI'd like access to try the Job Application Autofill extension.\n\n")}`,
