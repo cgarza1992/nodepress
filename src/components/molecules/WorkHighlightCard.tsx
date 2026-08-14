@@ -12,11 +12,12 @@ interface WorkHighlightCardProps {
   image?: string;
   video?: string;
   preview?: ReactNode;
+  requestAccess?: { label: string; href: string };
 }
 
 const CHAR_LIMIT = 180;
 
-export function WorkHighlightCard({ title, description, tags, href, caseStudy, image, video, preview }: WorkHighlightCardProps) {
+export function WorkHighlightCard({ title, description, tags, href, caseStudy, image, video, preview, requestAccess }: WorkHighlightCardProps) {
   const [expanded, setExpanded] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -92,6 +93,14 @@ export function WorkHighlightCard({ title, description, tags, href, caseStudy, i
               className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap hover:text-blue-500 transition-colors cursor-pointer"
             >
               View Live →
+            </a>
+          )}
+          {requestAccess && (
+            <a
+              href={requestAccess.href}
+              className="text-xs text-blue-600 dark:text-blue-400 whitespace-nowrap hover:text-cyan-500 transition-colors cursor-pointer font-medium"
+            >
+              {requestAccess.label} →
             </a>
           )}
         </div>

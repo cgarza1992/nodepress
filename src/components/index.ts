@@ -10,6 +10,7 @@ export { OpenSourceProjects } from './OpenSourceProjects';
 export { ContactSection } from './ContactSection';
 
 // Organisms
+export { IndependentWork } from './organisms/IndependentWork';
 export { AuctaneWork } from './organisms/AuctaneWork';
 export { WPEngineWork } from './organisms/WPEngineWork';
 export { PlanGrid } from './organisms/PlanGrid';

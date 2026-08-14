@@ -18,6 +18,7 @@ export interface WorkHighlight {
   image?: string;
   video?: string;
   preview?: ReactNode;
+  requestAccess?: { label: string; href: string };
 }
 
 interface AuctaneWorkProps {

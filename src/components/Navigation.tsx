@@ -27,7 +27,7 @@ export function Navigation() {
   const [isDark, setIsDark] = useState(false);
   const [caseStudiesOpen, setCaseStudiesOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const navItems = ['Auctane', 'WP Engine', 'Projects', 'About', 'Contact'];
+  const navItems = ['Freelance', 'Auctane', 'WP Engine', 'Projects', 'About', 'Contact'];
   const storybookUrl = process.env.NEXT_PUBLIC_STORYBOOK_URL || 'https://storybook.christophergarza.dev';
 
   useEffect(() => {
