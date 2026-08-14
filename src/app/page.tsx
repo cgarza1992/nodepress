@@ -338,7 +338,7 @@ export default function Home() {
         <Navigation />
 
         <Hero
-          eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 9+ years · Austin</>}
+          eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 10+ years · Austin</>}
           title="Christopher Garza"
           subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           statusLine="Austin, TX · Remote-friendly · Available for freelance, contract & full-time"
