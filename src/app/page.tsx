@@ -318,6 +318,7 @@ export default function Home() {
       title: 'Atlas — AI Chief of Staff for PMs',
       description: 'An AI chief of staff for project managers and SMB delivery teams — real-time intelligence across projects, clients, and team health without leaving the tools they already use. Includes a live call co-pilot with transcription, sentiment tracking, and agenda coaching; a delivery control panel with burndown, blockers, and velocity; and chat over meeting history and project data. Built with a FastAPI (Python) backend and a Next.js + TypeScript frontend, with BM25 full-text retrieval, a sentiment/morale engine, and a Teamwork integration. Supports a fully local LLM mode so sensitive project data never leaves the machine.',
       tags: ['Next.js', 'TypeScript', 'FastAPI', 'Python', 'AI', 'Local LLM', 'RAG'],
+      image: '/atlas/atlas-core-dashboard.png',
       requestAccess: {
         label: 'Request a demo',
         href: `mailto:${siteConfig.author.email}?subject=${encodeURIComponent('Demo request: Atlas')}&body=${encodeURIComponent("Hi Christopher,\n\nI'd like a demo of Atlas.\n\n")}`,
