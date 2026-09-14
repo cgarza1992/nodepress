@@ -294,6 +294,11 @@ export default function Home() {
 
   const independentProjects = [
     {
+      title: 'Travel Health Club',
+      description: 'Two-sided marketplace for vetted health and wellness providers. Role and ownership-based access control, a multi-state provider vetting workflow, migration-only schema changes, and CI running the full migration set against a fresh database per pull request.',
+      tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'Payload CMS', 'GitHub Actions', 'Vercel'],
+    },
+    {
       title: 'Job Application Autofill: Accessibility Tool',
       description: 'An accessibility-first Chrome extension (Manifest V3), built for people (myself included) who find the repetitive typing that job applications demand physically hard. Save your profile once and it fills the forms for you, so applying no longer means re-entering your name, work history, and essays into every portal by hand. Accessibility runs through the whole tool: real labels, full keyboard navigation, focus management, live screen-reader status announcements, and colorblind-safe status cues, all to keep strain low. You stay in control: it never clicks Submit (it fills, shows a review panel, and you confirm and send), never touches EEO/demographic questions unless you opt in with your own answers, and keeps all data on your machine (no account, no telemetry). It can draft essay answers with a local AI (Ollama) in your own voice, and handles the awkward widgets (react-select dropdowns, typeaheads, split-date pickers, résumé upload) across Workday, Greenhouse, and Ashby, with a graceful fallback for iframe-embedded forms.',
       tags: ['Chrome Extension', 'Manifest V3', 'TypeScript', 'Accessibility', 'Local AI (Ollama)', 'Privacy-first'],
@@ -340,7 +345,7 @@ export default function Home() {
         <Hero
           eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 10+ years · Austin</>}
           title="Christopher Garza"
-          subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          subtitle="Senior frontend engineer building the component systems and data layers that other teams ship on. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           statusLine="Austin, TX · Remote-friendly · Available for freelance, contract & full-time"
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
