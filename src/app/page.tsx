@@ -295,7 +295,7 @@ export default function Home() {
   const independentProjects = [
     {
       title: 'Travel Health Club',
-      description: 'A travel platform that connects customers, practitioners, and location spaces, bringing all three together in one place.',
+      description: 'Travel Health Club is a two-sided marketplace I\'m building that connects travelers with personally vetted health and wellness practitioners and venues, starting in Austin. I\'m working across the full stack on Next.js, Payload CMS, and Postgres. On the backend, every listing moves through a review process before it can appear publicly. Each provider can edit only its own record, and CI tests those permission rules against a freshly migrated database. On the frontend, provider pages are built from a limited set of reusable blocks. Each block is a single React component, and the same component renders both the admin\'s live preview and the public page, so what providers see while editing is exactly what travelers see. Data loads in server components and reaches interactive pieces as plain props, and sensitive health data stays isolated from everyday content from day one.',
       tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'Payload CMS', 'GitHub Actions', 'Vercel'],
       preview: (
         <div className="w-full aspect-[16/10] flex flex-col items-center justify-center gap-2 border-b border-slate-200 dark:border-slate-700/50 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800/60 dark:to-slate-900/40 text-center px-6">
