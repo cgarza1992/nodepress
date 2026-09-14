@@ -294,6 +294,21 @@ export default function Home() {
 
   const independentProjects = [
     {
+      title: 'Travel Health Club',
+      description: 'Travel Health Club is a two-sided marketplace I\'m building that connects travelers with personally vetted health and wellness practitioners and venues, starting in Austin. I\'m working across the full stack on Next.js, Payload CMS, and Postgres. On the backend, every listing moves through a review process before it can appear publicly. Each provider can edit only its own record, and CI tests those permission rules against a freshly migrated database. On the frontend, provider pages are built from a limited set of reusable blocks. Each block is a single React component, and the same component renders both the admin\'s live preview and the public page, so what providers see while editing is exactly what travelers see. Data loads in server components and reaches interactive pieces as plain props, and sensitive health data stays isolated from everyday content from day one.',
+      tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'Payload CMS', 'GitHub Actions', 'Vercel'],
+      preview: (
+        <div className="w-full aspect-[16/10] flex flex-col items-center justify-center gap-2 border-b border-slate-200 dark:border-slate-700/50 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800/60 dark:to-slate-900/40 text-center px-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500/70 dark:text-blue-400/70" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="14" rx="2" />
+            <path d="M3 9h18M8 21h8M12 17v4" />
+          </svg>
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 dark:text-blue-400">In design</span>
+          <span className="text-sm text-slate-500 dark:text-slate-400">Preview coming soon</span>
+        </div>
+      ),
+    },
+    {
       title: 'Job Application Autofill: Accessibility Tool',
       description: 'An accessibility-first Chrome extension (Manifest V3), built for people (myself included) who find the repetitive typing that job applications demand physically hard. Save your profile once and it fills the forms for you, so applying no longer means re-entering your name, work history, and essays into every portal by hand. Accessibility runs through the whole tool: real labels, full keyboard navigation, focus management, live screen-reader status announcements, and colorblind-safe status cues, all to keep strain low. You stay in control: it never clicks Submit (it fills, shows a review panel, and you confirm and send), never touches EEO/demographic questions unless you opt in with your own answers, and keeps all data on your machine (no account, no telemetry). It can draft essay answers with a local AI (Ollama) in your own voice, and handles the awkward widgets (react-select dropdowns, typeaheads, split-date pickers, résumé upload) across Workday, Greenhouse, and Ashby, with a graceful fallback for iframe-embedded forms.',
       tags: ['Chrome Extension', 'Manifest V3', 'TypeScript', 'Accessibility', 'Local AI (Ollama)', 'Privacy-first'],
@@ -340,7 +355,7 @@ export default function Home() {
         <Hero
           eyebrow={<>Senior Software Engineer · <GradientText>Frontend</GradientText> · 10+ years · Austin</>}
           title="Christopher Garza"
-          subtitle="Senior frontend engineer building the technical systems behind pricing, conversion, and analytics for enterprise products. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
+          subtitle="Senior frontend engineer building the component systems and data layers that other teams ship on. Frontend to backend, component libraries to data pipelines. Most engineers pick a side. I've spent my career not having to. The work shows up in the metrics, not just the repo."
           statusLine="Austin, TX · Remote-friendly · Available for freelance, contract & full-time"
           image="/profile_triumph_pic.jpg"
           ctaPrimary={{ text: "Get In Touch", href: "#contact" }}
