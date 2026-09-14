@@ -295,7 +295,7 @@ export default function Home() {
   const independentProjects = [
     {
       title: 'Travel Health Club',
-      description: 'Travel platform that links customers, practitioners, and location spaces. Role and ownership-based access control, a multi-state provider vetting workflow, migration-only schema changes, and CI running the full migration set against a fresh database per pull request.',
+      description: 'A travel platform that connects customers, practitioners, and location spaces, bringing all three together in one place.',
       tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'Payload CMS', 'GitHub Actions', 'Vercel'],
       preview: (
         <div className="w-full aspect-[16/10] flex flex-col items-center justify-center gap-2 border-b border-slate-200 dark:border-slate-700/50 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800/60 dark:to-slate-900/40 text-center px-6">
