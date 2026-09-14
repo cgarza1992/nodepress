@@ -297,6 +297,16 @@ export default function Home() {
       title: 'Travel Health Club',
       description: 'Two-sided marketplace for vetted health and wellness providers. Role and ownership-based access control, a multi-state provider vetting workflow, migration-only schema changes, and CI running the full migration set against a fresh database per pull request.',
       tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'Payload CMS', 'GitHub Actions', 'Vercel'],
+      preview: (
+        <div className="w-full aspect-[16/10] flex flex-col items-center justify-center gap-2 border-b border-slate-200 dark:border-slate-700/50 bg-gradient-to-br from-slate-100 to-slate-50 dark:from-slate-800/60 dark:to-slate-900/40 text-center px-6">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" className="text-blue-500/70 dark:text-blue-400/70" aria-hidden="true" focusable="false">
+            <rect x="3" y="3" width="18" height="14" rx="2" />
+            <path d="M3 9h18M8 21h8M12 17v4" />
+          </svg>
+          <span className="text-xs font-semibold tracking-[0.2em] uppercase text-blue-600 dark:text-blue-400">In design</span>
+          <span className="text-sm text-slate-500 dark:text-slate-400">Preview coming soon</span>
+        </div>
+      ),
     },
     {
       title: 'Job Application Autofill: Accessibility Tool',
